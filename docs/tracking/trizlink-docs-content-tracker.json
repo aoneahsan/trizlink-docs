@@ -1,0 +1,43 @@
+{
+  "$schema": "trizlink-docs-content-tracker",
+  "description": "Per-page documentation content + SEO enrichment progress for the TrizLink docs site. Resumable across sessions: the first page with status != 'complete' is the next thing to work on.",
+  "site": "trizlink-docs",
+  "liveUrl": "https://docs.trizlink.com",
+  "product": "https://trizlink.com",
+  "createdAt": "2026-06-22",
+  "lastUpdated": "2026-06-22",
+  "author": "Ahsan Mahmood",
+  "seoFloorPerPage": "definition-first intro, use cases, how-it-works steps, tips, 5-7 FAQ, distinct title + meta description, ~700-1000 unique words",
+  "totalPages": 23,
+  "completePages": 23,
+  "remainingPages": 0,
+  "pages": [
+    { "path": "intro", "title": "Introduction to TrizLink", "status": "complete" },
+    { "path": "getting-started/create-account", "title": "Create your account", "status": "complete" },
+    { "path": "getting-started/quick-start", "title": "Quick Start", "status": "complete" },
+    { "path": "features/short-links", "title": "Short links", "status": "complete" },
+    { "path": "features/link-in-bio", "title": "Link-in-bio pages", "status": "complete" },
+    { "path": "features/qr-codes", "title": "QR codes", "status": "complete" },
+    { "path": "features/analytics", "title": "Analytics", "status": "complete" },
+    { "path": "features/custom-domains", "title": "Custom domains", "status": "complete" },
+    { "path": "features/link-organization", "title": "Link organization", "status": "complete" },
+    { "path": "features/tracking-and-utm", "title": "Tracking & UTM", "status": "complete" },
+    { "path": "features/workspaces-and-teams", "title": "Workspaces & teams", "status": "complete" },
+    { "path": "features/social-media", "title": "Social media", "status": "complete" },
+    { "path": "features/widgets", "title": "Widgets", "status": "complete" },
+    { "path": "features/ai-features-byok", "title": "AI features (BYOK)", "status": "complete" },
+    { "path": "features/api-access", "title": "API access", "status": "complete" },
+    { "path": "features/utility-tools", "title": "Utility tools", "status": "complete" },
+    { "path": "features/browser-extension", "title": "Browser extension", "status": "complete" },
+    { "path": "features/theme-customizer", "title": "Theme customizer", "status": "complete" },
+    { "path": "features/sharing", "title": "Sharing", "status": "complete" },
+    { "path": "guides/faq", "title": "FAQ", "status": "complete" },
+    { "path": "about/privacy-and-data", "title": "Privacy & data", "status": "complete" },
+    { "path": "about/changelog", "title": "Changelog", "status": "complete" },
+    { "path": "about/about-the-author", "title": "About the author", "status": "complete" }
+  ],
+  "runHistory": [
+    { "date": "2026-06-22", "summary": "Created trizlink-docs from the native-update-docs structure. Adapted brand (TrizLink blue), config, SEO (JSON-LD WebSite+Organization+SoftwareApplication, robots AI-bot allowlist, llms.txt). Wrote all 23 baseline pages covering every real TrizLink feature, hitting the SEO uniqueness floor. Dual hosting (Firebase + GitHub Pages) configured." }
+  ],
+  "nextSteps": "Keep pages honest against the live trizlink app. On material product change, update the matching feature page + bump about/changelog + re-run yarn build. Multi-page enrichment workflow: ~/.claude/rules/seo-aeo-ranking.md §13."
+}

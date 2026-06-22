@@ -1,0 +1,44 @@
+# TrizLink — Documentation Index
+
+> TrizLink is a link-management platform for creating branded short links, link-in-bio pages, QR codes, and reading click analytics. It also includes workspaces and teams, custom domains, UTM and tracking tools, an API, a browser extension, bring-your-own-key AI helpers, and a set of free client-side utility tools. Sign-in is Google-only. Product: https://trizlink.com. Author: Ahsan Mahmood (https://aoneahsan.com).
+
+## About
+
+TrizLink turns long URLs into short, shareable links and gives each one a QR code plus live click stats broken down by country, referrer, device, browser, and OS. Beyond shortening, it offers drag-and-drop link-in-bio pages, custom domains, workspaces with role-based teams, UTM templates, tracking pixels, webhooks, embeddable widgets, social-post scheduling, and an in-app API. AI features are opt-in and run on your own OpenAI or Anthropic API key (bring-your-own-key) — TrizLink never charges for AI usage.
+
+This `llms.txt` follows the [llmstxt.org](https://llmstxt.org) spec — a structured index for large language models.
+
+## Getting Started
+
+- [Introduction](https://docs.trizlink.com/intro): What TrizLink is, who it's for, and the feature areas it covers.
+- [Create your account](https://docs.trizlink.com/getting-started/create-account): Sign in with Google and set up your first workspace.
+- [Quick Start](https://docs.trizlink.com/getting-started/quick-start): Create your first short link and bio page in five minutes.
+
+## Features
+
+- [Short links](https://docs.trizlink.com/features/short-links): Custom aliases, passwords, expiry, and per-link click stats.
+- [Link-in-bio pages](https://docs.trizlink.com/features/link-in-bio): Drag-and-drop bio pages with templates and a custom slug.
+- [QR codes](https://docs.trizlink.com/features/qr-codes): Generate and download QR codes for any link.
+- [Analytics](https://docs.trizlink.com/features/analytics): Clicks over time by country, referrer, device, browser, and OS.
+- [Custom domains](https://docs.trizlink.com/features/custom-domains): Use your own domain for branded short links.
+- [Link organization](https://docs.trizlink.com/features/link-organization): Labels, search, filters, and CSV bulk import.
+- [Tracking & UTM](https://docs.trizlink.com/features/tracking-and-utm): UTM templates, tracking pixels, and webhooks.
+- [Workspaces & teams](https://docs.trizlink.com/features/workspaces-and-teams): Separate workspaces with admin, editor, and viewer roles.
+- [Social media](https://docs.trizlink.com/features/social-media): Connect accounts, compose, and schedule posts.
+- [Widgets](https://docs.trizlink.com/features/widgets): Embed link lists or bio pages on any website.
+- [AI features (BYOK)](https://docs.trizlink.com/features/ai-features-byok): Use your own OpenAI/Anthropic key for captions, hashtags, and forecasts.
+- [API access](https://docs.trizlink.com/features/api-access): Create API keys and manage links programmatically.
+- [Utility tools](https://docs.trizlink.com/features/utility-tools): 40+ free, client-side PDF, image, text, code, color, and SEO tools.
+- [Browser extension](https://docs.trizlink.com/features/browser-extension): Shorten the current tab from your toolbar.
+- [Theme customizer](https://docs.trizlink.com/features/theme-customizer): Appearance, accent color, radius, and scaling.
+- [Sharing](https://docs.trizlink.com/features/sharing): Share links over the web or the native OS share sheet.
+
+## Guides
+
+- [FAQ](https://docs.trizlink.com/guides/faq): Common questions about accounts, pricing, privacy, and limits.
+
+## About
+
+- [Privacy & data](https://docs.trizlink.com/about/privacy-and-data): What TrizLink stores and how to delete it.
+- [Changelog](https://docs.trizlink.com/about/changelog): Notable documentation and product updates.
+- [About the author](https://docs.trizlink.com/about/about-the-author): Ahsan Mahmood, the developer behind TrizLink.

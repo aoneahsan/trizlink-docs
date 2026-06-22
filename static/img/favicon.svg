@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="TrizLink favicon">
+  <defs>
+    <linearGradient id="tz-fav" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="28" height="28" rx="7" fill="url(#tz-fav)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(16,16)">
+    <path d="M-4,-6 L-8,-6 A6,6 0 0,0 -8,6 L-4,6"/>
+    <path d="M4,-6 L8,-6 A6,6 0 0,1 8,6 L4,6"/>
+    <line x1="-6" y1="0" x2="6" y2="0"/>
+  </g>
+</svg>

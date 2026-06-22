@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "default": "trizlink-docs"
+  },
+  "targets": {
+    "trizlink-docs": {
+      "hosting": {
+        "trizlink-docs": ["trizlink-docs"]
+      }
+    }
+  },
+  "etags": {}
+}
