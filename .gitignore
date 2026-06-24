@@ -29,12 +29,20 @@ Thumbs.db
 
 # Env / secrets (this is a PUBLIC repo — never commit secrets)
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 *.pem
 *.key
 .firebase/
 .firebaserc.local
+.npmrc
+
+# Keystores / signing / service accounts (never tracked, even though docs-only)
+*.jks
+*.keystore
+key.properties
+keystore.properties
+*service-account*.json
 
 # Project-record / private notes
 project-record-ignore/

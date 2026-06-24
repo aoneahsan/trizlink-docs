@@ -68,6 +68,11 @@ Dual-hosted (Firebase Hosting + GitHub Pages). See `DEPLOY.md`. **Deploy is user
 
 `nvm` installs/updates Node + npm → `npm` installs global CLIs (incl. yarn) → `yarn` for all local work. Never `pnpm`. Only `yarn.lock` committed.
 
+## Gitignore Hygiene (IRON-SOLID)
+`.gitignore` stays current with the project structure — ignore only recoverable artifacts (build/`dist`/`www`/`node_modules`/logs/caches/IDE), never lose source. Custom rules always present: `*.ignore.*`, `project-record-ignore/`. This is a **PUBLIC** repo -> secrets/`.env`/keystores are NEVER tracked.
+Full rule + private/public protocol: `~/.claude/rules/project-config.md`.
+Gitignore Last Verified: 2026-06-24
+
 ## CLAUDE.md + AGENTS.md Sync
 
 Every rule lives in BOTH `CLAUDE.md` and `AGENTS.md`. Update one → update the other.
