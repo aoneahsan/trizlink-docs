@@ -1,12 +1,19 @@
-# AGENTS.md — trizlink-docs
+# CLAUDE.md — trizlink-docs
 
-**Last Updated:** 2026-08-17
-**Mirror of `CLAUDE.md`** — identical except this header. Update one, update the other.
+**Last Updated:** 2026-09-03
+**Mirror of `AGENTS.md`** — identical except this header. Update one, update the other.
 
-| Context Budget Last Verified | 2026-08-17 — CLAUDE.md 4,150 B / no PENDING-TASKS.md; re-check due 2026-08-27 |
+| Context Budget Last Verified | 2026-09-03 — CLAUDE.md **5.2 KB** / PENDING-TASKS.md **2.5 KB** with **2** open entries (`TASK-001`, `TASK-002`); measured with `wc -c`. Re-check due 2026-09-13 |
 |---|---|
 
-Public Docusaurus documentation site for **TrizLink** (https://trizlink.com), a link-management platform.
+Public Docusaurus documentation site for **Trizlink** (https://trizlink.com), a link-management platform.
+
+🔴 **STALE CONTENT — every page describes the OLD app as of 2026-06-22 (v2.0.1).** The product was rebuilt
+from scratch and went live at `trizlink.com` on 2026-08-31 (`../trizlink/`, Supabase backend, Free/Pro/Team
+plans, no browser extension, 18-endpoint public API at `api.trizlink.com`). The owner ruled on 2026-09-03:
+**full re-derivation of all 23 pages against the rebuilt app's source** — `PENDING-TASKS.md` → `TASK-001`,
+and the cross-repo plan in `../remaining-work.md` → C2. Until that lands, treat every product claim on this
+site as unverified. 🔴 Derive from `../trizlink/src`, never from `../trizlink-old/` and never from memory.
 
 Fleet law auto-loads from `~/.claude/rules/` at session start — **never restate a global rule here.** This
 file carries only what is true of *this* repo.
@@ -20,9 +27,9 @@ file carries only what is true of *this* repo.
 | Package manager | yarn (NEVER npm/pnpm) |
 | Node | >=18 (`.nvmrc` = 22) |
 | Author | Ahsan Mahmood ([aoneahsan@gmail.com](mailto:aoneahsan@gmail.com)) |
-| Live URL | https://docs.trizlink.com (Firebase Hosting site `trizlink-docs` + GitHub Pages, custom domain) |
+| Live URL | https://docs.trizlink.com — **GitHub Pages only** (measured 2026-09-03: `server: GitHub.com`). The Firebase option in `DEPLOY.md` contradicts the docs-site rule and is `TASK-002` |
 | Product (app) | https://trizlink.com · Android: https://play.google.com/store/apps/details?id=com.trizlink.app |
-| Sibling project | `../trizlink-old/` — the shipped app (PRIVATE), inside the `trizlink-project-root/` rebuild kit |
+| Sibling projects | **`../trizlink/`** — the LIVE rebuilt app (PRIVATE, branch `redevelop-v1`): the ONLY source of truth for product facts · `../trizlink-old/` — the legacy app, read-only, **never** a source for these docs since 2026-08-31 · the kit records one level up (`../docs/PROJECT-CONTEXT.md`, `../remaining-work.md`) |
 | Dev ports | start 5962 · serve 5963 |
 | Content tracker | `docs/tracking/trizlink-docs-content-tracker.json` |
 | Gitignore Last Verified | 2026-06-24 |
