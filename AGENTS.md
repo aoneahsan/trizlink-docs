@@ -1,7 +1,7 @@
 # CLAUDE.md — trizlink-docs
 
 **Last Updated:** 2026-09-03
-**Mirror of `AGENTS.md`** — identical except this header. Update one, update the other.
+**Mirror of `CLAUDE.md`** — identical except this header. Update one, update the other.
 
 | Context Budget Last Verified | 2026-09-03 — CLAUDE.md **5.2 KB** / PENDING-TASKS.md **2.5 KB** with **2** open entries (`TASK-001`, `TASK-002`); measured with `wc -c`. Re-check due 2026-09-13 |
 |---|---|
@@ -27,7 +27,7 @@ file carries only what is true of *this* repo.
 | Package manager | yarn (NEVER npm/pnpm) |
 | Node | >=18 (`.nvmrc` = 22) |
 | Author | Ahsan Mahmood ([aoneahsan@gmail.com](mailto:aoneahsan@gmail.com)) |
-| Live URL | https://docs.trizlink.com — **GitHub Pages only** (measured 2026-09-03: `server: GitHub.com`). The Firebase option in `DEPLOY.md` contradicts the docs-site rule and is `TASK-002` |
+| Live URL | https://docs.trizlink.com — **GitHub Pages only** (measured 2026-09-03: `server: GitHub.com`). ✅ `TASK-002` closed 2026-09-04: `DEPLOY.md` no longer offers Firebase, and the `firebase:deploy:preview` script is gone |
 | Product (app) | https://trizlink.com · Android: https://play.google.com/store/apps/details?id=com.trizlink.app |
 | Sibling projects | **`../trizlink/`** — the LIVE rebuilt app (PRIVATE, branch `redevelop-v1`): the ONLY source of truth for product facts · `../trizlink-old/` — the legacy app, read-only, **never** a source for these docs since 2026-08-31 · the kit records one level up (`../docs/PROJECT-CONTEXT.md`, `../remaining-work.md`) |
 | Dev ports | start 5962 · serve 5963 |
@@ -69,14 +69,15 @@ docs/
 src/css/custom.css · src/pages/index.tsx
 static/{robots.txt, llms.txt, humans.txt, CNAME, img/*}
 docusaurus.config.ts · sidebars.ts
-firebase.json + .firebaserc (Firebase Hosting target `trizlink-docs`)
-.github/workflows/deploy-docs.yml (GitHub Pages)
+.github/workflows/deploy-pages.yml (GitHub Pages)
 ```
 
 ## Deployment
 
-Dual-hosted (Firebase Hosting + GitHub Pages). See `DEPLOY.md`. Deploying needs the Firebase project, the
-GitHub Pages settings and DNS for `docs.trizlink.com`.
+**GitHub Pages only** — a push to `main` runs `.github/workflows/deploy-pages.yml` and that IS the deploy.
+See `DEPLOY.md`. 🔴 Never Firebase: the fleet docs-site rule allows one host, this repo has no
+`firebase.json` and never had one, and the live host has always answered `server: GitHub.com`
+(`DONE-002`, 2026-09-04).
 
 **Committing and pushing this repo is NOT owner-only.** It is the docs site of an ordinary own production
 product, so the agent commits and pushes it **directly** — owner directive 2026-08-17. Only a project the

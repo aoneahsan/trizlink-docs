@@ -26,7 +26,7 @@ yarn typecheck    # tsc --noEmit
 
 ## Deployment
 
-Dual-hosted: **Firebase Hosting** (site `trizlink-docs`) and **GitHub Pages** (custom domain `docs.trizlink.com`). Both serve the same `build/` output. See [`DEPLOY.md`](./DEPLOY.md). Deployment is a user-only step (needs the Firebase project / DNS).
+**GitHub Pages only** (custom domain `docs.trizlink.com`) — a push to `main` is the deploy. See [`DEPLOY.md`](./DEPLOY.md). Deployment is a user-only step (needs the Firebase project / DNS).
 
 ## License
 

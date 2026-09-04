@@ -17,8 +17,8 @@ const config: Config = {
   tagline: 'Short links, link-in-bio pages, QR codes, and click analytics — documented.',
   favicon: 'img/favicon.svg',
 
-  // Production URL — served from Firebase Hosting site `trizlink-docs` and
-  // GitHub Pages (custom domain docs.trizlink.com).
+  // Production URL — served by GitHub Pages only (custom domain docs.trizlink.com).
+  // 🔴 Never Firebase: `DEPLOY.md` and the fleet docs-site rule both say one host.
   url: SITE_URL,
   baseUrl: '/',
 

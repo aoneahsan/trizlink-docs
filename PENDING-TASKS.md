@@ -23,16 +23,6 @@ is also story surface "Docs-site landing prose" and passes GATE 4.
 **Applies when:** any session, one writer (`aoneahsan-ccca-docs-writer`, `EXCLUSIVE SCOPE` = this repo only).
 **Priority: HIGH** — a public site making claims the product cannot meet. **Size:** 2–3 sessions.
 
-### TASK-002 — `DEPLOY.md` offers Firebase Hosting; the docs-site rule is GitHub Pages only
-
-**Found while working on:** the same audit. `DEPLOY.md` describes the site as "dual-hosted" on Firebase Hosting
-and GitHub Pages; the fleet rule (`~/.claude/rules/docs-sites.md`) is **GitHub Pages only, never Firebase**, and
-the live site serves from GitHub (`server: GitHub.com`, 2026-09-03). Remove Option A and the `firebase:deploy`
-script, any `.firebaserc` / `firebase.json` in this repo, and the "dual-hosted" sentence; keep the Pages workflow
-and the CNAME. Also tick-ready: `docs/MANUAL-TASKS.md` rows 1–2 are done in practice (the owner moves them).
-
-**Priority: LOW. Size:** 0.1 session, best folded into TASK-001's first commit.
-
 ## ✅ Done
 
 Completed entries live in `docs/DONE-TASKS.md`. Nothing is deleted.
