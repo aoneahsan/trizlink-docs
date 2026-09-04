@@ -17,24 +17,24 @@ const FEATURES: Feature[] = [
     body: 'Turn long URLs into short, shareable links with optional custom aliases, passwords, and expiry dates. Every link gets a QR code and live click stats.',
   },
   {
-    title: 'Link-in-bio pages',
-    body: 'Build a single landing page for all your links with a drag-and-drop block editor and ready-made templates. Publish it to a custom slug like trizlink.com/yourname.',
+    title: 'Bio pages',
+    body: 'Build one page for all your links from fifteen block types and three layouts. Publish it to a slug like trizlink.com/yourname, which shares an address space with your short links.',
   },
   {
     title: 'Click analytics',
-    body: 'See clicks over time plus a breakdown by country, referrer, device, browser, and OS — per link and across your whole workspace. Updates in real time.',
+    body: 'See clicks over time plus a breakdown by country, referrer, device and browser, per link and across a whole workspace. No visitor IP is ever stored, and click counts are best-effort everywhere, ours included.',
   },
   {
     title: 'QR codes',
-    body: 'Generate a QR code for any short link, customise it, and download it for print or screens. A standalone QR generator tool is included too.',
+    body: 'Every short link has a QR code, derived from the link rather than stored, with four error-correction levels. Scans are counted separately from ordinary clicks.',
   },
   {
     title: 'Workspaces & teams',
-    body: 'Keep links, bios, and analytics separate per workspace. Invite teammates with admin, editor, or viewer roles and group them into teams.',
+    body: 'Keep links, bio pages and analytics separate per workspace. Four fixed roles: owner, admin, member and viewer. Teams and the audit log are on the Team plan.'
   },
   {
     title: 'Bring-your-own-key AI',
-    body: 'Add your own OpenAI or Anthropic API key to draft captions, hashtags, and bios and forecast link performance. No key, no AI — and no extra cost from us.',
+    body: 'AI drafts a bio tagline, a social post and an analytics summary. It is metered on the Free plan; adding your own OpenAI or Anthropic key removes that limit on every plan, including Free.'
   },
 ];
 
@@ -101,7 +101,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={`${siteConfig.title} — Short links, bio pages, QR codes & analytics`}
-      description="Documentation for Trizlink: branded short links, bio pages, QR codes, click analytics, workspaces, an API, and a browser extension. Sign in with Google."
+      description="Documentation for Trizlink: branded short links, bio pages, QR codes, click analytics, workspaces and a public API. Sign in with Google."
     >
       <HomepageHeader />
       <main>
