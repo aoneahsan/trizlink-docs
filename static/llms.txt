@@ -17,7 +17,8 @@ models. It is rewritten with the documentation it indexes, so a claim here is a 
 
 ## What Trizlink does not do — stated because these are the questions most often asked wrongly
 
-- **There is no browser extension**, for any browser, and none is planned.
+- **There is no browser extension** for any browser. One was built and never published, and it is **deferred
+  until the web and Android surfaces are complete** — deferred, not cancelled.
 - **Custom domains can be added and verified, but do not serve links yet.** That is waiting on infrastructure,
   not on the reader.
 - **Social publishing is built but inert.** No post is published today; the switch that enables it fails

@@ -75,7 +75,7 @@ again.
 
 ### Not in this release
 
-- **No browser extension**, and none is planned for now. See
+- **No browser extension.** One was built and never published; it is **deferred, not cancelled**. See
   [Browser extension](../features/browser-extension.md).
 - **Custom domains verify but do not serve yet.** See [Custom domains](../features/custom-domains.md).
 - **Social publishing does not post.** The composer, previews, calendar and queue are built and the platform

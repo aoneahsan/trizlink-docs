@@ -197,7 +197,8 @@ somebody's name cannot be undone. See [Social publishing](../features/social-med
 
 ### Is there a browser extension?
 
-**No**, and none is planned for now. The [browser extension page](../features/browser-extension.md) explains
+**No.** One was built and never published, and it is **deferred rather than cancelled** — it waits until the
+web and Android surfaces are complete. The [browser extension page](../features/browser-extension.md) explains
 why and gives three faster ways to shorten a link.
 
 ### Can I share to X or WhatsApp from inside Trizlink?

@@ -104,7 +104,8 @@ increment your counter, and neither can you.
 
 ## What Trizlink does not do {#what-it-does-not-do}
 
-- **There is no browser extension**, and none is planned. Shorten from the dashboard, the API, or the CSV
+- **There is no browser extension.** One was built and never published; it is **deferred until the web and
+  Android surfaces are complete**, not cancelled. Shorten from the dashboard, the API, or the CSV
   importer.
 - **Custom domains do not serve traffic yet.** Adding a domain and verifying ownership work today; a verified
   domain begins answering requests at cutover. [The custom domains page](./features/custom-domains.md) states
