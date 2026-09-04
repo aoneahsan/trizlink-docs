@@ -1,75 +1,158 @@
 ---
-title: Social Media
-description: Connect Facebook, X, LinkedIn, Instagram, TikTok, and Threads to TrizLink, then compose, schedule, and track posts from one content calendar hub.
+title: Social publishing
+description: Compose one post, preview it per network and queue it per account. Trizlink's social publishing is built and currently publishes nothing, and this page says why.
 sidebar_position: 9
-keywords: [social media scheduling, connect social accounts, schedule posts, content calendar, social media hub, oauth social, compose posts, track posts]
+keywords: [social publishing, schedule posts, social composer, connected accounts, post queue, platform limits]
 ---
 
-The social media feature in TrizLink is a convenience layer for composing, scheduling, and tracking posts to your own connected social accounts from one place. You connect accounts on supported networks via OAuth, then write posts, schedule them, view them on a content calendar, and track what you've published — all from the hub at `/dashboard/social`. Supported networks are Facebook, Twitter/X, LinkedIn, Instagram, TikTok, and Threads. TrizLink is free to use with Google sign-in.
+Social publishing is where you write one post, see how it will look on each network, and queue it against the
+accounts you have connected. The composer, the per-platform previews, the calendar and the per-account queue
+are all built.
 
-## What you can do
+**Nothing publishes today.** Read the next section before planning around this.
 
-You can connect your accounts on Facebook, Twitter/X, LinkedIn, Instagram, TikTok, and Threads through OAuth, then compose posts and schedule them for later. A content calendar gives you a single view of what's planned and published, and post tracking lets you keep tabs on what you've sent out. Because it works through your own connected accounts, it acts as a convenience layer over the social profiles you already own.
+## On this page
 
-## Use cases
+- [What is not live yet](#not-live)
+- [Which platforms exist](#platforms)
+- [The composer](#composer)
+- [The queue](#queue)
+- [How your tokens are held](#tokens)
+- [Limits](#limits)
+- [FAQ](#faq)
 
-- **Plan a week of content in one sitting.** Compose several posts and schedule them across your connected networks instead of posting one at a time.
-- **Keep a publishing overview.** Use the content calendar to see what's scheduled and avoid gaps or pile-ups in your posting.
-- **Cross-post an announcement.** Share the same update to multiple connected accounts from a single compose flow.
-- **Track what went out.** Review your posts in the hub to confirm scheduled items published and keep a record of recent activity.
-- **Centralize a multi-network presence.** Manage accounts across six networks from `/dashboard/social` rather than logging into each platform separately.
+## What is not live yet {#not-live}
 
-## How it works
+Publishing is behind a platform switch, and that switch is **off**. It cannot be turned on until the outstanding
+developer applications exist with the networks themselves — a product cannot post to somebody's account without
+being a registered application there.
 
-1. Open the social hub at `/dashboard/social`, which organizes posts, creation, the calendar, and accounts.
-2. Go to the accounts area and connect a social account via OAuth — Facebook, Twitter/X, LinkedIn, Instagram, TikTok, or Threads.
-3. Authorize TrizLink through the network's OAuth flow so it can post on your behalf within the permissions that network grants.
-4. Compose a post in the create view, choosing the connected account or accounts it should go to.
-5. Schedule the post for a chosen time, or review it on the content calendar alongside everything else planned.
-6. Use the posts view to track what has published and keep an eye on recent activity.
+Two consequences worth stating plainly:
 
-## Tips
+- With no application, no access token can exist, so every queued item stays pending and the interface says
+  exactly that rather than pretending to send.
+- **The switch fails closed on purpose**, and it is the only switch in the product that does. The others
+  default to on, because a failed settings read should not take the platform down. This one defaults to off,
+  because a wrong post published under somebody else's name is the one failure here that cannot be undone.
 
-- Connect each account once and confirm the OAuth authorization succeeded before relying on scheduling for that network.
-- Use the content calendar to spot empty days or clusters so your cadence stays even.
-- Tailor copy per network where it matters — what reads well on LinkedIn may not fit X — even when cross-posting.
-- Schedule posts a little ahead of time so you have room to adjust the calendar without last-minute rushing.
-- Re-authorize a connection if a network's permissions change or a token expires, since posting depends on the account's current permissions.
-- Keep your TrizLink short links handy to include in posts so you can track clicks alongside your publishing.
+Everything else on this page describes what is built and what it will do. It is not a description of posts
+going out today.
 
-## FAQ
+## Which platforms exist {#platforms}
 
-### Which social networks can I connect?
+Seven platforms are modelled. Four can be connected; three never had an integration at all.
 
-You can connect Facebook, Twitter/X, LinkedIn, Instagram, TikTok, and Threads. Each is connected through OAuth from the accounts area of the social hub at `/dashboard/social`.
+| Platform | Connectable | Publishes | Text ceiling | Visible before the cut |
+|---|---|---|---|---|
+| X | Yes | **No** | 280 | 280 |
+| Facebook Page | Yes | Yes | 63,206 | 477 |
+| Instagram | Yes | Yes | 2,200 | 125 |
+| LinkedIn | Yes | Yes | 3,000 | 210 |
+| TikTok | No | No | 2,200 | 150 |
+| YouTube | No | No | 5,000 | 157 |
+| Pinterest | No | No | 500 | 50 |
 
-### Do I need to give TrizLink access to my accounts?
+**X connects and reads but will not publish**, and that is a decision rather than a bug. X's free developer
+tier authenticates and reads; posting requires their paid tier, which this product does not take. Connecting
+X is still useful — it is the account identity — but a publish path will refuse it until that changes.
 
-Yes. You connect each account via OAuth and authorize TrizLink to act on your behalf. Posting then operates within whatever permissions that network grants for your account.
+**TikTok has no scheduling API at all**, so even as a connectable platform it could never accept a scheduled
+post.
 
-### Is this a separate social network?
+The two numbers in that table are different questions. The **text ceiling** is where the platform refuses the
+post. **Visible** is where the feed truncates the caption. The second is the one that changes how you write.
 
-No. The social media feature is a convenience layer over your own connected accounts. It composes, schedules, and tracks posts to the profiles you already own — it does not host content itself.
+## The composer {#composer}
 
-### What does the content calendar show?
+One post, seven frames, seven different sets of rules. The preview is not decoration — it is where you find
+out that 300 characters is comfortable on LinkedIn and twenty over on X.
 
-The content calendar gives you one view of your posts so you can see what's scheduled and published across your connected accounts, making it easier to plan a consistent cadence.
+You write one body and override it per platform where it matters: X takes its own text, Instagram takes a
+first comment, LinkedIn takes an article URL rendered as a card. Media is checked against each platform's own
+count, size and format rules before anything is queued.
 
-### Why might a scheduled post not publish?
+A draft can be written with AI. That costs one of your monthly allowance, and the remaining count is shown
+beside the button rather than discovered by running out. See [AI assistance](./ai-features-byok.md).
 
-Posting depends on the connected account's permissions. If a network revokes access, a token expires, or the account lacks the needed permission, publishing can be affected. Re-authorizing the connection usually resolves it.
+## The queue {#queue}
 
-### Can I track how my posts performed?
+A post to three accounts is **three outcomes**, not one. Each account gets its own row with its own state,
+attempts and error, because a single badge over three results is wrong in one direction or the other.
 
-You can track your posts within the hub to confirm what published and review recent activity. For click tracking on links you share, pair posts with TrizLink short links and check their analytics.
+| State | Meaning |
+|---|---|
+| `pending` | Waiting for its moment |
+| `processing` | Being sent |
+| `completed` | The platform accepted it, and returned a permalink |
+| `failed` | It did not go, with the reason |
 
-### Does the social media feature cost anything?
+Two states you will see on the page are **derived and never stored**: an item is *blocked* when the account it
+targets cannot publish, and *overdue* when its moment has passed. Storing either is how a row reads "blocked"
+for a week after the account was reconnected — there is always a writer for the failure and rarely one for the
+recovery.
 
-No. TrizLink is free to use; connecting accounts, composing, scheduling, the calendar, and post tracking are all part of the platform once you sign in with Google.
+The sweep that sends queued items claims each one exactly once. Double-posting is the other failure a person
+cannot undo.
+
+## How your tokens are held {#tokens}
+
+An access token is not "your data that you should be able to read back" — it is **a capability to act as you
+on somebody else's platform**. So tokens live in their own table with **no client path at all**: no grant for
+any signed-in role, no policy, nothing. Even a grant added by accident later would still be refused.
+
+What the interface legitimately needs is the expiry and the scopes, and neither of those is the credential.
+Those live on the account row, which you can read. Expiry warnings start **14 days** out, because warning
+early is the entire point of the state existing.
+
+## Limits {#limits}
+
+- **Plan-gated to Pro and Team**, enforced server-side. Free has no social publishing.
+- Connecting an account is a settings-level permission; writing a post rides the same capability as editing
+  links. There is no separate publishing role.
+- Per-platform rate ceilings apply on top of everything else, and they are the platforms' numbers, not ours.
+- No analytics come back from the platforms. Trizlink records that a post was accepted and its permalink; how
+  it performed is on the platform. To measure clicks, put a
+  [short link](./short-links.md) in the post.
+
+## FAQ {#faq}
+
+### Can I schedule posts right now?
+
+You can compose, preview and queue. Nothing is sent, because publishing is switched off until the developer
+applications exist.
+
+### Which networks will post when it is live?
+
+Facebook Page, Instagram and LinkedIn. X can be connected but will not publish on the free developer tier the
+product uses.
+
+### Is Threads supported?
+
+No. The seven platforms are X, Facebook Page, Instagram, LinkedIn, TikTok, YouTube and Pinterest, and only the
+first four can be connected.
+
+### Why is the switch off by default rather than on?
+
+Because every other switch in the product fails open and this one must not. A settings read that hiccups
+should never cause a post under somebody's name.
+
+### Can Trizlink read my social account?
+
+It holds the connection's token and its scopes. The token is never readable by any browser, including yours,
+and the product does not pull your existing posts or your followers.
+
+### What happens when a token expires?
+
+The connection shows as expiring 14 days ahead and then expired. Queued items targeting it are shown as
+blocked rather than failing silently, and reconnecting clears it.
+
+### Does this cost anything?
+
+It is part of Pro and Team. There is no separate charge, and no charge from us for a post.
 
 ## Related
 
-- [Link in bio](/features/link-in-bio)
-- [Sharing](/features/sharing)
-- [Analytics](/features/analytics)
-- [Widgets](/features/widgets)
+- [Short links](./short-links.md)
+- [AI assistance](./ai-features-byok.md)
+- [Analytics](./analytics.md)
+- [Sharing](./sharing.md)

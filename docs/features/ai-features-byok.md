@@ -1,74 +1,136 @@
 ---
-title: AI Features (Bring Your Own Key)
-description: TrizLink AI features are bring-your-own-key helpers for captions, hashtags, bios, forecasts, and image generation using your own OpenAI or Anthropic key.
+title: AI assistance
+description: Trizlink's AI suggestions run on our key with a monthly allowance on every plan, and adding your own OpenAI or Anthropic key removes that limit — on Free as well as on Pro and Team.
 sidebar_position: 11
-keywords: [bring your own key, byok ai, social caption generator, hashtag generator, performance forecast, openai api key, anthropic api key, ai image generation]
+keywords: [ai suggestions, bring your own key, byok, openai key, anthropic key, ai allowance, ai settings]
 ---
 
-TrizLink AI features are bring-your-own-key (BYOK) helpers: you add your own OpenAI or Anthropic API key in settings, and TrizLink uses that key to power optional AI tools instead of charging you for AI or supplying keys of its own. When a key is present, AI helpers light up across the app; when it is absent, those features are simply disabled and everything else keeps working as normal. This keeps AI fully optional, transparent about cost, and under your control — the requests run against your provider account, billed at that provider's published rates.
+Trizlink's AI features are three optional suggestion panels that draft text you then edit. They run on our
+own key, metered by a monthly allowance your plan sets. You can supply your own OpenAI or Anthropic key
+instead, and doing so **removes the limit on every plan, including Free**.
 
-## What you can do
+## On this page
 
-With your own key connected, TrizLink can generate tone-aware social captions, suggest relevant hashtags, and draft short bios for your link-in-bio page. It can also forecast outcomes — estimating post performance, link clicks, and traffic trends — and generate images for posts or pages. These are conveniences layered on top of TrizLink's core free features, not a separate paid plan, because the AI cost is paid directly to your provider.
+- [Where AI appears](#where)
+- [The allowance](#allowance)
+- [Bringing your own key](#byok)
+- [What happens to your key](#key-handling)
+- [Turning it off](#off)
+- [Limits](#limits)
+- [FAQ](#faq)
 
-## Use cases
+## Where AI appears {#where}
 
-- A creator pastes a rough post idea and asks TrizLink to produce three caption variations in a friendly tone, then picks the best one.
-- A marketer generating a campaign needs a quick set of hashtags that match the topic without manually researching each one.
-- Someone building a link-in-bio page wants a concise, on-brand bio drafted from a few keywords.
-- A social manager wants a rough forecast of how a planned post or link might perform before committing to a publishing schedule.
-- A small business owner needs a simple promotional image to accompany a shortened link, generated on demand instead of opening a separate design tool.
+Three places, and nowhere else:
 
-## How it works
+- **Bio page tagline.** *Suggest three* offers three options in your own words, sized for the platform you are
+  putting the address on. Pick one and it lands in the field, editable like anything you typed.
+- **Social composer draft.** One instruction, one first version, which you then rewrite.
+- **Analytics insights.** A short read of the numbers already on the page. Each insight names the figure it
+  came from, so you can check it — an insight you cannot verify is a horoscope.
 
-1. Get an API key from your chosen provider — OpenAI or Anthropic — through that provider's own dashboard.
-2. Open TrizLink settings and paste your key into the AI configuration section.
-3. Choose the AI helper you want, such as caption generation, hashtag suggestions, bio drafting, forecasting, or image generation.
-4. Provide your input — a topic, draft text, tone preference, or the link you want to analyze.
-5. TrizLink calls your provider using your key and returns the generated text, suggestions, forecast, or image.
-6. Review, edit, and use the output; remove your key at any time to disable AI features again.
+Every one of them produces a draft you edit. None of them acts on your behalf, publishes anything, or changes
+a link.
 
-## Tips
+## The allowance {#allowance}
 
-- Treat your API key like a password: it authorizes spending on your provider account, so keep it private and rotate it if you suspect exposure.
-- Set usage limits or budget alerts inside your OpenAI or Anthropic account so AI experimentation never produces a surprise bill.
-- Use forecasts as directional estimates to compare options, not as promises — actual performance depends on audience, timing, and content.
-- Always proofread AI captions, hashtags, and bios before publishing; the model can be confidently wrong or off-brand.
-- If AI helpers do not appear, confirm a valid key is saved and that your provider account has available credit.
+| | Free | Pro | Team |
+|---|---|---|---|
+| AI suggestions per month | 50 | 500 | 2,000 |
 
-## FAQ
+The count is shown **beside the button, before you press it** — a metered feature whose meter only appears in
+the refusal is a feature that surprises everybody exactly once. When the allowance is spent, the panel says so
+and points at the way out rather than failing.
 
-### Does TrizLink charge extra for AI features?
+If the allowance cannot be read at all, the surface shows no number rather than a confident zero, because
+*"none left"* and *"we could not ask"* are different things to a reader.
 
-No. TrizLink does not charge for AI and does not supply keys. You pay your AI provider directly, according to their pricing, for the requests the features make.
+AI is the only part of Trizlink that costs money **per request**, which is why it is the only line rationed
+tightly. A row in a table costs nothing, so those limits are generous; a model call does not, so this one is
+not.
 
-### Which providers are supported?
+## Bringing your own key {#byok}
 
-You can connect your own OpenAI or Anthropic API key. TrizLink uses whichever key you provide to power the AI helpers.
+Add a key from **Settings → AI**. Two providers are offered: **OpenAI** and **Anthropic**.
 
-### What happens if I do not add a key?
+A key of your own replaces ours **for your requests only**, and while it is present **the allowance stops
+applying entirely** — on Free as much as on Team. The reasoning is worth stating: a request you are paying
+your provider for costs us nothing, so rationing it would be rent rather than a limit.
 
-The AI features stay disabled and hidden from normal use. The rest of TrizLink — short links, analytics, link-in-bio, and more — continues to work without any AI key.
+Your key sits **on top of** the house key, never instead of it. Remove it and suggestions keep working on
+ours, back at your plan's allowance.
 
-### Are the performance forecasts guaranteed?
+## What happens to your key {#key-handling}
 
-No. Forecasts for post performance, clicks, and traffic are estimates generated by an AI model. They can help you compare choices, but they are not guarantees of real-world results.
+This is the part most worth reading carefully, because the honest answer is more complicated than *"it never
+leaves your device"*.
 
-### Is my API key safe?
+- **It is stored on the device you typed it into**, under a per-workspace, per-provider key in that browser's
+  storage. It does not follow you to another browser or another machine, and you will need to add it again
+  there.
+- **It does travel** — as one request header, on the AI call it pays for, and on nothing else. It has to
+  reach a model somewhere, and the prompts are ours and stay on the server, so the call is made from our edge
+  rather than from your browser. That means one implementation per feature, and it means the output caps and
+  the guarantee that your prompt is not stored survive when you bring your own key.
+- **It is never written down.** Not to the database, not to a log line, not to an analytics event, not to an
+  error report, not into a URL.
 
-Your key is used to call your provider on your behalf. As with any credential, keep it confidential, avoid sharing it, and revoke and replace it from your provider's dashboard if it is ever exposed.
+An earlier version of this product promised the key "is never uploaded". That stopped being true the moment
+it had to reach a model, so the promise was changed rather than quietly kept. A security claim a product
+cannot keep is worse than no claim at all, because the reader stops checking.
 
-### Can I remove my key later?
+## Turning it off {#off}
 
-Yes. You can delete your saved key from settings at any time, which immediately disables the AI helpers while leaving your links and data untouched.
+**Settings → AI** has a switch that removes every suggestion button in the product. Off means off: the panels
+are absent rather than present-and-broken, because a feature that cannot work should not offer a button that
+fails.
 
-### What can the AI generate exactly?
+## Limits {#limits}
 
-Tone-aware social captions, hashtags, short bios, forecasts for post performance and link traffic, and images — all optional and only available while a valid key is connected.
+- **What is sent is the text of the draft** — a tagline hint, a post instruction, or the figures already on
+  the analytics page. Never your other analytics, never another workspace, never anybody else's data.
+- **AI does not run unless you ask it to.** Nothing is generated in the background.
+- No image generation. No hashtag generator. No performance forecast. Three text panels is the whole feature.
+- Suggestions are drafts. They can be confidently wrong, and they are placed in an editable field for exactly
+  that reason.
+- Your own key is per device and per workspace, so a second browser is a second setup.
+
+## FAQ {#faq}
+
+### Do I need my own API key to use AI?
+
+No. Suggestions work on the Free plan on our key, at the Free allowance of 50 a month. Your own key lifts
+that ceiling.
+
+### Does bringing my own key only help on paid plans?
+
+No, and this is the point of the design. Your own key removes the monthly limit on **every** plan, Free
+included.
+
+### Which providers can I use?
+
+OpenAI or Anthropic.
+
+### Is my key sent anywhere?
+
+To the provider, through our edge function, as one header on the AI request it pays for. It is not stored on
+our side in any form and appears in no log, event or error report.
+
+### Will my key sync to my other devices?
+
+No. It is held on the device you entered it on. Add it again on another browser if you want it there.
+
+### What does Trizlink send to the model?
+
+The draft text you are working on, or the figures already displayed on the analytics page. Nothing else.
+
+### Can I turn AI off completely?
+
+Yes, from Settings → AI. Every suggestion button disappears.
 
 ## Related
 
-- [API access](/features/api-access)
-- [Social media tools](/features/social-media)
-- [Link-in-bio pages](/features/link-in-bio)
-- [Analytics](/features/analytics)
+- [Bio pages](./link-in-bio.md)
+- [Social publishing](./social-media.md)
+- [Analytics](./analytics.md)
+- [Public API](./api-access.md)

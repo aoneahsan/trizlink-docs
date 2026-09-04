@@ -1,74 +1,134 @@
 ---
-title: Browser Extension
-description: The TrizLink browser extension for Chrome and Firefox shortens the current tab's URL from your toolbar, with custom aliases, recent links, and QR codes.
+title: Browser extension
+description: Trizlink does not offer a browser extension. Here is why, what to use instead to shorten a link quickly, and what would have to be true for one to ship.
 sidebar_position: 14
-keywords: [trizlink extension, chrome extension, firefox extension, shorten url, manifest v3, browser toolbar, custom alias, chrome identity]
+keywords: [trizlink browser extension, chrome extension, shorten url quickly, no extension, public api alternative]
 ---
 
-The TrizLink browser extension is a Chrome and Firefox add-on, built on Manifest V3 with the WXT framework, that lets you shorten the URL of the current tab directly from your browser toolbar. Open the popup on any page and the current URL is already filled in, ready to become a short link in a single click — with optional aliases, QR codes, and a searchable list of recent links. Signing in syncs your links to your TrizLink account, and the extension uses Chrome Identity for sign-in rather than the Firebase Auth SDK.
+**Trizlink does not offer a browser extension.** There is no Chrome add-on, no Firefox add-on, and nothing to
+install.
 
-## What you can do
+An earlier version of this page described one in detail. That extension was never published, and leaving a
+tutorial for software nobody can install is worse than saying so plainly. This page stays at the same address
+so that anything linking here still works, and answers the question honestly instead.
 
-From the toolbar popup you can shorten the page you are on, optionally set a custom alias, and immediately copy or display a QR code for the new link. You can browse, search, open, copy, and delete your recent links without leaving the popup, and you can sign in to keep everything synced to your account. The options page gives you broader control over your account, active workspace, feature toggles, popup size, and how many recent links to show.
+## On this page
 
-## Use cases
+- [Why there is not one](#why-not)
+- [Three faster ways to shorten a link](#alternatives)
+- [The permission problem](#permissions)
+- [What would have to be true for one to ship](#what-it-would-take)
+- [FAQ](#faq)
 
-- While reading an article, you click the toolbar icon and instantly create a short link to share it.
-- You set a memorable custom alias for a page you share often, so the link is easy to recognize.
-- You need a QR code for the current page on the spot — the popup can display one without opening another tool.
-- You revisit and reuse a link you created earlier by searching your recent links in the popup.
-- You switch the active workspace from the options page so new links land in the right place for the project you are working on.
+## Why there is not one {#why-not}
 
-## How it works
+Trizlink is built by one developer, and the surfaces were chosen deliberately: web and Android first,
+together, verified module by module. An extension is a third store, a third review process and a third
+permission model. Shipping it half-finished would be worse than not shipping it, so it is **deferred until
+the first two are complete — not cancelled, and not quietly dropped.**
 
-1. Install the TrizLink extension in Chrome or Firefox and pin it to your toolbar.
-2. On first run, a welcome modal asks for your preferences, including auto-copy, QR display, and notifications.
-3. Sign in with Chrome Identity to sync your shortened links to your TrizLink account.
-4. Open the popup on any page; the current tab's URL is auto-filled, and you can add an optional custom alias of 3–20 characters.
-5. Click "Shorten URL" to create the short link, then copy it, view its QR code, or find it in your recent links list.
-6. Adjust account, workspace, feature toggles, popup size, and recent-links limit from the options page whenever you like.
+There is a second, more specific reason the old one was not simply carried forward. It authenticated by
+sending a raw Google token where the backend expected a different credential entirely, so its cloud mode never
+worked at all. Any future extension would be a thin client of the [public API](./api-access.md) rather than a
+port of that code.
 
-## Tips
+## Three faster ways to shorten a link {#alternatives}
 
-- Pin the extension so the one-click shorten action is always within reach in your toolbar.
-- Turn on auto-copy in the welcome modal or options page if you usually paste the new short link right away.
-- Use custom aliases (3–20 characters) for links you share repeatedly so they are easier to remember and recognize.
-- Sign in early so your links sync to your account and appear across your devices, not just in the extension.
-- Set the recent-links limit on the options page to match how many past links you want quick access to.
+What an extension is actually for is removing a context switch: you are on a page, you want a short link to
+it, and you do not want to copy the address into another tab. That is a real friction and it is worth
+solving. It does not require an extension to solve.
 
-## FAQ
+### 1. The box on the home page
 
-### Which browsers are supported?
+Paste an address into the box on [trizlink.com](https://trizlink.com). It validates as you type and previews
+what the short link will look like. Pressing the button carries the destination through sign-in and opens the
+create form with the URL already filled in, so you never navigate the dashboard to find it.
 
-The extension works in Chrome and Firefox. It is built on Manifest V3 using the WXT framework.
+Be clear about what it does not do: it does not create the link from the home page. It gets you to the form
+with the work already done.
 
-### How does sign-in work?
+### 2. The public API
 
-Sign-in uses Chrome Identity rather than the Firebase Auth SDK. Signing in syncs your shortened links to your TrizLink account.
+This is the honest answer for anyone who wanted an extension for speed. A workspace-scoped key and a single
+`POST /v1/links` creates a link, which means a shell alias, an editor command, a launcher action or a phone
+shortcut can each do it in one step — from **outside** the browser as well as inside it. That is genuinely
+faster than a toolbar button.
 
-### Does the popup fill in the URL automatically?
+The API is on Pro and Team. See [Public API](./api-access.md).
 
-Yes. When you open the popup on a page, the current tab's URL is auto-filled so you can shorten it right away.
+### 3. Bulk import, when it is not one link
 
-### Can I set a custom alias?
+If you want an extension because you are making thirty links, the extension is the wrong tool anyway. Paste
+or upload a CSV, map the columns, read the preview, and commit. The preview step is the point — a bad import
+of 400 links is not fun to undo. See [Link organisation](./link-organization.md#import).
 
-Yes. You can add an optional custom alias between 3 and 20 characters before creating the short link.
+**Not an option, despite what you may have read elsewhere:** Trizlink does not register itself as an Android
+share target, so it will not appear when you share a page from another app, and the app does not scan QR
+codes.
 
-### What can I do with recent links?
+## The permission problem {#permissions}
 
-The popup keeps a recent-links list where you can search, open, copy, and delete links, so you can reuse or clean them up quickly.
+The reason link-shortening extensions are awkward is that the useful version needs to know the address of the
+page you are on. Depending on how it is built, that can mean requesting access to **every site you visit** — a
+permission that is trivially justified while writing the feature and very hard to justify to somebody reading
+the install dialogue.
 
-### What does the options page control?
+Narrower designs exist. An extension can ask for the active tab only when you click its icon, which is a much
+smaller ask and covers the main use. But narrower designs do less: no context menu on a link you have not
+opened, no automatic tagging, no reading the page title for you. Working out which trade is right is the
+actual design problem, and it is not one to rush because a competitor has a toolbar button.
 
-The options page covers your account, workspace selection, feature toggles, popup size, and the recent-links limit.
+## What would have to be true for one to ship {#what-it-would-take}
 
-### What happens on first run?
+1. Web and Android complete and verified, because that is the order that was chosen.
+2. The public API stable enough to build against, since an extension would be a client of it rather than a
+   second implementation.
+3. A permission model narrow enough to justify to a store reviewer and to a reader.
+4. **Something it can do that the API cannot.** If the answer is only *"it is in the toolbar"*, that is not
+   enough.
 
-A welcome modal appears asking for your preferences around auto-copy, QR display, and notifications, so the extension behaves the way you want from the start.
+The last point is the honest one. Convenience features are easy to justify while building and hard to justify
+afterwards, when somebody is deciding whether to grant an extension access to every page they open. If one
+ships, it will be because it earned that trade.
+
+## FAQ {#faq}
+
+### Is there a Trizlink browser extension?
+
+No. Not for Chrome, not for Firefox, not for any browser. An earlier version of the product had an unpublished
+one; it is deferred rather than cancelled.
+
+### Will there ever be one?
+
+Possibly. It is deferred until the web and Android surfaces are complete and until it can do something the API
+cannot.
+
+### What is the fastest way to shorten a link without one?
+
+The public API. One `POST` from a shell alias, an editor command or a launcher action, which also works
+outside the browser.
+
+### Can I share a page to Trizlink from my phone?
+
+No. The Android app is not registered as a share target.
+
+### Was there ever a published extension?
+
+No. One was built and never published.
+
+### Why keep this page if the feature does not exist?
+
+Because the address is linked from elsewhere, and answering the question is more useful than a 404. Removing a
+page does not remove the question.
+
+### Where should I ask for one?
+
+Through the contact form at [trizlink.com/contact](https://trizlink.com/contact). A deferred item moves when
+somebody explains what it is blocking.
 
 ## Related
 
-- [Short links](/features/short-links)
-- [QR codes](/features/qr-codes)
-- [Workspaces and teams](/features/workspaces-and-teams)
-- [Sharing](/features/sharing)
+- [Public API](./api-access.md)
+- [Link organisation](./link-organization.md)
+- [Short links](./short-links.md)
+- [Utility tools](./utility-tools.md)

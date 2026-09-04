@@ -1,74 +1,190 @@
 ---
-title: API Access
-description: Generate TrizLink API keys to programmatically create, edit, and delete links and fetch analytics over RESTful endpoints, with live interactive docs in-app.
+title: Public API
+description: Eighteen REST endpoints at api.trizlink.com/v1 for links, bio pages, analytics, domains, webhooks and social posts, with per-resource scopes and separate destructive permissions.
 sidebar_position: 12
-keywords: [trizlink api, api keys, rest api, link management api, analytics api, api documentation, programmatic links, rotate api key]
+keywords: [trizlink api, rest api, api key, api scopes, rate limits, openapi, link management api]
 ---
 
-The TrizLink API is a RESTful interface that lets you create, edit, and delete links and fetch analytics programmatically using an API key you generate in your dashboard. Instead of clicking through the web app for every change, you can drive TrizLink from your own scripts, backend services, or automation tools. You manage keys from the dashboard, authenticate your requests with them, and rely on the in-app interactive documentation as the authoritative, always-current reference for endpoints and parameters.
+The Trizlink public API is eighteen REST endpoints at `https://api.trizlink.com/v1` covering links, bio pages,
+analytics, domains, webhooks and social posts. You mint a workspace-scoped key, tick the scopes it needs, and
+call it from anything that speaks HTTP. It is available on **Pro and Team**.
 
-## What you can do
+## On this page
 
-You can generate one or more API keys at `/dashboard/api-keys`, then use them to programmatically manage your links — creating new short links, updating existing ones, and removing links you no longer need — as well as retrieving analytics data for reporting. Because the interface is RESTful, it fits naturally into most languages and HTTP clients. The interactive API documentation lives in-app at `/dashboard/api/docs`, where you can explore the live endpoints and their exact request and response shapes.
+- [The endpoints](#endpoints)
+- [Scopes, and the permissions that are not scopes](#scopes)
+- [Two addresses, one API](#two-addresses)
+- [Keys](#keys)
+- [Errors](#errors)
+- [Conventions](#conventions)
+- [Rate limits and allowances](#limits)
+- [FAQ](#faq)
 
-## Use cases
+## The endpoints {#endpoints}
 
-- A developer integrates TrizLink into an internal tool so that publishing content also creates a tracked short link automatically.
-- A marketing team generates campaign links in bulk from a spreadsheet or script instead of creating each one by hand.
-- An analytics pipeline pulls click and traffic data on a schedule to combine TrizLink metrics with other reporting sources.
-- A product automatically cleans up expired or unused links by deleting them through the API.
-- An agency syncs link edits — such as updating a destination URL — across many campaigns from a single automation.
+| Method | Path | Scope |
+|---|---|---|
+| `GET` | `/v1/links` | `links:read` |
+| `POST` | `/v1/links` | `links:write` |
+| `GET` | `/v1/links/{id}` | `links:read` |
+| `PATCH` | `/v1/links/{id}` | `links:write` |
+| `DELETE` | `/v1/links/{id}` | `links:write` **plus** `links:delete` |
+| `GET` | `/v1/links/{id}/clicks` | `analytics:read` |
+| `GET` | `/v1/bio-pages` | `bio:read` |
+| `POST` | `/v1/bio-pages` | `bio:write` |
+| `GET` | `/v1/bio-pages/{id}` | `bio:read` |
+| `PATCH` | `/v1/bio-pages/{id}` | `bio:write` |
+| `DELETE` | `/v1/bio-pages/{id}` | `bio:write` **plus** `bio:delete` |
+| `GET` | `/v1/analytics/overview` | `analytics:read` |
+| `GET` | `/v1/analytics/breakdown` | `analytics:read` |
+| `GET` | `/v1/domains` | `domains:read` |
+| `POST` | `/v1/webhooks` | `webhooks:write` |
+| `DELETE` | `/v1/webhooks/{id}` | `webhooks:write` |
+| `POST` | `/v1/social/posts` | `social:write` |
+| `GET` | `/v1/token` | **none** |
 
-## How it works
+The reference inside the product at `/dashboard/api/docs` renders from the same table the router validates
+against, and `/v1/openapi.json` is generated from it too. There is no hand-maintained specification to drift.
 
-1. Sign in to TrizLink and open the API keys page at `/dashboard/api-keys`.
-2. Generate a new API key and copy it immediately, storing it somewhere secure such as a secrets manager or environment variable.
-3. Open the in-app interactive docs at `/dashboard/api/docs` to see the available endpoints, methods, and parameters.
-4. Send authenticated HTTP requests from your code or HTTP client, including your API key as the request's credential.
-5. Use the responses to create, update, delete links, or read analytics within your own workflow.
-6. Revoke or rotate keys from the same `/dashboard/api-keys` page whenever a key is no longer needed or may be exposed.
+## Scopes, and the permissions that are not scopes {#scopes}
 
-## Tips
+Eight scopes, read and write per resource:
 
-- Always reference the in-app API docs at `/dashboard/api/docs` for exact endpoint paths and parameters — that is the live, authoritative source of truth.
-- Store API keys in environment variables or a secrets manager, never hardcoded in committed source code.
-- Create separate keys for separate integrations so you can revoke one without breaking the others.
-- Rotate keys periodically and immediately revoke any key you suspect has leaked.
-- Handle errors and rate responses gracefully in your code so a transient failure does not break your automation.
+```text
+links:read   links:write
+bio:read     bio:write
+analytics:read
+domains:read
+webhooks:write
+social:write
+```
 
-## FAQ
+**A scope you did not tick answers `404`, not `403`.** A 403 confirms the thing exists, which turns an
+id-guessing loop into a way of finding out what a workspace holds.
 
-### Where do I generate an API key?
+Three **permissions** sit on a separate list, and none of them is implied by a write scope:
 
-Go to `/dashboard/api-keys` in your TrizLink dashboard. From there you can create new keys and manage existing ones.
+```text
+links:delete   bio:delete   workspace:purge
+```
 
-### What can the API do?
+Deleting a link needs `links:write` **and** `links:delete`. That separation is the point: a key that
+automates creating campaign links has every reason to hold `links:write` and no reason at all to be able to
+erase them. Grant a destructive permission only to the key that genuinely needs it.
 
-It lets you programmatically create, edit, and delete links and fetch analytics over RESTful endpoints. The full, current capability set is documented in the in-app API docs.
+A missing permission is the one case that answers **403** rather than 404, and the difference is not
+inconsistency. The key already holds the scope, so it has already proved it may see the resource — refusing
+loudly gives away nothing it did not know, and tells the integrator precisely what to add.
 
-### Where is the endpoint reference?
+**`GET /v1/token` deliberately requires no scope.** It answers what the key is and what it may do, which is
+what a client needs before it can do anything else — a key that cannot ask about itself makes every
+integration start by guessing.
 
-The authoritative, interactive endpoint documentation is in-app at `/dashboard/api/docs`. It stays in sync with the live API, so always check it rather than relying on copied examples.
+## Two addresses, one API {#two-addresses}
 
-### How do I keep my keys secure?
+`api.trizlink.com` is the documented address. The underlying Supabase functions address **still answers and
+is not deprecated** — the friendly host is a small edge worker that rewrites the host and prefix onto the same
+function, and the two were proved byte-identical against a control.
 
-Keep keys secret, store them outside your codebase, and revoke or rotate them from `/dashboard/api-keys` if they may have been exposed. Use a distinct key per integration.
+If you wrote an integration against either address, it keeps working. That is a promise, not an accident of
+the current deployment. New integrations should use `https://api.trizlink.com/v1` because it is the address
+the documentation, the OpenAPI document and the key cards all print.
 
-### Can I revoke a key without losing my links?
+## Keys {#keys}
 
-Yes. Revoking a key only disables that credential. Your links, analytics, and account remain intact, and you can generate a replacement key right away.
+Mint keys at `/dashboard/api-keys`. A key looks like `tz_live_` followed by four visible characters and then
+the secret.
 
-### Is the API free to use?
+- **The full key is shown once, at creation.** Only a hash is stored, and no client role can read that column
+  at all. If you lose it, rotate rather than recover — there is nothing to recover.
+- What the interface can show afterwards is the prefix, the last four characters, the scopes and the dates.
+- A key is **live** or **revoked**. Expired is derived from its expiry date rather than stored, because a
+  stored copy needs something to write it and the day that job is missed a dead key reads as live.
+- A revoked key carries the moment it stopped working, and its reason is either `manual` or `rotated` —
+  "rotated" tells the reader a replacement exists, and "revoked" tells them it does not.
+- Revoking a key disables that credential and nothing else. Links, analytics and the workspace are untouched.
 
-TrizLink is a free link-management platform, and API access is part of it. Use the in-app docs to understand any limits that apply to your account.
+Use one key per integration, so revoking one does not break the others.
 
-### What format are requests and responses?
+## Errors {#errors}
 
-The API is RESTful and uses standard HTTP. The exact request bodies and response structures for each endpoint are shown in the in-app interactive documentation.
+Eight codes, each with a fixed status. There is no ninth.
+
+| Code | Status |
+|---|---|
+| `invalid_request` | 400 |
+| `invalid_key` | 401 |
+| `insufficient_permission` | 403 |
+| `not_found` | 404 |
+| `conflict` | 409 |
+| `limit_reached` | **422** |
+| `rate_limited` | **429** |
+| `server_error` | 500 |
+
+`limit_reached` is a plan allowance, so retrying will not help until something changes. `rate_limited` is a
+speed problem, so backing off will.
+
+If the platform's API switch is turned off, every key gets a `503` with a body saying so — deliberate, not a
+fault. That is there so an integrator does not go looking through their own logs for a bug that is not theirs.
+
+## Conventions {#conventions}
+
+- **Pagination**: list endpoints default to **20** items and cap at **50**.
+- **Times** are ISO-8601 with a zone.
+- **Ids** are UUIDs.
+- **`PATCH` is partial** — send only what changes.
+- **The version is in the path**, and additions are additive: new fields may appear, existing ones do not
+  change meaning.
+
+## Rate limits and allowances {#limits}
+
+Rates are derived from the workspace owner's plan and never stored on the key.
+
+| | Per minute | Per hour | Per day | Live keys |
+|---|---|---|---|---|
+| Free | — | — | — | **0** |
+| Pro | 120 | 5,000 | 50,000 | 5 |
+| Team | 300 | 20,000 | 250,000 | 20 |
+
+**Free has no API access at all**, which is a real state rather than a hidden one: there is no key to mint.
+
+## FAQ {#faq}
+
+### Is the API available on the Free plan?
+
+No. Pro and Team only, and the key allowance on Free is zero.
+
+### Why does a request for something I did not authorise return 404 rather than 403?
+
+Because a 403 tells you the resource exists. Answering 404 means a key cannot be used to map what a workspace
+holds.
+
+### I have `links:write`. Why can I not delete a link?
+
+Because deletion needs `links:delete` as well, and a write scope never implies it. Add the permission to the
+key deliberately, or use a different key for destructive work.
+
+### Do I have to move to `api.trizlink.com`?
+
+No. The functions address still answers and is not deprecated. Use the friendly host for new work because it
+is what everything documents.
+
+### Can I recover a key I lost?
+
+No. Only a hash is stored. Rotate the key and update the integration.
+
+### What is the difference between 422 and 429?
+
+`limit_reached` (422) means a plan allowance was hit and retrying changes nothing. `rate_limited` (429) means
+you are going too fast and backing off will work.
+
+### Where is the machine-readable specification?
+
+`/v1/openapi.json`, generated from the same table the router enforces.
 
 ## Related
 
-- [Short links](/features/short-links)
-- [Analytics](/features/analytics)
-- [Tracking and UTM](/features/tracking-and-utm)
-- [AI features (bring your own key)](/features/ai-features-byok)
+- [Short links](./short-links.md)
+- [Analytics](./analytics.md)
+- [Tracking and UTM](./tracking-and-utm.md)
+- [Workspaces and teams](./workspaces-and-teams.md)

@@ -1,74 +1,118 @@
 ---
-title: Sharing
-description: TrizLink sharing opens an in-app social share modal on the web and the OS share sheet on mobile, sharing only public URLs like short links and bio pages.
+title: Sharing a link
+description: One copy control with an honest fallback, and a per-link social card you control. Trizlink has no share modal and no native share sheet, and this page says so.
 sidebar_position: 16
-keywords: [share links, social sharing, share modal, copy link, web share, capacitor share, share short link, share qr code]
+keywords: [copy link, share short link, social card, open graph tags, link preview, twitter card]
 ---
 
-Sharing in TrizLink is a single, consistent contract for getting your public links in front of others: on the web, clicking Share opens an in-app share modal with social buttons plus copy-link, and on the native mobile app it opens your device's OS share sheet. The same Share action behaves predictably wherever you use it, so you never have to guess what happens when you click it. Only public URLs — like short links and public bio pages — are ever shared, never private workspace data, keeping the behavior safe by design.
+Sharing a Trizlink link means two things: getting the address into your clipboard, and controlling what other
+people see when you paste it somewhere. Both are simple, and one of them is worth understanding properly,
+because a link preview is the first thing most readers meet.
 
-## What you can do
+This page is short, and deliberately so — see [what is not here](#not-here).
 
-You can share a short link, a public bio page, or a QR code's URL straight from the places you already work. On the web, the in-app modal gives you buttons for X, Facebook, LinkedIn, WhatsApp, Telegram, Reddit, and Email, plus a copy-link option for everything else. On the mobile app, the native OS share sheet hands the link to whatever apps you have installed. Share is wired into the home footer, the dashboard top bar, each link card, and the QR code display.
+## On this page
 
-## Use cases
+- [Copying a link](#copying)
+- [The social card](#social-card)
+- [The cache problem](#cache)
+- [What is not here](#not-here)
+- [FAQ](#faq)
 
-- You finish creating a short link and tap Share on its card to post it to LinkedIn or send it over WhatsApp.
-- You want to send your public bio page to a contact and use the copy-link option to paste it into a chat.
-- On your phone, you open the native share sheet to send a link to any installed app in one step.
-- You share the URL behind a QR code directly, without first downloading and re-uploading the code image.
-- You grab the Share action from the dashboard top bar to quickly distribute a link while reviewing your account.
+## Copying a link {#copying}
 
-## How it works
+Copy controls sit beside anything worth copying: a short link in the Links list, a domain's DNS values, a
+widget's snippet, a webhook URL, a UTM template's tags, an API key at the moment it is minted.
 
-1. Click or tap Share from the home footer, dashboard top bar, a link card, or the QR code display.
-2. On the web, an in-app share modal opens with social buttons and a copy-link option.
-3. Pick a social platform — X, Facebook, LinkedIn, WhatsApp, Telegram, Reddit, or Email — or copy the link.
-4. On the native mobile app, the OS share sheet opens instead, listing your installed apps.
-5. Choose the destination and the public URL is handed off to share.
-6. Only the public URL travels — short links and public bio pages — never private workspace data.
+They all go through one path, so they all behave the same way. The modern clipboard interface is used where
+the browser offers it, a selection-based fallback is used where it does not, and where **neither** works the
+control says the copy failed and shows you the value to select by hand. It never silently does nothing, which
+is the failure mode a copy button usually has.
 
-## Tips
+## The social card {#social-card}
 
-- Use copy-link when your destination is not one of the listed social platforms; it works everywhere you can paste.
-- Remember that only public URLs are shared, so you can share confidently without exposing private workspace details.
-- On mobile, the native share sheet reaches every app you have installed, so install the apps you share to most.
-- Share QR codes by their URL when a recipient is on a computer and cannot scan a code from their own screen.
-- Look for the Share action in the most convenient spot for your task — the footer, the dashboard top bar, a link card, or the QR display.
+When somebody pastes your short link into a chat app, a social network or a search result, the preview they
+see comes from tags on the link. You set them per link, in the **Social card** section of the link form.
 
-## FAQ
+| Field | Notes |
+|---|---|
+| Title | What the card headlines |
+| Description | The line under it |
+| Image address | **1200 × 630** is the size that survives every platform's crop |
+| Card shape | Large image · Small thumbnail · Player · App |
+| Site account | The account the page belongs to |
+| Author account | The person who wrote it, if that is somebody else |
 
-### What happens when I click Share on the web?
+Three things the form will tell you, and it is easier to read them here first:
 
-An in-app share modal opens with social buttons for X, Facebook, LinkedIn, WhatsApp, Telegram, Reddit, and Email, plus a copy-link option.
+- **An image much smaller than 1200 × 630 is refused outright by some platforms** rather than being scaled
+  up.
+- **Large image needs an image at least 300 px wide**, or X quietly falls back to the small card. Selecting
+  large and setting no image gets you the small one without being told by the platform.
+- **With no image set at all**, platforms use whatever the destination page declares, or show a text-only
+  card. That is often fine; it is just not your choice.
 
-### How is sharing different on mobile?
+X reads its own tags first and falls back to the general ones. There is a **Where X differs** block for when
+it needs to say something different — leave it blank and there is nothing to keep in step.
 
-On the native mobile app, Share opens your device's OS share sheet instead of the in-app modal, so you can hand the link to any installed app.
+## The cache problem {#cache}
 
-### What exactly gets shared?
+Every platform caches what it read the first time somebody shared an address. **Changing these fields does not
+change a card that is already out there.** The old one keeps being shown until that platform re-reads the
+link, which can take days, and Trizlink cannot force it.
 
-Only public URLs, such as short links and public bio pages. Private workspace data is never shared.
+The practical consequence: set the card **before** you share the link widely, not after somebody tells you the
+preview looks wrong. If a card is already wrong in the wild, most platforms have their own debugging tool that
+will re-fetch on request — that is the only reliable lever, and it is theirs, not ours.
 
-### Which social platforms are supported in the modal?
+## What is not here {#not-here}
 
-The web share modal includes X, Facebook, LinkedIn, WhatsApp, Telegram, Reddit, and Email, along with a copy-link button.
+Being plain about the absences, because the shape of this feature is smaller than it sounds:
 
-### Where can I find the Share action?
+- **There is no share modal.** No panel of platform buttons for X, Facebook, WhatsApp, Telegram, Reddit and
+  the rest. Copy the link and paste it where you want it.
+- **There is no native share sheet**, on Android or anywhere else. The Android app does not register itself as
+  a share target, so Trizlink will not appear when you share a page from another app.
+- **There is no share action on a link card** beyond copying it.
+- The one exception is the blog on the product site, where a post carries a small row: copy link, X, LinkedIn
+  and email. That is a blog affordance, not a product-wide share contract.
 
-Share is available on the home footer, the dashboard top bar, each link card, and the QR code display.
+## FAQ {#faq}
 
-### Can I share a QR code?
+### How do I share a short link?
 
-Yes. You can share the public URL behind a QR code directly from the QR code display, which is useful when the recipient cannot scan the code.
+Copy it and paste it. There is no share dialog to open.
 
-### Do I need a specific browser for sharing to work?
+### Can I share to X or WhatsApp from inside Trizlink?
 
-No. Because the web path uses an in-app modal rather than relying on a browser-only share API, it works consistently across browsers.
+No. There is no in-app share panel. Copy the address and use the app you want.
+
+### Does Trizlink appear in my phone's share sheet?
+
+No. The Android app does not register as a share target.
+
+### Why does my link preview look wrong after I fixed it?
+
+Because the platform cached the old one when the link was first shared. It updates when that platform
+re-reads the address, which can take days. Use that platform's own preview-debugging tool to force a re-fetch.
+
+### What image size should I use?
+
+1200 × 630. Smaller images are cropped unpredictably or refused, and an image under 300 px wide will not
+produce a large card on X.
+
+### What gets shown if I set no card at all?
+
+Whatever the destination page declares, or a plain text card. It still works; you just are not choosing it.
+
+### Is anything private ever exposed by a preview?
+
+The card shows only what you put in those fields plus the destination page's own tags. Your workspace,
+analytics and other links are not part of it.
 
 ## Related
 
-- [Short links](/features/short-links)
-- [QR codes](/features/qr-codes)
-- [Link-in-bio pages](/features/link-in-bio)
-- [Browser extension](/features/browser-extension)
+- [Short links](./short-links.md)
+- [QR codes](./qr-codes.md)
+- [Widgets](./widgets.md)
+- [Social publishing](./social-media.md)

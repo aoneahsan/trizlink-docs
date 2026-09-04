@@ -1,74 +1,108 @@
 ---
-title: Utility Tools
-description: TrizLink includes 40+ free utility tools that run entirely in your browser, covering PDF, image, text, code, color, calculator, generator, and SEO tasks.
+title: Utility tools
+description: A curated directory of 48 free browser tools hosted on ZTools, a separate product. Trizlink's own tools suite was retired in July 2026 and the directory replaced it.
 sidebar_position: 13
-keywords: [free online tools, client-side tools, pdf tools, image tools, text tools, json formatter, qr code generator, browser utilities]
+keywords: [free online tools, ztools, pdf tools, image tools, json formatter, qr code generator, tools directory]
 ---
 
-The TrizLink utility tools are a directory of 40+ free helpers at `/dashboard/tools` that run entirely in your browser, so your files are processed on your own device and nothing is uploaded to a server. They cover everyday tasks across documents, images, text, code, color, math, generators, and SEO — handy companions to your link management without sending you to a dozen separate websites. Because the processing is client-side, your content stays local; the practical trade-off is that very large files are limited by your device's memory and browser.
+The tools page is a **directory**, not a feature. It lists 48 free browser tools grouped by what you are
+trying to do, and every one of them opens on **ZTools** — a separate product — in a new tab, so whatever you
+were doing in Trizlink stays where it was.
 
-## What you can do
+## On this page
 
-You can reach for the right small tool the moment you need it, all from one place. The collection spans eight broad categories: PDF tools, image tools, text tools, code tools, color tools, calculators, generators, and SEO tools. Each tool does one focused job — merging PDFs, resizing images, formatting JSON, generating a QR code — and runs instantly in the browser tab you already have open.
+- [Why it is a directory](#why-a-directory)
+- [The eight categories](#categories)
+- [If you followed an old bookmark](#old-bookmarks)
+- [Limits](#limits)
+- [FAQ](#faq)
 
-## Use cases
+## Why it is a directory {#why-a-directory}
 
-- A marketer compresses and converts a few images before adding them to a campaign, without installing any software.
-- A developer formats messy JSON, converts it to CSV, or tests a regular expression while debugging, all in the browser.
-- Someone needs to merge several PDFs or convert a PDF to Word before sharing a document.
-- A creator generates a QR code, password, or barcode on the spot for a quick project.
-- An SEO practitioner produces meta tags, OpenGraph tags, a robots.txt, or a sitemap while preparing a page.
+Trizlink had its own tools suite once, and **it was removed in July 2026**. Maintaining forty calculators is
+not what a link product is for, and a half-maintained tool is worse than a link to a maintained one.
 
-## How it works
+ZTools is the same developer's dedicated free-tools product, which is why the link is a recommendation rather
+than an advertisement, and why the directory exists here at all rather than leaving you to go looking.
 
-1. Open `/dashboard/tools` to browse the directory of 40+ utilities.
-2. Pick a category — PDF, image, text, code, color, calculators, generators, or SEO.
-3. Select the specific tool you need, such as PDF merge, image resize, JSON formatter, or QR code generator.
-4. Provide your input directly in the tool, whether that is a file, some text, or a few settings.
-5. The tool processes everything locally in your browser and shows the result immediately.
-6. Download or copy the output, then move on — nothing was sent to or stored on a server.
+The tools run in your browser on ZTools — nothing is uploaded anywhere, including to us. Trizlink is not in
+the path: it points, and that is the whole of it.
 
-## Tips
+## The eight categories {#categories}
 
-- For sensitive documents, client-side processing means the file never leaves your device, which is ideal for privacy.
-- If a very large file is slow or fails, it is likely hitting your browser or device memory limits — try a smaller file or close other tabs.
-- Bookmark `/dashboard/tools` so the whole toolbox is one click away whenever you need a quick conversion or generator.
-- Use the SEO generators (meta tag, OpenGraph, robots.txt, sitemap) while preparing public pages so the markup is ready before you publish.
-- Combine tools in sequence — for example, convert an image, then generate a base64 string — to handle multi-step tasks without leaving the browser.
+48 tools, at `/dashboard/tools`, with a search box across all of them.
 
-## FAQ
+| Category | Examples of what is in it |
+|---|---|
+| PDF | Merge, split, convert to and from Word and images |
+| Image | Conversion, compression, resizing |
+| Text | Counting, case, comparison |
+| Code and data | JSON formatting, conversion between formats |
+| Colour and design | Pickers, converters, contrast |
+| Calculators | Everyday arithmetic and conversions |
+| Generators | QR codes, passwords, placeholder data |
+| SEO and web | Meta and markup helpers |
 
-### Are my files uploaded anywhere?
+The directory is a **curated 48**, not a live feed of everything ZTools has. ZTools itself carries more than
+500, so when nothing here matches what you searched for, it is genuinely worth searching there before
+concluding the tool does not exist — the page offers that search directly.
 
-No. The utility tools run entirely client-side in your browser, so your files and text are processed locally and are not uploaded to a server.
+## If you followed an old bookmark {#old-bookmarks}
 
-### How many tools are there?
+A link to one of Trizlink's retired tools still resolves. It lands on this page with a banner naming the tool
+you asked for and a direct link to it on ZTools, alongside the rest of the directory.
 
-There are 40+ free tools organized into categories: PDF, image, text, code, color, calculators, generators, and SEO.
+That is a deliberate choice over a redirect: you get the thing you wanted **and** the context that it moved,
+which is the difference between a redirect and a dead end.
 
-### What kinds of PDF tasks are supported?
+## Limits {#limits}
 
-The PDF tools include merge, split, PDF-to-Word and Word-to-PDF, PDF-to-image and image-to-PDF, compress, and rotate.
+- **These tools are not part of Trizlink.** They are on another site, with its own terms and its own privacy
+  position. Trizlink neither processes nor sees anything you put into them.
+- **The directory is curated and can go stale.** If a listed tool has moved, that is a link to fix here.
+- **The QR generator in this list is not the same thing as a link's QR code.** A code generated there is not
+  attached to a short link and its scans are not counted. For a code you can measure, use the one on the link
+  itself — see [QR codes](./qr-codes.md).
+- Nothing here is gated by plan, because there is nothing of ours to gate.
+- Every entry opens in a new tab. That is not configurable.
 
-### Can I process large files?
+## FAQ {#faq}
 
-You can, but client-side processing is bounded by your device and browser memory. Very large files may run slowly or fail, so smaller files are more reliable.
+### Are these tools part of Trizlink?
 
-### Do the tools cost anything?
+No. They are on ZTools, a separate product by the same developer. The page here is a directory that points at
+them.
 
-No. The utility tools are free to use as part of TrizLink.
+### What happened to Trizlink's own tools?
 
-### What image and text tools are included?
+They were retired in July 2026. Maintaining a suite of calculators is not what a link product is for, and the
+same tools are available on a product that does maintain them.
 
-Image tools cover resize, compress, convert, crop, background remover, color picker, base64, and filters. Text tools cover word counter, case converter, formatter, diff, find/replace, text-to-speech, and duplicate remover.
+### Are my files uploaded when I use one?
 
-### Are there tools for developers?
+Not to Trizlink — nothing you do there touches this product at all. The tools run in your browser on ZTools;
+that site's own terms are what govern them.
 
-Yes. Code tools include a JSON formatter, JSON-to-CSV, code formatter and minifier, base64, URL encoder, and a regex tester, plus color tools like hex-to-rgb and contrast checking.
+### How many tools are listed?
+
+48, across eight categories. ZTools itself has more than 500, and the page links to a search there.
+
+### A tool I used to open in Trizlink is gone. Where is it?
+
+Follow the old address. It lands on the directory with a banner naming the tool and a link straight to it.
+
+### Can I use the QR generator here to make a trackable code?
+
+No. That generator makes a plain QR code with no link behind it. A trackable one comes from a short link's own
+QR section.
+
+### Why does the directory sometimes show nothing for my search?
+
+Because it is a curated 48 rather than everything ZTools has. Use the "search ZTools" option the page offers.
 
 ## Related
 
-- [QR codes](/features/qr-codes)
-- [Short links](/features/short-links)
-- [Tracking and UTM](/features/tracking-and-utm)
-- [Widgets](/features/widgets)
+- [QR codes](./qr-codes.md)
+- [Short links](./short-links.md)
+- [Link organisation](./link-organization.md)
+- [Widgets](./widgets.md)

@@ -1,75 +1,168 @@
 ---
-title: Workspaces and Teams
-description: Separate links, bios, and analytics into independent TrizLink workspaces, invite team members with admin, editor, or viewer roles, and group them into teams.
+title: Workspaces and teams
+description: A Trizlink workspace is the tenant that owns links, bio pages and analytics. Four roles and seven capabilities on every plan; teams and the audit log on Team.
 sidebar_position: 8
-keywords: [workspaces, team members, roles, admin editor viewer, invite team, link sharing, multi-tenant links, team collaboration]
+keywords: [workspace, workspace roles, team members, permissions matrix, invite member, audit log, multi tenant]
 ---
 
-A workspace in TrizLink is an independent silo that holds its own links, bio pages, and analytics, separate from every other workspace you belong to. Switching the active workspace switches the entire set of links and bios you see, so different clients, brands, or projects never mix. On top of that, you can invite team members, assign them roles, and group them into teams — all managed at `/dashboard/workspaces`. TrizLink is free to use with Google sign-in.
+A workspace is the tenant that owns things in Trizlink. Links, bio pages, domains, pixels, widgets and every
+click row belong to exactly one, and a member's role inside it decides what they may do. Switching workspace
+switches everything you see, so a client's work and a client's numbers never mix with anybody else's.
 
-## What you can do
+## On this page
 
-You can keep separate bodies of work apart by giving each one its own workspace; all links and bios belong to the active workspace, and analytics are scoped to it. You can invite people to a workspace, assign each one a role — admin, editor, or viewer — and organize members into teams within that workspace. Invitations are sent as links and accepted through an invite URL, so collaborators join without manual account setup on your side.
+- [What a workspace owns](#what-it-owns)
+- [Four roles, seven capabilities](#roles)
+- [Inviting people](#inviting)
+- [Teams](#teams)
+- [The audit log](#audit)
+- [Limits](#limits)
+- [FAQ](#faq)
 
-## Use cases
+## What a workspace owns {#what-it-owns}
 
-- **Run an agency.** Give each client its own workspace so their links, bios, and analytics stay isolated and you can hand off access cleanly.
-- **Separate brands.** Keep two product brands in distinct workspaces so reports and bio pages never bleed into one another.
-- **Bring in a collaborator with limited access.** Invite a contractor as a viewer so they can see links and analytics without changing anything.
-- **Delegate day-to-day work.** Add an editor who can create and manage links while admins keep control of workspace settings and membership.
-- **Structure a larger group.** Group members into teams within a workspace so responsibilities are clear as the number of collaborators grows.
+Everything scoped to work rather than to you personally: short links, bio pages, folders, labels,
+collections, custom domains, tracking pixels, UTM templates, webhooks, widgets, social connections and the
+click and view rows behind the analytics.
 
-## How it works
+Your account owns the workspaces. A first one, **My Workspace**, is created when you sign in for the first
+time; manage the rest at `/dashboard/workspaces`.
 
-1. Open `/dashboard/workspaces` to view and manage your workspaces, including settings, members, and teams.
-2. Choose which workspace is active; the links, bios, and analytics you see all belong to that active workspace.
-3. Create or select the workspace for a given client, brand, or project so its work stays in its own silo.
-4. Invite a team member, choosing their role — admin, editor, or viewer — to set what they can do.
-5. The invited person opens the invite link at `/invite/:token` to accept and join the workspace.
-6. Optionally group members into teams within the workspace to keep larger groups organized.
+Separation is enforced in the database rather than in the interface. Row-level security means a query issued
+for the wrong workspace returns nothing, not the wrong rows — so a bug in a screen cannot show you somebody
+else's links.
 
-## Tips
+## Four roles, seven capabilities {#roles}
 
-- Create a separate workspace per client or brand from the start; moving work between silos later is more effort than setting them up cleanly.
-- Reserve the admin role for people who should manage settings and membership, not just create links.
-- Use the viewer role for stakeholders who need to see analytics but should not edit links or bios.
-- Confirm you are in the intended active workspace before creating links, since new links belong to whichever workspace is active.
-- Send invite links only to people you intend to grant access to, and assign the lowest role that still lets them do their job.
-- Use teams to mirror your real structure — for example a content team and a paid-media team — so responsibilities stay legible.
+The roles are a ladder, strongest first.
 
-## FAQ
+| Role | What it is |
+|---|---|
+| **Owner** | Everything, including deleting the workspace and handing it to someone else |
+| **Admin** | Everything except deleting the workspace or changing who owns it |
+| **Member** | Creates and edits links and bio pages. Cannot change people or settings |
+| **Viewer** | Reads links and analytics. Changes nothing |
 
-### What exactly does a workspace separate?
+Underneath, seven capabilities are what the server actually checks:
 
-A workspace separates links, bios, and analytics into an independent silo. All links and bios belong to the active workspace, and analytics are scoped to it, so two workspaces never share or mix their data.
+| Capability | Meaning |
+|---|---|
+| `canCreateLinks` | Create links and bio pages |
+| `canEditLinks` | Edit links anyone here made |
+| `canDeleteLinks` | Delete links |
+| `canViewAnalytics` | See analytics |
+| `canManageTeam` | Invite, remove and change roles |
+| `canManageSettings` | Change workspace settings |
+| `canManageBilling` | Change the plan |
 
-### What roles can I assign to team members?
+Two things follow from that list, and both are deliberate:
 
-You can assign admin, editor, or viewer. Admins manage the workspace including settings and membership, editors work with links and bios, and viewers have read access — useful for stakeholders who only need to see results.
+- **Bio pages are governed by the link capabilities.** There is no separate bio permission, because a bio
+  page is workspace content like anything else. Adding one would put a row on the permissions matrix for a
+  distinction the product does not make.
+- **Organising is editing.** Folders, labels and collections ride `canEditLinks` rather than
+  `canManageSettings`, so a contributor can file their own work instead of asking an admin for a folder.
 
-### How does someone accept an invitation?
+The browser holds a copy of this table to draw the matrix and disable controls, and **the browser is not the
+enforcement**. Every write is re-checked server-side against the workspace's own capability table. Asking the
+browser what a role may do would be asking it to widen its own permissions.
 
-You invite a member from the workspace, and they accept by opening the invite link at `/invite/:token`. Following that URL joins them to the workspace with the role you assigned.
+Roles are available on **every plan**, Free included.
+
+## Inviting people {#inviting}
+
+From `/dashboard/workspaces/<id>/members`, invite by email and choose the role. The invitation is a link the
+recipient opens at `/invite/<token>` and accepts; they need a Google account, because that is how everybody
+signs in.
+
+Give the lowest role that lets someone do their job. A stakeholder who wants to see numbers is a viewer, and
+a viewer genuinely cannot change anything — the refusal is in the database, not in a hidden button.
+
+## Teams {#teams}
+
+A team is a named group of members *inside* a workspace. It does not own links, does not have its own
+analytics and does not create a second silo — it exists so responsibilities stay legible when a workspace has
+more people than you can hold in your head.
+
+**Teams are part of the Team plan.** So is the audit log. The plan's own line for this is *"Roles, teams
+and an audit log"* — roles are on every plan; the teams and the log are what Team adds.
+
+## The audit log {#audit}
+
+`/dashboard/workspaces/<id>/audit` records who was added to what and when: every membership change, team
+change and settings change, as it happens.
+
+It is worth understanding how it refuses, because there are two different refusals and they mean different
+things:
+
+- **By role.** If your role cannot change settings, you are told you are not permitted. You are not shown an
+  upsell, because the answer to "may I read this" is not "buy something".
+- **By plan.** If your role would allow it but the workspace is not on Team, you get the locked card
+  explaining what the log adds to the People page you already have.
+
+The server asks both questions again, with a distinct message for each, so a stale entitlement in the browser
+still lands on the right sentence.
+
+Three properties of the log itself:
+
+- **It is append-only.** Update and delete are refused for every role, so the page offers neither. An edit
+  control that always fails is worse than none, because it implies the rest of the row is negotiable.
+- **The actor comes from the session on the server**, never from the request. A client cannot claim to be
+  somebody else.
+- **There is no export**, and that is a decision rather than a gap. The log is a reading surface for the
+  people in the workspace; a CSV of who-joined-when leaving the product is a promise this page does not make.
+
+## Limits {#limits}
+
+| | Free | Pro | Team |
+|---|---|---|---|
+| Workspaces | 5 | 25 | 100 |
+| Members | 30 | 100 | 500 |
+| Roles | Yes | Yes | Yes |
+| Teams and the audit log | — | — | Yes |
+
+- A link belongs to one workspace and cannot be moved to another. Decide the structure before you create four
+  hundred links.
+- Only the owner can delete a workspace or transfer it.
+- Deleting a workspace removes its content. The owner's own membership row goes with it, never on its own.
+
+## FAQ {#faq}
+
+### What roles exist?
+
+Owner, admin, member and viewer. There is no "editor" — the role that creates and edits links is called
+member.
+
+### Do I need a paid plan to work with other people?
+
+No. Members, roles and invitations are on every plan, including Free, which allows 30 members. Teams and the audit log are the
+Team-plan additions.
 
 ### What is the difference between a workspace and a team?
 
-A workspace is the top-level silo that owns links, bios, and analytics. A team is a grouping of members inside a workspace, used to organize people — it does not create a separate set of links or analytics.
+A workspace owns links, bio pages and analytics. A team is a grouping of people inside one workspace. A team
+owns nothing.
 
-### Can one link belong to two workspaces?
+### Can a link belong to two workspaces?
 
-No. Each link belongs to the workspace that was active when it was created. To work with a different set of links, switch the active workspace at `/dashboard/workspaces`.
+No. It belongs to the workspace it was created in. Check which workspace is active before you start creating.
 
-### Can I change a member's role later?
+### Can I change somebody's role later?
 
-Yes. Membership and roles are managed at `/dashboard/workspaces`, so an admin can adjust who has admin, editor, or viewer access as responsibilities change.
+Yes, from the workspace's members page, if your own role includes `canManageTeam`.
 
-### Does using workspaces and teams cost anything?
+### Why can a viewer not see the audit log?
 
-No. TrizLink is free to use; workspaces, member invitations, roles, and teams are part of the platform once you sign in with Google.
+Because reading who changed what is a settings-level question. A viewer is told they are not permitted rather
+than being shown an upgrade prompt, since the plan is not what is stopping them.
+
+### Can I export the audit log?
+
+No, by decision. It is a reading surface inside the workspace.
 
 ## Related
 
-- [Link in bio](/features/link-in-bio)
-- [Analytics](/features/analytics)
-- [Link organization](/features/link-organization)
-- [Sharing](/features/sharing)
+- [Bio pages](./link-in-bio.md)
+- [Analytics](./analytics.md)
+- [Link organisation](./link-organization.md)
+- [Custom domains](./custom-domains.md)

@@ -1,75 +1,134 @@
 ---
 title: Widgets
-description: Create embeddable TrizLink widgets that display a list of your links or a bio page inside an iframe on any external website, with configurable appearance.
+description: Embed a Trizlink link, bio page or collection on any site in four shapes — inline, button, popup or QR — with a snippet generated from the widget rather than stored.
 sidebar_position: 10
-keywords: [embeddable widgets, iframe widget, embed links, embed bio page, website widget, link list widget, widget appearance, embed on blog]
+keywords: [embed widget, iframe embed, embed short link, embed bio page, popup widget, qr widget, embed snippet]
 ---
 
-A widget in TrizLink is an embeddable iframe that displays a list of your links or a bio page on any external website. You configure how it looks, copy its embed code, and drop it into a site or blog so your links appear there without rebuilding the page. Each widget is managed at `/dashboard/widgets` and renders at `trizlink.com/widget/:widgetId`. TrizLink is free to use with Google sign-in.
+A widget is a piece of Trizlink you put on somebody else's page. It points at one thing — a short link, a bio
+page or a collection — and renders in one of four shapes. You copy a snippet, paste it into a site, and the
+widget's views and clicks are counted back in your workspace.
 
-## What you can do
+## On this page
 
-You can create a widget that shows either a list of your links or one of your bio pages, then configure its appearance — size, theme, and how many items it displays. The widget is embedded as an iframe, so it works on most external websites, blogs, and site builders that allow custom HTML. Once embedded, it pulls from TrizLink and renders at its own widget URL, letting you surface your links anywhere you can paste embed code.
+- [The four shapes](#shapes)
+- [What a widget can point at](#targets)
+- [The snippet](#snippet)
+- [What is counted](#counting)
+- [Limits](#limits)
+- [FAQ](#faq)
 
-## Use cases
+## The four shapes {#shapes}
 
-- **Add your links to a blog.** Embed a widget in a sidebar or footer so readers always see your current links without you editing each post.
-- **Put a bio page on your own site.** Display your TrizLink bio page inside your existing homepage instead of sending visitors elsewhere.
-- **Show a curated link list.** Limit the widget to a set number of items to feature only your most important links.
-- **Match your site's look.** Set the widget's theme and size so it blends into the page rather than standing out awkwardly.
-- **Keep an embed current automatically.** Because the widget pulls from TrizLink, the embedded list reflects your links without you touching the host site again.
+| Shape | What you paste | Good for |
+|---|---|---|
+| **Inline** | An `<iframe>` with a width, height and corner radius | A block in a page's flow — a link list in a sidebar or a post |
+| **Button** | A single `<a>` element | A call to action in existing copy, styled by the host page |
+| **Popup** | A `<script>` tag with a position | A floating launcher on every page of a site |
+| **QR** | An `<iframe>` rendering a scannable code | A screen people photograph — a slide, a display, a kiosk |
 
-## How it works
+The inline and QR shapes are iframes and carry nothing of yours into the host page. The button is a plain
+anchor, so it inherits the host site's own styling. The popup is the only one that loads a script.
 
-1. Open `/dashboard/widgets` to create and manage your widgets.
-2. Choose what the widget displays — a list of your links or a bio page.
-3. Configure appearance: size, theme, and the item limit that controls how many entries show.
-4. Save the widget; it is assigned an ID and renders at `trizlink.com/widget/:widgetId`.
-5. Copy the iframe embed code for the widget.
-6. Paste the embed code into any external website that accepts custom HTML, and the widget appears on that page.
+## What a widget can point at {#targets}
 
-## Tips
+Three kinds of target: a **short link**, a **bio page**, or a **collection** of links.
 
-- Set an item limit that fits the space on your host page so the widget doesn't overflow its container.
-- Match the widget theme to your site's light or dark style for a cleaner fit.
-- Preview the widget URL at `trizlink.com/widget/:widgetId` before embedding to confirm it looks right.
-- Make sure your host platform allows iframe embeds; some restricted site builders block custom HTML.
-- Choose a size that stays responsive within your layout, and test it on both desktop and mobile widths.
-- Use a link-list widget where you update links often, so the embed stays current without editing the host page.
+There is deliberately **no foreign key** from a widget to its target. A widget pointing at something that has
+been deleted is a real state, and it says so on the page it is embedded in — rather than the widget silently
+vanishing from a customer's site, or rendering the word `undefined`. A dangling target renders its own empty
+state, which is the behaviour you want on a page you no longer control.
 
-## FAQ
+## The snippet {#snippet}
 
-### What can a widget display?
+The snippet is **generated from the widget every time you look at it, never stored**.
 
-A widget can display either a list of your links or one of your bio pages. You pick which when you create the widget at `/dashboard/widgets`.
+That sounds like an implementation detail and is not. The previous version of this product stored the embed
+code as a string, with a *"regenerate embed code"* button beside it — which is the shape of a bug: every field
+that changes the snippet needs a writer, and the day one is missed, the customer's page keeps loading the old
+one. Here there is nothing to regenerate, because there is nothing stored to go stale.
 
-### How is a widget embedded?
+Each widget also has a public page at `trizlink.com/widget/<id>`, which is what the iframes load.
 
-A widget is embedded as an iframe. You copy its embed code from the dashboard and paste it into any external website that accepts custom HTML, and the widget renders inline on that page.
+The panel offers a width, height, corner radius and button tone, plus two options: whether to show a QR code
+alongside, and whether to show Trizlink branding. Copy the snippet with the button rather than retyping it —
+the indentation in the block is part of what you paste.
 
-### Where does the widget actually render?
+```html
+<!-- Trizlink widget -->
+<iframe
+  src="https://trizlink.com/widget/<id>?type=inline"
+  width="100%"
+  height="400"
+  title="Your widget"
+  loading="lazy"
+  style="border: 0; border-radius: 8px;"
+></iframe>
+```
 
-Each widget renders at `trizlink.com/widget/:widgetId`, where `:widgetId` is the ID assigned when you save it. The iframe you embed points to that URL.
+## What is counted {#counting}
 
-### What appearance options can I configure?
+Two events: a **view** when the widget loads, and a **click** when somebody follows something in it.
 
-You can configure size, theme, and the item limit that sets how many entries the widget shows. These let you fit the widget to your host page's space and style.
+Both counters on the widget are maintained by the database from those event rows, and no browser holds the
+grant to write them — the same arrangement that protects a link's click total. A widget nobody has loaded
+reports zero and says so, rather than showing an estimate.
 
-### Will the embedded widget stay up to date?
+A widget view also records one **impression** for each short link it rendered, which is what makes a funnel
+from *seen* to *clicked* possible rather than inferred.
 
-Yes. Because the widget pulls from TrizLink, the embedded list or bio reflects your TrizLink content without you re-editing the host page each time something changes.
+Clicks that pass through a short link carry `?via=widget`, so widget traffic is separable from direct traffic
+in [Analytics](./analytics.md).
 
-### Can I use a widget anywhere?
+## Limits {#limits}
 
-You can embed a widget on most external sites and blogs that allow custom HTML or iframe code. Platforms that block custom HTML or iframes won't be able to host it.
+- One widget points at one target. There is no multi-target widget.
+- The inline and QR shapes are iframes, so the host page cannot restyle their insides. Use the button shape
+  when you want the host site's own styling.
+- The popup shape loads a script on the host page. Some sites will not allow that; the other three shapes do
+  not need it.
+- A widget is public. Anything embedded in it is readable by anyone who finds the widget URL, so do not point
+  one at something you meant to keep private.
+- The widget page does not carry the theme control. It inherits nothing from your dashboard.
 
-### Does creating widgets cost anything?
+## FAQ {#faq}
 
-No. TrizLink is free to use; creating, configuring, and embedding widgets are part of the platform once you sign in with Google.
+### Where do I manage widgets?
+
+`/dashboard/widgets`. Each widget's detail panel carries its snippet and its counts.
+
+### Do I need to regenerate the embed code after changing a widget?
+
+No. The snippet is derived from the widget, so what you pasted keeps pointing at the current settings.
+Dimensions are in the snippet itself, so a size change is the one case worth re-copying.
+
+### What happens if I delete the link a widget points at?
+
+The widget renders its own empty state on the host page. It does not disappear and it does not print an
+error.
+
+### Can I embed a widget on a site I do not control?
+
+You can hand somebody the snippet. Whether their site accepts an iframe or a script is their decision, and
+the popup shape is the one most likely to be blocked.
+
+### Are widget views counted as link clicks?
+
+No. A view is a view. When a visitor actually follows a link in the widget, that is a click, and it is marked
+as coming from a widget.
+
+### Does a widget work if the visitor is not signed in?
+
+Yes. A widget is public and has no sign-in gate — it is meant for strangers on somebody else's page.
+
+### Can I style the inline widget with my own CSS?
+
+Not its contents; it is an iframe. You control its width, height and corner radius. The button shape is the
+one that inherits your styling.
 
 ## Related
 
-- [Link in bio](/features/link-in-bio)
-- [Sharing](/features/sharing)
-- [Short links](/features/short-links)
-- [Social media](/features/social-media)
+- [Short links](./short-links.md)
+- [Bio pages](./link-in-bio.md)
+- [QR codes](./qr-codes.md)
+- [Analytics](./analytics.md)

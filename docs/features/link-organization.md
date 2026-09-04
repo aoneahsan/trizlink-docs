@@ -1,75 +1,151 @@
 ---
-title: Link Organization
-description: Organize TrizLink links with custom labels and tags, filter and search across every link, and bulk-import many links at once from a CSV file.
+title: Link organisation
+description: Folders, labels and collections are three different structures in Trizlink, not three names for one. Plus CSV import of up to 5,000 rows, parsed in your browser.
 sidebar_position: 6
-keywords: [link organization, link labels, link tags, bulk import links, csv link import, search links, filter links, link management]
+keywords: [link folders, link labels, link collections, csv import, bulk import links, export links csv, filter links]
 ---
 
-Link organization in TrizLink is the set of tools for labeling, searching, and bulk-importing your short links so you can find any link quickly. Instead of scrolling through a long, undifferentiated list, you attach custom labels (tags) to each link, filter the Links list by those labels, search across all your links, and load many links at once from a CSV file. Everything lives in your dashboard, and TrizLink is free to use with Google sign-in.
+Trizlink gives you three ways to keep a workspace's links findable, and they are deliberately different from
+each other rather than three words for the same idea. On top of them sit search, filtering, a CSV importer
+and a CSV export.
 
-## What you can do
+## On this page
 
-You can tag every link with one or more custom labels, then filter the Links list at `/dashboard/links` by label to see only the links that matter for a given project, client, or channel. You can search across all your links to jump straight to one, and you can bulk-import a large batch of links from a CSV file at `/dashboard/links/bulk-import` instead of creating each one by hand.
+- [Three structures, three jobs](#structures)
+- [Search and filtering](#search)
+- [Importing a CSV](#import)
+- [Exporting a CSV](#export)
+- [Who can organise](#permissions)
+- [Limits](#limits)
+- [FAQ](#faq)
 
-## Use cases
+## Three structures, three jobs {#structures}
 
-- **Group links by campaign or client.** Label every link for a launch (for example `summer-launch`) so you can filter to that set in seconds and review them together.
-- **Separate channels.** Tag links by where they live — `newsletter`, `instagram`, `print` — and filter by channel when you need to check or update just that group.
-- **Migrate from another tool.** Export your existing links to CSV and import them all at once, keeping the target URL, custom code, title, description, and tags in one pass.
-- **Find a single link fast.** Use search when you remember part of a title, code, or destination but don't want to scroll.
-- **Tidy up an old account.** Re-label legacy links so an unstructured pile becomes a filterable, searchable library.
+| | What it is | How many per link |
+|---|---|---|
+| **Folder** | Exclusive. Where a link lives | Exactly one, or none |
+| **Label** | A cross-cut. What a link *is* | One, or none |
+| **Collection** | A shortlist. A set you assembled | As many as you like |
 
-## How it works
+- A **folder** is exclusive: a link lives in exactly one. Use it for the structure that genuinely partitions
+  your work — a client, a campaign, a year.
+- A **label** cuts across folders. Everything that is true of links in several folders is a label. Labels
+  carry one of four tones (accent, success, warning, neutral) so the chips read at a glance, and the database
+  refuses any other value rather than letting one row render unstyled.
+- A **collection** is a shortlist. **Nothing moves to join one**, and a link can be in as many as you like.
+  Deleting a collection deletes nothing but the shortlist.
 
-1. Open the Links list at `/dashboard/links`, where all of your links appear with search and filter controls.
-2. Add one or more labels (tags) to a link when you create or edit it; labels are free text you define yourself.
-3. Use the label filter to narrow the list to links carrying a specific label.
-4. Use search to match links across your whole account when you only remember part of a link's details.
-5. To add many links at once, go to `/dashboard/links/bulk-import` and prepare a CSV with the columns: target URL, custom code, title, description, and tags.
-6. Upload the CSV; each valid row becomes a link with its title, description, and tags applied, ready to filter and search like any other link.
+Removing a folder or a label does **not** remove the links filed under them; they simply become unfiled. That
+is stated in the delete dialogue too, because it is the question everybody has at that moment.
 
-## Tips
+Names are capped — 48 characters for a folder or collection, 32 for a label — with an optional note up to 160
+characters on labels and collections.
 
-- Decide on a small, consistent set of label names before you start tagging — `client-acme` and `acme-client` will split the same group into two filters.
-- Keep tags short and lowercase so they stay easy to type and scan.
-- A link can carry several labels at once, so combine a channel tag with a campaign tag for finer filtering.
-- When preparing a CSV, match the expected columns exactly (target URL, custom code, title, description, tags) so each row imports cleanly.
-- Use the description field during bulk import to record context you'll want later, since it is searchable alongside titles.
-- Re-label in small batches rather than all at once, so you can confirm your tagging scheme works before applying it everywhere.
+Manage all three at `/dashboard/labels`.
 
-## FAQ
+## Search and filtering {#search}
 
-### Can I organize links into folders?
+The Links list filters by status, folder and label, and searches across your links. All four live in the URL,
+so a filtered view can be bookmarked or sent to a colleague and lands exactly where you left it.
 
-No. TrizLink organizes links with labels (tags) plus search and filtering, not a folder hierarchy. You group links by attaching shared labels and then filtering by them, which lets a single link belong to several groups at once.
+Lists are paginated rather than loaded whole: 20 rows by default, 50 at most. That is a deliberate ceiling —
+fetching an entire workspace to filter it in the browser is how a product becomes slow for the people who use
+it most.
 
-### How do labels differ from search?
+## Importing a CSV {#import}
 
-Labels are tags you assign deliberately so you can filter the Links list down to a defined set. Search matches across your links on demand. Use labels for stable groupings and search for one-off lookups.
+`/dashboard/links/bulk-import` is a five-step wizard, and **only the last step writes**. Every step before it
+is reversible by pressing Back, which is what makes it safe to explore with a real file.
 
-### Can a link have more than one label?
+**The file is parsed in your browser and never uploaded.** There is nothing for a server to hold: the rows
+become links through the ordinary create path, under the same permissions and the same plan limit as a link
+you make by hand. An upload endpoint would be a second write path with its own authorisation to get wrong.
 
-Yes. Label operations are per-link, and you can attach multiple labels to the same link, so it can appear under several filters — for example both a campaign label and a channel label.
+Eight columns are recognised, and they are the previous version's own column names so that a file exported
+from the old product still imports:
 
-### What columns does the CSV bulk import expect?
+| Column | Required |
+|---|---|
+| `target_url` | **Yes** |
+| `custom_code` | No |
+| `title` | No |
+| `description` | No |
+| `folder_id` | No |
+| `label_ids` | No |
+| `expires_at` | No |
+| `password` | No |
 
-The bulk-import file at `/dashboard/links/bulk-import` uses these fields per row: target URL, custom code, title, description, and tags. Providing all of them lets each imported link arrive already titled, described, and tagged.
+Ceilings: **2 MB** and **5,000 rows** per file.
 
-### Is there a limit to how many links I can import at once?
+**A refused row is never silently repaired.** The check step names every problem with its line number in the
+file and the value it read, because an importer that guesses produces links nobody asked for, which then have
+to be found and deleted. A bad import of 400 links is not fun to undo, and the preview step exists so that it
+does not happen.
 
-Bulk import is designed to load many links from a single CSV in one operation. Keep your file well-formed and matching the expected columns so every row is processed; very large files are best split into a few smaller uploads to make any row-level issues easier to spot.
+## Exporting a CSV {#export}
 
-### Do labels affect how my short links work?
+The Links list exports whatever your **current filters** match. The file is built on the server, walking the
+same list with the same four filters the table is showing, in pages — so what is on screen and what is in the
+file cannot disagree, and your browser never fetches a whole table to build it.
 
-No. Labels are an internal organization layer for your dashboard. They change how you find and filter links — not the destination, custom code, or behavior of the links themselves.
+The columns are the importer's own, in the importer's order, so a file goes back in as it came out.
 
-### Does organizing links cost anything?
+## Who can organise {#permissions}
 
-No. TrizLink is free to use; sign in with Google and you get the Links list, labels, search, filtering, and CSV bulk import as part of the platform.
+Creating and renaming folders, labels and collections rides `canEditLinks`; removing them rides
+`canDeleteLinks`. Organising is editing the links, not administering the workspace — putting it behind the
+settings permission would leave a contributor unable to make a folder for their own work.
+
+See [Workspaces and teams](./workspaces-and-teams.md).
+
+## Limits {#limits}
+
+- **One label per link.** Labels are a cross-cut, not a tag cloud; if you need several dimensions, use a
+  folder for one of them and a collection for another.
+- **No nested folders.** One level.
+- Import ceilings are 2 MB and 5,000 rows. Split a larger file.
+- Imported links count against your plan's short-link allowance exactly like any other.
+- There is no bulk edit of destinations from the list. Change them one at a time, or through
+  the [API](./api-access.md).
+
+## FAQ {#faq}
+
+### What is the difference between a folder and a label?
+
+A folder is where a link lives, and a link has one. A label is what a link is, cutting across folders. If you
+find yourself wanting two folders for one link, you want a label or a collection.
+
+### Can a link have several labels?
+
+No. One label per link. A collection is the structure for "belongs to many sets".
+
+### If I delete a folder, do I lose its links?
+
+No. They become unfiled. The same is true of a label, and of a collection — deleting a collection deletes the
+shortlist, not the links in it.
+
+### Is my CSV uploaded anywhere?
+
+No. It is parsed in your browser, and the rows are created through the ordinary link path. The file itself
+never leaves the machine.
+
+### What happens to a row my file gets wrong?
+
+It is refused and named, with the line number and the value that failed. Nothing is guessed and nothing is
+half-imported.
+
+### Can I import a file exported from the old version of Trizlink?
+
+The columns are the same eight, deliberately, so a file in that shape imports. The links themselves were not
+carried across in the rebuild, so re-importing an export is exactly the intended way back.
+
+### How big a file can I import?
+
+2 MB and 5,000 rows.
 
 ## Related
 
-- [Short links](/features/short-links)
-- [Analytics](/features/analytics)
-- [Tracking and UTM](/features/tracking-and-utm)
-- [Custom domains](/features/custom-domains)
+- [Short links](./short-links.md)
+- [Workspaces and teams](./workspaces-and-teams.md)
+- [Analytics](./analytics.md)
+- [Public API](./api-access.md)
