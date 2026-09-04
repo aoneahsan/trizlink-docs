@@ -104,7 +104,7 @@ const config: Config = {
         sameAs: PLAY_URL,
         author: { '@type': 'Person', name: 'Ahsan Mahmood', url: 'https://aoneahsan.com' },
         description:
-          'Trizlink is a link-management platform: branded short links, bio pages, QR codes, click analytics and shared workspaces. Sign in with Google. There is no browser extension.',
+          'Trizlink is a link-management platform: branded short links, bio pages, QR codes, click analytics and shared workspaces. Sign in with Google. There is no browser extension yet; it is deferred, not cancelled.',
       }),
     },
     {

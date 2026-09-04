@@ -100,7 +100,11 @@ export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title} — Short links, bio pages, QR codes & analytics`}
+      /* 🔴 NO `siteConfig.title` HERE. Docusaurus's `useTitleFormatter` already appends
+         ` | ${siteTitle}`, so including it produced `Trizlink Docs — … | Trizlink Docs` —
+         the brand twice, 76 chars, pushing the unique words past the ~60-char truncation.
+         Measured live 2026-09-05. Verify in `build/`, never here. */
+      title="Short links, bio pages, QR codes & analytics"
       description="Documentation for Trizlink: branded short links, bio pages, QR codes, click analytics, workspaces and a public API. Sign in with Google."
     >
       <HomepageHeader />
