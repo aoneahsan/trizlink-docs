@@ -1,88 +1,128 @@
 ---
-title: Quick Start
-description: Create your first TrizLink short link, generate its QR code, publish a link-in-bio page, and read your click analytics — in about five minutes.
+title: Quick start
+description: Create your first Trizlink short link, draw its QR code, publish a bio page and read the click breakdowns, with the limits of each step stated as you go.
 sidebar_position: 2
 keywords:
   - trizlink quick start
   - create short link
   - first bio page
   - shorten url
-  - link analytics
+  - read click analytics
 ---
 
-This Quick Start walks you from a fresh TrizLink account to a working short link, a QR code, a published link-in-bio page, and your first analytics read — in roughly five minutes. It assumes you have already [created your account](/getting-started/create-account) by signing in with Google.
+This walks you from a signed-in account to a working short link, a scannable QR code, a published bio page and
+your first analytics read. It takes about five minutes and assumes you have already
+[created your account](./create-account.md).
 
-## 1. Create your first short link
+## On this page
 
-1. Open [trizlink.com](https://trizlink.com) and go to **Dashboard → Links**.
-2. Click **Create Link** (this opens the full-page create form at `/dashboard/links/new`).
-3. Paste the long **destination URL** you want to shorten.
-4. (Optional) Set a **custom alias** so the short link reads the way you want, e.g. `spring-sale`.
-5. (Optional) Add a **password** or an **expiry date** if the link should be gated or time-limited.
-6. Save. TrizLink shows your new short link (in the form `trizlink.com/l/<code>`) ready to copy.
+- [1. Create a short link](#step-1)
+- [2. Draw its QR code](#step-2)
+- [3. Publish a bio page](#step-3)
+- [4. Read the clicks](#step-4)
+- [5. What to set up next](#step-5)
+- [FAQ](#faq)
 
-You now have a branded short link. Full details in [Short links](/features/short-links).
+## 1. Create a short link {#step-1}
 
-## 2. Grab its QR code
+1. Go to **Dashboard → Links** and press **New link**, which opens the full-page form at
+   `/dashboard/links/new`.
+2. Paste your destination URL.
+3. Leave the short code blank to get a generated one, or type your own.
+4. Save.
 
-1. Open the link you just created.
-2. Find its **QR code**, customise if you like, and **download** it for print or screens.
+The address you copy is `https://trizlink.com/<code>`. The form has ten sections — Destination, Short code,
+Security, Expiry, Targeting, A/B split, UTM, QR, Pixels and Social card — and every one after the first two is
+optional, so a link with only a destination is a complete link.
 
-Anyone who scans the QR code is sent to your destination, and the scan counts as a click in analytics. More in [QR codes](/features/qr-codes).
+A generated code is six characters drawn from a 32-symbol alphabet with `0`, `O`, `1`, `l` and `I` removed,
+because a short link's job is to survive being read off a poster and typed into a different device. Codes are
+unique case-insensitively across the whole product, so `Spring26` and `spring26` cannot both exist.
 
-## 3. Publish a link-in-bio page
+Full field reference: [Short links](../features/short-links.md).
 
-1. Go to **Dashboard → Bio** and create a new bio page.
-2. Pick a **template** (minimalist, portfolio, business, or influencer).
-3. Use the **drag-and-drop editor** to add blocks: your short links, social icons, text, and a call-to-action.
-4. Set a **custom slug** so the page lives at `trizlink.com/yourname`.
-5. Use **Preview** to check it, then **Publish**.
+## 2. Draw its QR code {#step-2}
 
-Your bio page is now a single link you can put in any "link in bio" field. More in [Link-in-bio pages](/features/link-in-bio).
+Open the link's **QR** section. The code is drawn from the short URL as an SVG, and nothing about it is
+stored — which is what stops it from ever disagreeing with the link.
 
-## 4. Read your analytics
+The one control is the error-correction level: **L**, **M** (the default), **Q** or **H**. Higher correction
+survives more damage and makes the code denser.
 
-1. Open **Dashboard → Analytics** for a workspace-wide view, or open a single link's **Analytics** tab.
-2. Watch clicks over time and the breakdown by **country, referrer, device, browser, and OS**.
-3. Note the **top-performing links** list to see what is working.
+There is **no download button**. Save the code the way you save any image in your browser, or screenshot it.
+More, including what counting scans costs you: [QR codes](../features/qr-codes.md).
 
-Analytics update in real time. More in [Analytics](/features/analytics).
+## 3. Publish a bio page {#step-3}
 
-## 5. (Optional) Set up the extras
+1. Go to **Dashboard → Bio pages** and create a page.
+2. Pick a layout: **Minimal**, **Portfolio** or **Spotlight**. These are three different shapes, not three
+   colour schemes — colour comes from whichever theme the visitor is in.
+3. Add blocks. There are fifteen types, from a plain link button to a countdown, an email capture form or an
+   embedded video.
+4. Set the slug. The page publishes to `trizlink.com/<slug>`.
+5. Press **Publish**.
 
-Depending on what you need next:
+A page stays a draft until you publish it, and drafts do not count against your plan's page allowance. Your
+slug shares one address space with short codes, so a name already used by a link is refused rather than
+quietly shadowing it. Detail: [Bio pages](../features/link-in-bio.md).
 
-- Add your own domain for branded links — [Custom domains](/features/custom-domains).
-- Organize links with labels and import in bulk from CSV — [Link organization](/features/link-organization).
-- Add UTM templates, tracking pixels, or webhooks — [Tracking & UTM](/features/tracking-and-utm).
-- Invite teammates with roles — [Workspaces & teams](/features/workspaces-and-teams).
-- Shorten links straight from your toolbar — [Browser extension](/features/browser-extension).
-- Connect your own AI key for captions and forecasts — [AI features (BYOK)](/features/ai-features-byok).
+## 4. Read the clicks {#step-4}
 
-## Tips for a clean start
+Open `/dashboard/analytics` for the workspace, or a single link's analytics from the Links list.
 
-- Decide on a workspace structure before you bulk-create links — one workspace per brand or client keeps analytics tidy.
-- Use consistent custom aliases (e.g. a campaign prefix) so links are easy to scan in the Links list.
-- Only put public destinations behind short links and QR codes — see the sharing privacy note in [Sharing](/features/sharing).
+You get clicks over time plus four breakdowns: **country**, **device**, **referrer** and **browser**. The
+range selector offers today, 7, 14, 30 and 91 days, and the 91-day range needs a plan whose history window
+reaches that far.
 
-## FAQ
+Two things to know before you read a number:
+
+- **This is not a live feed.** Figures are fetched when you open the page and again when you reload or change
+  the range. Nothing streams in behind you.
+- **Click counts are best-effort, here and everywhere.** Bots inflate a count, a link preview invents one, a
+  privacy blocker removes one you really got. Treat the shape as reliable and the last digit as not.
+
+Detail, including exactly what is stored per click: [Analytics](../features/analytics.md).
+
+## 5. What to set up next {#step-5}
+
+- Add a domain you own, and verify it — [Custom domains](../features/custom-domains.md). Read that page's
+  limits section first: verification works today, serving does not.
+- Group links with folders and labels, or import a spreadsheet —
+  [Link organisation](../features/link-organization.md).
+- Tag campaigns, attach a pixel, or receive webhooks —
+  [Tracking and UTM](../features/tracking-and-utm.md).
+- Invite people and give them roles — [Workspaces and teams](../features/workspaces-and-teams.md).
+
+## FAQ {#faq}
 
 ### Do I need to install anything?
 
-No. TrizLink works in the browser. The [Android app](https://play.google.com/store/apps/details?id=com.trizlink.app) and the [browser extension](/features/browser-extension) are optional conveniences.
+No. Trizlink runs in a browser. The
+[Android app](https://play.google.com/store/apps/details?id=com.trizlink.app) is optional, and there is no
+browser extension.
 
-### How long are short links kept?
+### How long do short links last?
 
-Indefinitely, unless you set an expiry date or delete them. Expired links show an "expired" page rather than being auto-deleted.
+Indefinitely, unless you set an expiry date or a click ceiling. Neither deletes the link — an expired link
+shows an expiry page until you extend or remove it.
 
 ### Can I change a link's destination later?
 
-Yes. Open the link and edit it. The short URL stays the same while the destination updates.
+Yes. Edit the link; the short address stays the same while the destination changes. That is one reason the
+redirect is answered fresh rather than cached forever by every visitor.
 
-### Is there a limit on links or clicks?
+### Are there limits on links and clicks?
 
-This Quick Start does not impose one; for current limits check the in-app dashboard and the [FAQ](/guides/faq).
+Yes. The Free plan allows 1,000 short links and 50,000 tracked clicks a month; Pro allows 50,000 links and
+500,000 clicks; Team is fair use on links with 2,000,000 clicks. Going over the click allowance stops new
+clicks being recorded — it never stops your links working.
 
-### Where do I manage everything after setup?
+### Why is my new link's analytics page empty?
 
-Everything lives under the **Dashboard** — Links, Bio, Analytics, Workspaces, Tracking, Tools, and Settings.
+Because it has no history yet. A link created a minute ago has nothing to show, and the page says so rather
+than drawing a chart of zeroes.
+
+### Where does everything live after setup?
+
+Under **Dashboard**: Links, Bio pages, Analytics, Social, Developers (API keys, webhooks, pixels, widgets,
+tools), Workspace and Account.

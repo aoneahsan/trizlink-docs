@@ -1,74 +1,115 @@
 ---
-title: QR Codes
-description: Every TrizLink short link includes a QR code you can view, customise, and download, plus a standalone QR generator. Scans count as clicks in analytics.
+title: QR codes
+description: Every Trizlink short link can be drawn as a QR code, derived from the address each time rather than stored, with four error-correction levels and optional separate scan counting.
 sidebar_position: 3
-keywords: [qr codes, qr code generator, downloadable qr code, custom qr code, scan tracking, short link qr, print qr]
+keywords: [qr code, short link qr, error correction level, scan tracking, printed qr code]
 ---
 
-TrizLink QR codes are scannable images that encode your short link URL, generated automatically for every short link you create. You can view each QR code, customise it, and download it for use on screens or in print, and because the code encodes the short link, scans are counted as clicks in your analytics. TrizLink also includes a standalone QR code generator among its utility tools for when you want to produce a code directly. QR codes give your short links a physical, scannable presence that bridges offline materials and online destinations.
+A Trizlink QR code is a scannable image of a short link, drawn from the address itself every time it is
+displayed. Nothing about it is stored on the link, which is the point: a stored image would go stale the
+moment you changed the code, and a printed poster would then point at nothing.
 
-## What you can do
+## On this page
 
-You can open the QR code attached to any short link, adjust its appearance, and download it in a format suitable for print or screens. You can also use the standalone QR code generator in the utility tools. Since each link's QR code encodes the short link URL, every scan is tracked the same way a click is.
+- [How it is produced](#how-it-works)
+- [Error correction](#error-correction)
+- [Counting scans](#counting-scans)
+- [What this does not include](#not-included)
+- [Printing advice](#printing)
+- [FAQ](#faq)
 
-## Use cases
+## How it is produced {#how-it-works}
 
-- **Print materials.** Add a downloaded QR code to flyers, posters, packaging, or business cards so people can scan straight to your link.
-- **On-screen sharing.** Show a QR code in a slide deck, livestream, or storefront display so a viewing audience can reach your destination quickly.
-- **Event check-ins.** Put a QR code at a booth or event entrance that links to a signup, schedule, or resource.
-- **Bridge offline to online.** Connect physical products or signage to a measurable short link so you can see how many scans convert.
-- **Quick one-off codes.** Use the standalone generator in the utility tools when you just need a QR code without managing a saved link.
+Open a link from the Links list, or the **QR** section of the link form. The code is rendered as an SVG in the
+page, encoding `https://trizlink.com/<code>` exactly as you would share it. It resolves like any other QR
+code, because it is any other QR code — there is no Trizlink redirector in the middle beyond the short link
+you already made.
 
-## How it works
+Because it is derived rather than saved, it can never disagree with the link, and a code you printed last
+year keeps working as long as the short link does.
 
-1. Sign in with Google and open a short link from the dashboard Links page.
-2. View the QR code that was generated automatically with that link.
-3. Customise the QR code's appearance to suit where you will use it.
-4. Download the QR code in a format ready for print or screen.
-5. Place the QR code on your material, and watch scans appear as clicks in the link's analytics.
-6. For a code outside a saved link, open the standalone QR code generator in the utility tools.
+## Error correction {#error-correction}
 
-## Tips
+Four levels, selectable beside the code:
 
-- Download QR codes at a large enough size for print so they stay sharp when scaled.
-- Keep enough contrast and quiet space around the code so scanners read it reliably.
-- Test the printed or displayed code with a phone before distributing it widely.
-- Use the per-link QR code (rather than the standalone generator) when you want scans tracked against that link.
-- Pair a QR code with a short, readable URL so people can also type the link if they prefer.
+| Level | Character |
+|---|---|
+| **L** | Smallest |
+| **M** | Default |
+| **Q** | Tolerant |
+| **H** | Most tolerant |
 
-## FAQ
+Higher correction survives more damage and makes the code denser. Pick **H** for anything that will be
+printed on a curved surface, laminated, or stuck somewhere it can be scuffed; **L** or **M** is fine on a
+screen.
 
-### Does every short link get a QR code?
+If the address is too long to encode at any version, the panel says so rather than drawing something broken.
+A short link never will be; a very long code on a very long custom domain eventually could.
 
-Yes. TrizLink generates a QR code automatically for every short link, and you can view, customise, and download it.
+## Counting scans {#counting-scans}
 
-### Do QR scans count in my analytics?
+By default a scan is indistinguishable from a tap, because it is the same URL either way.
 
-Yes. A link's QR code encodes the short link URL, so scanning it is recorded as a click in that link's analytics.
+The link form has a **Count scans separately** switch. Turning it on appends `?qr=1` **inside the encoded
+address**, so the redirect can tell a scan from a click and report the two apart. Leaving it off keeps the
+encoded address byte-identical to the short link itself.
 
-### Can I customise how the QR code looks?
+That trade is worth stating plainly: the marker is what makes scan counting possible, and it is also a
+difference between what the QR code contains and what you copied to your clipboard. Decide before you print,
+because a printed code carrying the wrong choice cannot be changed.
 
-Yes. You can customise the QR code before downloading it so it fits the material where you plan to use it.
+Scans that are counted show up alongside clicks in [Analytics](./analytics.md), with the same country, device,
+referrer and browser breakdowns.
 
-### Can I download QR codes for print?
+## What this does not include {#not-included}
 
-Yes. QR codes are downloadable for print or screen use. Download at a suitable size so the code stays clear at the dimensions you need.
+- **There is no download button.** The code is an SVG in the page; save it the way your browser saves any
+  image, or take a screenshot. Nothing about the code is held server-side to download.
+- **There is no appearance customisation.** No colours, no logo in the middle, no rounded modules. Error
+  correction is the only control.
+- **There is no batch export.** One code, one link, one panel.
+- **A QR code cannot be attached to something that is not a short link.** If you need a code for an arbitrary
+  URL, the [tools directory](./utility-tools.md) points at a standalone generator hosted on a separate site.
 
-### Is there a QR code generator that isn't tied to a link?
+## Printing advice {#printing}
 
-Yes. A standalone QR code generator is available among the utility tools for producing a code directly.
+- Save at a size larger than you need. An SVG scales without loss, so export or screenshot generously.
+- Leave the quiet zone alone. The white margin drawn around the code is part of the code.
+- Keep the contrast high and do not invert it. Some scanners cope; enough do not.
+- Test the actual printed piece with a phone before you order a thousand of them.
 
-### Will I see who scanned my QR code?
+## FAQ {#faq}
 
-Scans are counted as clicks, so you see them in the link's analytics alongside breakdowns like country, device, and referrer, rather than personal identities.
+### Does every short link have a QR code?
 
-### Are QR codes free to use?
+Yes. It is derived from the address, so every link already has one whether you have looked at it or not.
 
-Yes. TrizLink is free, and QR codes are included with every short link as well as in the standalone generator.
+### Can I download the QR code as a PNG or SVG file?
+
+Not from a button in the product. Save the rendered image through your browser, or screenshot it. This is a
+real gap rather than a hidden setting.
+
+### Can I change its colours or add my logo?
+
+No. The only control is the error-correction level.
+
+### Do scans appear in my analytics?
+
+Yes, as clicks. They are only reported *as scans* when **Count scans separately** is switched on for that
+link, which changes what the code encodes.
+
+### Will I see who scanned it?
+
+No. You see the same aggregate breakdowns as any click — country, device, referrer, browser — and never a
+person. No visitor address is stored anywhere. See [Analytics](./analytics.md#privacy).
+
+### The code stopped scanning after I reprinted it smaller. Why?
+
+A denser code needs more physical size. Raise the error-correction level, or print it larger, and test the
+piece itself rather than the screen.
 
 ## Related
 
-- [Short links](/features/short-links)
-- [Analytics](/features/analytics)
-- [Utility tools](/features/utility-tools)
-- [Sharing](/features/sharing)
+- [Short links](./short-links.md)
+- [Analytics](./analytics.md)
+- [Utility tools](./utility-tools.md)

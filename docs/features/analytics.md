@@ -1,74 +1,170 @@
 ---
 title: Analytics
-description: Track per-link and workspace-wide clicks in TrizLink with breakdowns by country, referrer, device, browser, and OS, plus top links, updating in real time.
+description: Trizlink records one row per click with country, device, referrer and browser, stores no visitor IP address, and reports refused visits alongside successful ones.
 sidebar_position: 4
-keywords: [link analytics, click tracking, real time analytics, geography breakdown, referrer source, device analytics, top performing links]
+keywords: [click analytics, link analytics, referrer breakdown, country breakdown, unique clicks, analytics privacy]
 ---
 
-TrizLink analytics are real-time click reports that show how your short links perform, both for a single link and across your whole workspace. They include clicks over time plus breakdowns by country and geography, referrer source, device type, browser, and operating system, along with a list of your top-performing links. The data updates live through Firestore listeners, so figures change as clicks happen. You view per-link analytics at `/dashboard/links/:id/analytics` and platform-wide analytics at `/dashboard/analytics`, giving you both a detailed and a big-picture view of your traffic.
+Trizlink analytics are click reports built from one append-only row per visit. Every time somebody follows a
+short link the edge writes a row, and the totals you see on a link are maintained by the database from those
+rows — never by a caller, so nobody can inflate a counter, including you. You read them per link at
+`/dashboard/links/<id>/analytics` and per workspace at `/dashboard/analytics`.
 
-## What you can do
+## On this page
 
-You can open any link's analytics to see its clicks over time and how they break down by country, referrer, device, browser, and operating system, or open the workspace-wide analytics for the same dimensions across all links. A top-performing links list highlights what is getting the most traffic, and everything updates in real time as clicks arrive.
+- [What is recorded](#what-is-recorded)
+- [The privacy model, and why it is built this way](#privacy)
+- [The four breakdowns](#breakdowns)
+- [Ranges and history](#ranges)
+- [Refused visits are data too](#outcomes)
+- [The other analytics surfaces](#other-surfaces)
+- [What these numbers are not](#limits)
+- [FAQ](#faq)
 
-## Use cases
+## What is recorded {#what-is-recorded}
 
-- **Measure a campaign.** Watch a campaign link's clicks over time to see when traffic spikes and how long interest lasts.
-- **Understand your audience.** Use the country and device breakdowns to learn where visitors are and what they use to reach you.
-- **Find your best links.** Check the top-performing links list to see which links deserve more promotion.
-- **Compare referrer sources.** See which referrers send the most clicks so you can focus your sharing where it works.
-- **Monitor live.** Keep the analytics open during a launch or post to watch clicks update in real time.
+One row per visit, carrying:
 
-## How it works
+| Field | Notes |
+|---|---|
+| Time | When the visit happened |
+| Country | ISO two-letter code, or empty |
+| Device | `mobile`, `tablet` or `desktop` |
+| Operating system and browser | Read from the user agent |
+| Referrer host | The host only, never the full URL |
+| Variant | Which A/B arm the visitor was sent down, when the link has a split |
+| Visitor hash | A salted hash used to answer "same person again". Never an address |
+| Unique | Whether this visitor was new to this link |
+| Outcome | Redirected, or the reason it was refused |
+| Source | Direct, QR scan, or widget |
+| Campaign tags | The `utm_*` values on the short URL itself |
+| Domain | Which host the visitor arrived on |
 
-1. Sign in with Google and open the dashboard.
-2. For one link, go to the Links page and open that link's analytics at `/dashboard/links/:id/analytics`.
-3. Review its clicks over time and the breakdowns by country, referrer, device, browser, and OS.
-4. For the whole workspace, open `/dashboard/analytics`.
-5. Read the platform-wide breakdowns and the top-performing links list.
-6. Leave the page open during active sharing to see figures update in real time via Firestore listeners.
+## The privacy model, and why it is built this way {#privacy}
 
-## Tips
+**No visitor IP address is stored anywhere.** What is stored is a SHA-256 hash of a **secret salt**, the
+address and the user agent, and the salt lives as a server-side function secret rather than in the database.
 
-- Open per-link analytics to diagnose a specific link, and workspace analytics to see overall trends.
-- Use the referrer breakdown to decide where to keep sharing and where to stop.
-- Check the device, browser, and OS breakdowns to confirm your destination works well for your actual audience.
-- Watch analytics live during a launch, since updates arrive in real time rather than on a delay.
-- Remember that QR scans count as clicks, so the same breakdowns apply to scanned links.
+That last detail is the whole design, so it is worth spelling out. An unsalted hash of an IP address is not
+anonymous: the entire IPv4 space is about four billion values, which any laptop can hash exhaustively in an
+afternoon. Anyone who obtained the table could reverse every "hash" back to an address, and the column would
+be an address book with extra steps. A salt they do not have makes that impossible. If the salt is ever
+absent, Trizlink hashes nothing at all and every click simply counts as non-unique — a worse number, and not
+a privacy problem.
 
-## FAQ
+**The country is read, never guessed.** It comes from the `cf-ipcountry` header the edge attaches. When that
+header is missing the country is left empty rather than estimated, and the two placeholder values the edge
+uses for "unknown" and for Tor are rejected rather than stored as if they were places. A geo-targeting rule
+that cannot tell where somebody is simply does not match, which is the safe direction to fail: inventing a
+country would silently send real visitors to the wrong page.
 
-### What dimensions can I break clicks down by?
+**Only the referrer host is kept**, never the full referring URL. A full referrer carries a query string, and
+query strings carry session tokens. Keeping the host answers "where did this traffic come from" without
+storing somebody else's secrets in our table.
 
-Clicks can be broken down by country and geography, referrer source, device type, browser, and operating system, alongside clicks over time.
+## The four breakdowns {#breakdowns}
 
-### Where do I find analytics for a single link?
+Country, device, referrer and browser, drawn as ranked bar lists with a table beneath each one. Six categories
+in a pie chart cannot be compared by eye and their labels never fit, so there are no pie charts here.
 
-Per-link analytics live at `/dashboard/links/:id/analytics`, reachable by opening a link from the dashboard Links page.
+Each carries its own caveat on the page, because each is unreliable in a different way:
 
-### Where do I find workspace-wide analytics?
+- **Country** is resolved from the network address, which a VPN or a corporate proxy gets wrong.
+- **Device** is read from what the browser says it is, which it may misreport.
+- **Referrer** is missing from most clients, which is what "Direct" really means.
+- **Browser** comes from the same self-description as the device.
 
-Platform-wide analytics are at `/dashboard/analytics`, showing the same breakdowns aggregated across all your links.
+Operating system is recorded on every click but is not currently surfaced as a breakdown.
 
-### How current is the data?
+## Ranges and history {#ranges}
 
-Analytics update in real time through Firestore listeners, so the numbers change as clicks happen rather than on a refresh schedule.
+The range selector offers today, 7, 14, 30 and 91 days. The comparison figure is measured against the window
+that *ends* where the current one begins, so "against the previous 14 days" means exactly that and you can
+derive it from what is on screen.
 
-### What is the top-performing links list?
+How far back you can look is a plan entitlement: **90 days** on Free, **365** on Pro, **730** on Team. The
+91-day range refuses on Free, at the control that refused, with the reason. Pasting a longer range into the
+URL does not work around it — the request is clamped to what your plan allows and you are told it was.
 
-It is a ranked list of your links by activity, so you can quickly see which ones are getting the most clicks.
+## Refused visits are data too {#outcomes}
 
-### Do QR code scans show up in analytics?
+A visit that did not end in a redirect still writes a row, tagged with why:
 
-Yes. A QR code encodes the short link URL, so scans are counted as clicks and appear in the same analytics with the same breakdowns.
+| Outcome | Meaning |
+|---|---|
+| `redirected` | The visitor reached the destination |
+| `password` | They were asked for a password |
+| `expired` | The link's date had passed |
+| `capped` | The link's click ceiling was reached |
+| `inactive` | The link was switched off |
+| `sign_in` | The link required a Trizlink account |
 
-### Is analytics included for free?
+Only redirected rows move a link's click total. The rest are what makes an error rate a real measurement
+rather than an invented zero, and they answer questions a success-only log cannot: whether people are hitting
+your password screen at all, or arriving at a link that stopped last week.
 
-Yes. TrizLink is a free platform and analytics are part of it. You sign in with Google to access your dashboard.
+## The other analytics surfaces {#other-surfaces}
+
+Beyond the overview, the workspace analytics area carries breakdowns, insights and alerts as separate views,
+plus **custom dashboards** at `/dashboard/analytics/custom`, **funnels and attribution** at
+`/dashboard/analytics/funnels`, **reports** at `/dashboard/analytics/reports` and **traffic alerts** at
+`/dashboard/analytics/alerts`.
+
+## What these numbers are not {#limits}
+
+- **Not live.** Figures are fetched when you open the page and again when you reload or change the range.
+  Nothing streams in behind you, and there is no realtime subscription anywhere in the product.
+- **Not audited.** Click counts are best-effort here and everywhere: a bot inflates one, a link preview
+  invents one, a privacy blocker removes one you really got. Strong enough to choose a morning over an
+  evening; not strong enough to choose 09:00 over 10:00.
+- **Not unlimited.** Tracked clicks per month are **50,000** on Free, **500,000** on Pro and **2,000,000** on
+  Team. Past the allowance nothing new is recorded and every link keeps resolving, because a storage limit
+  must not break somebody's live links.
+- **Not per person.** There is no visitor profile, no cross-site identity and no way to ask who somebody was.
+- **Not switched on everywhere by default.** A link can be set not to record clicks at all, and a custom
+  domain has its own switch for the same thing.
+
+## FAQ {#faq}
+
+### Do you store my visitors' IP addresses?
+
+No. A salted hash is stored so repeat visits can be recognised, and the salt is a server secret rather than a
+database column, so the hash cannot be reversed back to an address.
+
+### How is the country worked out?
+
+It is read from a header the edge attaches, not inferred. When the header is absent the country is left empty
+rather than guessed.
+
+### Why do so many clicks say "Direct"?
+
+Because most clients send no referrer at all. That is what Direct means here — not that somebody typed the
+address.
+
+### What is a unique click?
+
+A click whose visitor hash had not been seen for that link before. If the hashing salt is unavailable, every
+click counts as non-unique rather than being wrongly merged.
+
+### Do QR scans appear here?
+
+Yes, as clicks. They are only distinguishable as scans when **Count scans separately** is on for that link.
+See [QR codes](./qr-codes.md#counting-scans).
+
+### Why did my numbers stop rising?
+
+Check the monthly tracked-click allowance for your plan. Past it, clicks stop being recorded while the links
+themselves keep working.
+
+### Can I export the raw click rows?
+
+Not from the analytics pages, which show aggregates. The Links list exports the links matching your current
+filters as a CSV, using the bulk importer's own columns so the file goes back in as it came out, and
+**Settings → Danger zone** exports everything on your account.
 
 ## Related
 
-- [Short links](/features/short-links)
-- [Tracking and UTM](/features/tracking-and-utm)
-- [QR codes](/features/qr-codes)
-- [Custom domains](/features/custom-domains)
+- [Short links](./short-links.md)
+- [Tracking and UTM](./tracking-and-utm.md)
+- [QR codes](./qr-codes.md)
+- [Custom domains](./custom-domains.md)

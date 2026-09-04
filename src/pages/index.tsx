@@ -50,10 +50,10 @@ function HomepageHeader(): ReactNode {
             Quick Start — 5 min
           </Link>
           <Link className="button button--secondary button--lg" to="/intro">
-            What is TrizLink?
+            What is Trizlink?
           </Link>
           <Link className="button button--outline button--lg" href="https://trizlink.com">
-            Open TrizLink
+            Open Trizlink
           </Link>
         </div>
       </div>
@@ -101,7 +101,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={`${siteConfig.title} — Short links, bio pages, QR codes & analytics`}
-      description="Documentation for TrizLink: branded short links, link-in-bio pages, QR codes, click analytics, workspaces, an API, and a browser extension. Sign in with Google."
+      description="Documentation for Trizlink: branded short links, bio pages, QR codes, click analytics, workspaces, an API, and a browser extension. Sign in with Google."
     >
       <HomepageHeader />
       <main>

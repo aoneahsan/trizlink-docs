@@ -1,74 +1,136 @@
 ---
-title: Link in Bio
-description: Build a single TrizLink bio page that holds all your links using a drag-and-drop block editor, pre-built templates, live preview, and a custom slug.
+title: Bio pages
+description: A Trizlink bio page is one public address holding every link you would otherwise have to choose between, built from fifteen block types on three layouts, with drafts, passwords and view counts.
 sidebar_position: 2
-keywords: [link in bio, bio page, landing page, drag and drop editor, bio templates, custom slug, social links]
+keywords: [bio page, link in bio page, landing page builder, page blocks, bio templates, custom slug, published pages]
 ---
 
-TrizLink link-in-bio is a single landing page, called a bio page, that holds all of your links in one shareable place at a custom slug such as `trizlink.com/yourname`. You build it with a drag-and-drop block editor using text blocks, social links, calls to action, and images, and you can start from a pre-built template and customise it. A live preview shows your changes as you work, and publishing makes the page available at your chosen slug. Bio pages are ideal when you want one URL that points people to everything you do, without needing a custom domain.
+A bio page is one public address holding every link you would otherwise have to choose between — the single
+URL you put in a social profile that only allows one. You build it from blocks, publish it to a slug at
+`trizlink.com/<slug>`, and it records its own views the same way a short link records its clicks.
 
-## What you can do
+## On this page
 
-You can assemble a complete bio page by dragging blocks into place, choosing from pre-built templates (minimalist, portfolio, business, influencer), and customising the result. Add text, social links, CTAs, and images, preview the page live, then publish it to a custom slug on `trizlink.com`. No custom domain is required for bio pages.
+- [Layouts, not colour schemes](#layouts)
+- [The fifteen blocks](#blocks)
+- [Drafts, publishing and the address](#publishing)
+- [Who can read it](#privacy)
+- [Limits](#limits)
+- [FAQ](#faq)
 
-## Use cases
+## Layouts, not colour schemes {#layouts}
 
-- **One link for social profiles.** Put a single `trizlink.com/yourname` URL in your social bios that routes followers to all your important destinations.
-- **Creator hub.** Use the influencer or portfolio template to feature your latest content, channels, and collaborations on one page.
-- **Small business landing page.** Start from the business template to list services, contact options, and a primary call to action.
-- **Event or launch page.** Build a focused bio page with CTAs and images that point to tickets, signups, or a product.
-- **Personal homepage.** Use the minimalist template for a clean page that introduces you and links to your work.
+There are three: **Minimal**, **Portfolio** and **Spotlight**. Each is a different arrangement of the page,
+not a different palette — colour comes from whichever theme the visitor is already in, so a page still looks
+like itself in light mode and in dark.
 
-## How it works
+The page's own header — display name, tagline, location — belongs to the page rather than to a block, so it
+survives deleting every block on it.
 
-1. Sign in with Google and open the bio page builder from your dashboard.
-2. Pick a pre-built template (minimalist, portfolio, business, or influencer) as a starting point.
-3. Drag and drop blocks (text, social links, CTAs, images) to arrange your page.
-4. Customise the content and styling, checking the live preview as you go.
-5. Set your custom slug so the page publishes to `trizlink.com/yourname`.
-6. Publish the page and share its slug URL anywhere you want one link to everything.
+## The fifteen blocks {#blocks}
 
-## Tips
+| Group | Blocks |
+|---|---|
+| Essentials | Link, Heading, Text, Image, Divider |
+| Media | Video, Spotify, YouTube |
+| Social | Social links, X feed, Instagram feed |
+| Capture | Contact form, Email collection |
+| Other | Countdown, Custom HTML |
 
-- Choose a template that matches your goal first, then customise, rather than building from a blank page.
-- Keep the most important link or CTA near the top so visitors see it without scrolling.
-- Use the live preview to confirm the page looks right before you publish.
-- Pick a slug that is short and recognisable, since it becomes your public `trizlink.com/yourname` address.
-- Combine a bio page with short links inside it so you can track clicks on individual destinations.
+Each block has its own property panel. A link block, for example, carries a title, a subtitle, a URL, an
+icon, corner radius, a shadow toggle, a hover style, whether it opens in a new tab and whether its clicks are
+counted. A countdown carries a target date, a display format and — because this is the question that actually
+bites — whose timezone it counts in: the visitor's, yours, or UTC.
 
-## FAQ
+Blocks are rows in the database rather than a blob on the page, so one can be reordered, disabled or counted
+without rewriting everything around it.
 
-### What is a bio page?
+## Drafts, publishing and the address {#publishing}
 
-A bio page is a single TrizLink landing page that gathers all your links in one place, published to a custom slug like `trizlink.com/yourname`.
+A page is a draft until you publish it. Drafts are not public and do not count against your plan's page
+allowance, so you can build several and publish the one that works.
 
-### Do I need a custom domain for a bio page?
+The published address is `trizlink.com/<slug>`. That slug shares a single address space with short codes and
+with public usernames, resolved in a fixed order: static pages first, then `/l/<code>`, then `/u/<username>`,
+then your slug. The guard runs in both directions — a slug cannot take a name a live short link already
+holds, and a short code cannot take a slug's. Without it a bio page could permanently shadow somebody's link,
+which is a 200 showing the wrong page, and that is worse than an error.
 
-No. Bio pages use `trizlink.com` slugs and do not require a custom domain. Custom domains apply to branded short links instead.
+Duplicating a page copies it as a draft with all its blocks. If every address derived from the name is
+already taken, the copy is refused and says so rather than inventing a slug you did not choose.
 
-### Which templates are available?
+## Who can read it {#privacy}
 
-You can start from four pre-built templates: minimalist, portfolio, business, and influencer, and customise any of them.
+A stranger reaching your page has no account and is not going to make one to see a list of links, so the page
+is served without the app shell and without a sign-in gate. It also carries **no theme control** — the page
+belongs to whoever made it, and putting Trizlink's appearance panel on somebody else's page would be our
+furniture in their room. It still honours whatever appearance the visitor's own system and stored preferences
+set.
 
-### What kinds of blocks can I add?
+Public reads go through a single server-side function. No anonymous database policy exists on any bio table,
+which is what stops a password gate from being walked around by reading the blocks directly, and what stops a
+view count from being forged by a browser.
 
-The drag-and-drop editor supports text blocks, social links, calls to action, and images, which you arrange in any order.
+You can put a **password** on a page. As with short links, only a hash is stored, no client role can read it,
+and it is compared on the server.
 
-### Can I preview before publishing?
+View counts work like click counts: an append-only row per view, with the totals on the page maintained by a
+database trigger rather than by any caller.
 
-Yes. A live preview shows your bio page as you edit, so you can see changes before you publish it to your slug.
+### One limit worth knowing before you rely on it
 
-### Can I change my slug later?
+A bio page is **not prerendered**. The 24 fixed marketing and legal pages are rendered to static HTML at build
+time, but a bio page is your data and does not exist when the build runs. It sets its title and description in
+the browser instead. That serves a person, and a crawler that runs JavaScript — and not one that does not. If
+being indexed by every crawler matters to you, do not depend on the bio page alone for it.
 
-Your bio page publishes to a custom slug you choose. Manage it from the bio page settings in your dashboard at [trizlink.com](https://trizlink.com).
+## Limits {#limits}
 
-### Is the link-in-bio feature free?
+- Published pages: **30** on Free, **100** on Pro, **500** on Team. Drafts are unlimited.
+- Bio pages use the same workspace roles as links. There is no separate bio permission, deliberately: a bio
+  page is workspace content governed by the same three verbs as everything else.
+- Bio pages are always on `trizlink.com`. A custom domain can be pointed at one in its settings, but
+  [custom domains do not serve traffic yet](./custom-domains.md#not-live).
+- Blocks that embed a third party — Spotify, YouTube, a social feed — depend on that service being reachable
+  from the visitor's network. Trizlink cannot make a blocked embed appear.
 
-Yes. TrizLink is a free platform and the bio page builder is included. You sign in with your Google account to use it.
+## FAQ {#faq}
+
+### What is the difference between a bio page and a short link?
+
+A short link is one address resolving to one destination. A bio page is one address showing a page of many
+destinations. They share an address space, so a name can be one or the other, never both.
+
+### How many templates are there?
+
+Three: Minimal, Portfolio and Spotlight. They are layouts; colour follows the visitor's theme.
+
+### Can I change my slug after publishing?
+
+Yes, from the page's settings. The old address stops working immediately, so change it before you print it
+rather than after.
+
+### Do drafts count against my plan?
+
+No. The allowance counts published pages only.
+
+### Can I password-protect a bio page?
+
+Yes. The visitor is asked before any block is sent, because the whole page is assembled server-side.
+
+### Does a bio page show up in search results?
+
+Possibly, and less reliably than a normal page. It is rendered in the browser rather than at build time, so
+crawlers that do not run JavaScript see very little. Treat search traffic as a bonus, not the plan.
+
+### Can I see which block a visitor pressed?
+
+A link block carries a **Count clicks on this button** switch. Turning it off means that button is missing
+from the page report; nothing else about the button changes.
 
 ## Related
 
-- [Short links](/features/short-links)
-- [Social media](/features/social-media)
-- [Theme customizer](/features/theme-customizer)
-- [Analytics](/features/analytics)
+- [Short links](./short-links.md)
+- [Analytics](./analytics.md)
+- [Widgets](./widgets.md)
+- [Social publishing](./social-media.md)

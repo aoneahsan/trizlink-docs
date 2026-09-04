@@ -1,75 +1,178 @@
 ---
 title: Tracking and UTM
-description: Track TrizLink campaigns with reusable UTM templates, image-beacon tracking pixels for conversions, and webhooks that POST link event notifications.
+description: Attach tracking pixels to Trizlink links, save UTM templates, receive webhooks on ten link and workspace events, and record conversions with a beacon that stores no visitor address.
 sidebar_position: 7
-keywords: [utm templates, utm parameters, tracking pixels, conversion tracking, webhooks, link events, campaign tracking, link notifications]
+keywords: [tracking pixel, utm template, campaign tags, webhook events, conversion beacon, meta pixel, google analytics 4]
 ---
 
-Tracking and UTM in TrizLink is a group of three campaign-tracking tools — UTM templates, tracking pixels, and webhooks — that help you attribute traffic and react to link activity. UTM templates save reusable parameter sets you apply to links, tracking pixels fire image beacons to record events and impressions, and webhooks send POST notifications to your own endpoints when link events occur. All three live under `/dashboard/tracking`, and TrizLink is free to use with Google sign-in.
+Tracking in Trizlink is four separate things that share a purpose: **pixels** fire your ad platforms' own tags
+when somebody follows a link, **UTM templates** save campaign tags you would otherwise retype, **webhooks**
+tell your systems when something happens, and the **conversion beacon** tells Trizlink when a visit turned
+into an outcome on your site.
 
-## What you can do
+They live under **Dashboard → Developers**: pixels and UTM templates share one page at
+`/dashboard/tracking/pixels`, webhooks are at `/dashboard/tracking/webhooks`.
 
-You can build and store reusable UTM parameter sets, then apply them to links so every campaign URL carries consistent `campaign`, `source`, `medium`, and `content` tagging. You can create image-beacon tracking pixels that fire to record events or impressions for conversion tracking. And you can register webhook endpoints that receive POST notifications carrying link metadata whenever link events happen, such as a click, a creation, or an expiration.
+## On this page
 
-## Use cases
+- [Tracking pixels](#pixels)
+- [What a pixel does to your redirect](#interstitial)
+- [UTM templates](#utm)
+- [Which campaign tag wins](#precedence)
+- [Webhooks](#webhooks)
+- [The conversion beacon](#beacon)
+- [Limits](#limits)
+- [FAQ](#faq)
 
-- **Standardize campaign tagging.** Save a UTM template for a recurring newsletter so every link uses the same source and medium, keeping your analytics reports clean.
-- **Measure conversions.** Place a tracking pixel on a thank-you or confirmation page to record when a visitor completes an action after following your link.
-- **Notify another system.** Point a webhook at your own backend so it learns about link clicks, creations, or expirations and can update records automatically.
-- **Run consistent A/B content tags.** Use the `content` UTM field from a saved template to label variants without retyping every parameter.
-- **Trigger downstream automation.** Use webhook POSTs as the signal that kicks off a workflow in a tool you already run, using the link metadata in the payload.
+## Tracking pixels {#pixels}
 
-## How it works
+A pixel is your advertising platform's own tag, rendered by Trizlink when somebody follows a link that
+carries it. Nine providers are supported, each validating the shape of its identifier so a mistyped one is
+caught when you save it rather than by silence three weeks later.
 
-1. Open the tracking area under `/dashboard/tracking` and choose UTM templates, pixels, or webhooks depending on what you need.
-2. For UTM templates, go to `/dashboard/tracking/utm-templates` and save a reusable set of `campaign`, `source`, `medium`, and `content` values, then apply the template to links.
-3. For tracking pixels, go to `/dashboard/tracking/pixels` and create an image-beacon pixel; place it where you want events or impressions recorded.
-4. The pixel fires when the page or beacon loads, recording the event for conversion tracking.
-5. For webhooks, go to `/dashboard/tracking/webhooks` and register the endpoint URL that should receive notifications.
-6. When a configured link event occurs — such as a click, creation, or expiration — TrizLink sends a POST request with link metadata to your registered endpoint.
+| Provider | Identifier looks like |
+|---|---|
+| Meta | 15 or 16 digits |
+| Google Analytics 4 | `G-` and ten characters |
+| Google Ads | `AW-` and nine to eleven digits |
+| TikTok | Twenty characters |
+| X | `o` and five characters |
+| LinkedIn Insight | Six to eight digits |
+| Pinterest | Thirteen digits |
+| Snapchat | A UUID |
+| Custom | Whatever your provider issues, with your own tag markup |
 
-## Tips
+Each pixel declares which of seven events it cares about: `page_view`, `link_click`, `bio_view`,
+`conversion`, `signup`, `purchase` or `custom`. At least one is required, and most accounts start with page
+views alone.
 
-- Keep UTM values lowercase and consistent (for example `source=newsletter`, not `Newsletter`) so reports don't split the same channel into separate rows.
-- Name UTM templates after the channel or campaign they serve so the right one is obvious when you apply it.
-- Test a tracking pixel on a low-traffic page first to confirm it fires before relying on it for conversion data.
-- Make sure your webhook endpoint returns quickly and can accept POST requests, so notifications aren't held up.
-- Log incoming webhook payloads on your side while you set things up, so you can confirm the link metadata you receive matches what you expect.
-- Reuse one UTM template across many links instead of hand-typing parameters, which prevents small spelling differences from fragmenting your data.
+A pixel can be attached to individual links or set to attach to all of them. Pausing one keeps its settings
+and stops it rendering. Declaring `bio_view` is what attaches a pixel to bio pages — those have no pixel
+panel of their own, so the declaration *is* the attachment, and the pixel then renders on every bio page in
+the workspace.
 
-## FAQ
+Two pixels with the same identifier in one workspace are refused, because they would fire the same tag twice
+and double every conversion.
 
-### What is a UTM template?
+## What a pixel does to your redirect {#interstitial}
 
-A UTM template is a saved, reusable set of UTM parameters — `campaign`, `source`, `medium`, and `content` — that you apply to links from `/dashboard/tracking/utm-templates`. It keeps your campaign tagging consistent so traffic is attributed the same way every time.
+This is the consequence nobody expects, so it gets its own section.
 
-### How does a tracking pixel record a conversion?
+**A link carrying an active pixel stops being a redirect.** Without one, following a short link returns a
+`301` and the browser moves on. With one, it returns a `200` and a short interstitial page, because a tag has
+to *render* somewhere and a redirect renders nothing.
 
-A tracking pixel is an image beacon you create at `/dashboard/tracking/pixels` and place on a page. When that page loads, the pixel fires, which records the event or impression — for example, marking that someone reached a confirmation page after clicking your link.
+That is a real trade. The pixel works; the visit costs an extra page load and stops being a permanent
+redirect a browser can cache. Attach pixels to the links you are actually measuring, not to everything.
 
-### What triggers a webhook?
+The three redirect behaviours side by side are on the [short links page](./short-links.md#redirect-behaviour).
 
-Webhooks fire on link events such as a click, a link creation, or a link expiration. When a configured event happens, TrizLink sends a POST request containing link metadata to the endpoint you registered at `/dashboard/tracking/webhooks`.
+## UTM templates {#utm}
 
-### What is in a webhook payload?
+A UTM template saves a set of campaign tags — a name, plus `source` and `medium` (both required) and
+optionally `campaign`, `term` and `content` — so a recurring newsletter or ad set is tagged the same way every
+time. Small spelling differences are what fragment a report into `newsletter` and `Newsletter`, and a saved
+template is the cheapest fix for that.
 
-A webhook notification is delivered as a POST request that includes link metadata describing the event. Log the payload on your endpoint during setup so you can map the fields you receive to your own system.
+**A template is a shortcut for typing, not a relationship.** A link does not store which template tagged it,
+and a template does not store a usage count. "How many links carry these three values" is counted when you
+read the page, by matching source, medium and campaign — which means a link you tagged by hand with the same
+convention counts too. Deleting a template changes nothing about the links you already made.
 
-### Do I need all three tools?
+## Which campaign tag wins {#precedence}
 
-No. UTM templates, tracking pixels, and webhooks are independent. Use only the ones that fit your workflow — for example, UTM templates for clean attribution without setting up pixels or webhooks at all.
+Three layers, and the order is deliberate:
 
-### Do UTM parameters replace my analytics?
+1. **A tag already written into the destination URL wins.** If you put `?utm_source=paid` into the destination
+   yourself, you meant it. Silently replacing it would move the visit in your own analytics.
+2. **The link's default tags fill in whatever is absent.** That is what a default is.
+3. **Tags on the short URL itself are what get recorded on the click.** A paid ad appends its own tags when it
+   builds the click-through, and those are the marker attribution reads.
 
-No. UTM parameters tag your destination URLs so your analytics tools can attribute the traffic. They complement TrizLink's own click analytics rather than replacing them.
+A destination Trizlink cannot parse is left untouched rather than dropped — the visitor still gets where they
+were going, which beats failing over a query string.
 
-### Does any of this cost extra?
+## Webhooks {#webhooks}
 
-No. TrizLink is free to use; UTM templates, tracking pixels, and webhooks are all available under `/dashboard/tracking` once you sign in with Google.
+Register an endpoint and Trizlink POSTs to it when something happens. Ten events exist:
+
+| Group | Events |
+|---|---|
+| Links | `link.created`, `link.updated`, `link.deleted`, `link.clicked` |
+| Bio pages | `bio.created`, `bio.updated`, `bio.viewed` |
+| Workspace | `domain.verified`, `workspace.created`, `member.invited` |
+
+Rules worth knowing before you build against it:
+
+- The endpoint **must be `https://`**. Plain HTTP is refused at save time.
+- Each endpoint subscribes to **at least one** event.
+- Retries are configurable as **0, 1, 3 or 5** attempts.
+- Every delivery is recorded as `pending`, `delivered` or `failed`, so a silent endpoint is visible rather
+  than assumed.
+- **There is no link-expiry event.** A link stopping because its date passed or its ceiling was reached
+  produces a recorded click outcome, not a webhook. If you need to know, poll the link or watch for
+  `link.updated` when you change it.
+
+Log the payloads on your side while you wire it up so you can map the fields you receive to your own system.
+
+## The conversion beacon {#beacon}
+
+A pixel tells your ad platform something happened. Nothing tells *Trizlink*. The beacon closes that: a 1×1
+GIF you place on your own confirmation or thank-you page, matched to the last short link that visitor
+followed using the same salted fingerprint the click row already stores.
+
+No cookie, no script, and — the part that matters — **the same image is returned whatever happens**. A beacon
+that answered differently for a matched and an unmatched visitor would be an oracle: anyone could probe it to
+find out who had clicked what. It answers identically, always, and records the match server-side or not at
+all.
+
+## Limits {#limits}
+
+- Pixels, templates, webhooks and the beacon are workspace-scoped, and editing them needs a role that can
+  manage the workspace's content.
+- Trizlink does not host or proxy your ad platform's script. A custom pixel's markup is yours, and a blocked
+  tag stays blocked.
+- A tracking pixel changes the redirect's status code. See [above](#interstitial).
+- Webhook payloads are not replayable from the dashboard; the delivery record tells you what happened, and
+  retries are what the endpoint gets.
+
+## FAQ {#faq}
+
+### Where are UTM templates? I cannot find a page for them.
+
+They share a page with pixels, at `/dashboard/tracking/pixels`, listed in the sidebar as **Pixels & UTM**.
+There is no separate UTM route.
+
+### Does adding a pixel slow my links down?
+
+It changes what they do. A link with an active pixel returns an interstitial page instead of a redirect, so
+the visitor sees one extra step. Without a pixel the redirect is unchanged.
+
+### If I delete a UTM template, do my links lose their tags?
+
+No. Tags are copied onto the link when you apply them; the template is only a way of typing them once.
+
+### Why is my template's usage count different from what I expected?
+
+Because it is counted by matching source, medium and campaign at read time rather than by tracking which
+links used the template. Links tagged by hand with the same values are included.
+
+### Do webhooks fire when a link expires?
+
+No. Expiry is recorded as a click outcome, not an event. The ten events are listed above.
+
+### Can a webhook endpoint be plain HTTP?
+
+No. `https://` only.
+
+### Does the conversion beacon set a cookie?
+
+No. It matches on the same salted fingerprint the click row already carries, and stores nothing new about the
+visitor. See [the analytics privacy model](./analytics.md#privacy).
 
 ## Related
 
-- [Analytics](/features/analytics)
-- [Short links](/features/short-links)
-- [Link organization](/features/link-organization)
-- [API access](/features/api-access)
+- [Analytics](./analytics.md)
+- [Short links](./short-links.md)
+- [API access](./api-access.md)
+- [Widgets](./widgets.md)

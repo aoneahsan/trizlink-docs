@@ -5,39 +5,153 @@
   "liveUrl": "https://docs.trizlink.com",
   "product": "https://trizlink.com",
   "createdAt": "2026-06-22",
-  "lastUpdated": "2026-06-22",
+  "lastUpdated": "2026-09-04",
   "author": "Ahsan Mahmood",
   "seoFloorPerPage": "definition-first intro, use cases, how-it-works steps, tips, 5-7 FAQ, distinct title + meta description, ~700-1000 unique words",
   "totalPages": 23,
-  "completePages": 23,
-  "remainingPages": 0,
+  "completePages": 9,
+  "remainingPages": 14,
   "pages": [
-    { "path": "intro", "title": "Introduction to TrizLink", "status": "complete" },
-    { "path": "getting-started/create-account", "title": "Create your account", "status": "complete" },
-    { "path": "getting-started/quick-start", "title": "Quick Start", "status": "complete" },
-    { "path": "features/short-links", "title": "Short links", "status": "complete" },
-    { "path": "features/link-in-bio", "title": "Link-in-bio pages", "status": "complete" },
-    { "path": "features/qr-codes", "title": "QR codes", "status": "complete" },
-    { "path": "features/analytics", "title": "Analytics", "status": "complete" },
-    { "path": "features/custom-domains", "title": "Custom domains", "status": "complete" },
-    { "path": "features/link-organization", "title": "Link organization", "status": "complete" },
-    { "path": "features/tracking-and-utm", "title": "Tracking & UTM", "status": "complete" },
-    { "path": "features/workspaces-and-teams", "title": "Workspaces & teams", "status": "complete" },
-    { "path": "features/social-media", "title": "Social media", "status": "complete" },
-    { "path": "features/widgets", "title": "Widgets", "status": "complete" },
-    { "path": "features/ai-features-byok", "title": "AI features (BYOK)", "status": "complete" },
-    { "path": "features/api-access", "title": "API access", "status": "complete" },
-    { "path": "features/utility-tools", "title": "Utility tools", "status": "complete" },
-    { "path": "features/browser-extension", "title": "Browser extension", "status": "complete" },
-    { "path": "features/theme-customizer", "title": "Theme customizer", "status": "complete" },
-    { "path": "features/sharing", "title": "Sharing", "status": "complete" },
-    { "path": "guides/faq", "title": "FAQ", "status": "complete" },
-    { "path": "about/privacy-and-data", "title": "Privacy & data", "status": "complete" },
-    { "path": "about/changelog", "title": "Changelog", "status": "complete" },
-    { "path": "about/about-the-author", "title": "About the author", "status": "complete" }
+    {
+      "path": "intro",
+      "title": "Introduction to TrizLink",
+      "status": "complete",
+      "lastDerived": "2026-09-04"
+    },
+    {
+      "path": "getting-started/create-account",
+      "title": "Create your account",
+      "status": "complete",
+      "lastDerived": "2026-09-04"
+    },
+    {
+      "path": "getting-started/quick-start",
+      "title": "Quick Start",
+      "status": "complete",
+      "lastDerived": "2026-09-04"
+    },
+    {
+      "path": "features/short-links",
+      "title": "Short links",
+      "status": "complete",
+      "lastDerived": "2026-09-04"
+    },
+    {
+      "path": "features/link-in-bio",
+      "title": "Link-in-bio pages",
+      "status": "complete",
+      "lastDerived": "2026-09-04"
+    },
+    {
+      "path": "features/qr-codes",
+      "title": "QR codes",
+      "status": "complete",
+      "lastDerived": "2026-09-04"
+    },
+    {
+      "path": "features/analytics",
+      "title": "Analytics",
+      "status": "complete",
+      "lastDerived": "2026-09-04"
+    },
+    {
+      "path": "features/custom-domains",
+      "title": "Custom domains",
+      "status": "complete",
+      "lastDerived": "2026-09-04"
+    },
+    {
+      "path": "features/link-organization",
+      "title": "Link organization",
+      "status": "pending"
+    },
+    {
+      "path": "features/tracking-and-utm",
+      "title": "Tracking & UTM",
+      "status": "complete",
+      "lastDerived": "2026-09-04"
+    },
+    {
+      "path": "features/workspaces-and-teams",
+      "title": "Workspaces & teams",
+      "status": "pending"
+    },
+    {
+      "path": "features/social-media",
+      "title": "Social media",
+      "status": "pending"
+    },
+    {
+      "path": "features/widgets",
+      "title": "Widgets",
+      "status": "pending"
+    },
+    {
+      "path": "features/ai-features-byok",
+      "title": "AI features (BYOK)",
+      "status": "pending"
+    },
+    {
+      "path": "features/api-access",
+      "title": "API access",
+      "status": "pending"
+    },
+    {
+      "path": "features/utility-tools",
+      "title": "Utility tools",
+      "status": "pending"
+    },
+    {
+      "path": "features/browser-extension",
+      "title": "Browser extension",
+      "status": "pending"
+    },
+    {
+      "path": "features/theme-customizer",
+      "title": "Theme customizer",
+      "status": "pending"
+    },
+    {
+      "path": "features/sharing",
+      "title": "Sharing",
+      "status": "pending"
+    },
+    {
+      "path": "guides/faq",
+      "title": "FAQ",
+      "status": "pending"
+    },
+    {
+      "path": "about/privacy-and-data",
+      "title": "Privacy & data",
+      "status": "pending"
+    },
+    {
+      "path": "about/changelog",
+      "title": "Changelog",
+      "status": "pending"
+    },
+    {
+      "path": "about/about-the-author",
+      "title": "About the author",
+      "status": "pending"
+    }
   ],
   "runHistory": [
-    { "date": "2026-06-22", "summary": "Created trizlink-docs from the native-update-docs structure. Adapted brand (TrizLink blue), config, SEO (JSON-LD WebSite+Organization+SoftwareApplication, robots AI-bot allowlist, llms.txt). Wrote all 23 baseline pages covering every real TrizLink feature, hitting the SEO uniqueness floor. Dual hosting (Firebase + GitHub Pages) configured." }
+    {
+      "date": "2026-06-22",
+      "summary": "Created trizlink-docs from the native-update-docs structure. Adapted brand (TrizLink blue), config, SEO (JSON-LD WebSite+Organization+SoftwareApplication, robots AI-bot allowlist, llms.txt). Wrote all 23 baseline pages covering every real TrizLink feature, hitting the SEO uniqueness floor. Dual hosting (Firebase + GitHub Pages) configured."
+    },
+    {
+      "date": "2026-09-04",
+      "summary": "All 23 rows reset to pending. The site describes the OLD product - intro says Firebase/Firestore (it is Supabase), features/browser-extension describes an extension that does not exist. TASK-001 re-derives every page against the rebuilt app in trizlink/. Every row read \"complete\" and every row was wrong, which is why the reset is the first commit rather than a per-page correction."
+    },
+    {
+      "date": "2026-09-04",
+      "summary": "Batch 1 of 3 re-derived against the rebuilt app: 9 pages, 10,756 words. 24 false claims removed with file:line evidence - Firebase/Firestore (it is Supabase/Postgres), six \"real time\" claims (there is no realtime anywhere in the app), the QR download button, /dashboard/tracking/utm-templates, a fourth bio template, an OS breakdown, an expiry webhook event, ten \"free platform\" claims, and TrizLink -> Trizlink (89:0 in the app catalogue, and the Story Bible bans the camel-case form). Also fixed in the main session: the site-wide hardcoded canonical (every page canonicalised to /) and docs/DONE-TASKS.md shipping as a public page - both found by grepping build/ rather than reading the config."
+    }
   ],
-  "nextSteps": "Keep pages honest against the live trizlink app. On material product change, update the matching feature page + bump about/changelog + re-run yarn build. Multi-page enrichment workflow: ~/.claude/rules/seo-aeo-ranking.md §13."
+  "nextSteps": [
+    "Re-derive each page against ../trizlink/ source; flip its row to complete only when written and built green."
+  ]
 }

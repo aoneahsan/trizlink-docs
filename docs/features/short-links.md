@@ -1,74 +1,172 @@
 ---
-title: Short Links
-description: Create short links from long URLs in TrizLink with optional custom aliases, passwords, expiry dates, QR codes, and live click stats you manage from one dashboard.
+title: Short links
+description: A Trizlink short link is a short address that resolves to a destination you can change, with optional passwords, expiry, click ceilings, geo and device targeting and A/B splits.
 sidebar_position: 1
-keywords: [short links, url shortener, custom alias, password protected links, link expiry, qr code, click stats]
+keywords: [short links, url shortener, custom short code, password protected link, link expiry, link targeting, ab split]
 ---
 
-TrizLink short links are compact, shareable URLs that point to your original long links and redirect visitors through the path `trizlink.com/l/<shortCode>`. Each short link can carry an optional custom alias, an optional password, and an optional expiry date, and every one is created with its own QR code and live click statistics. You build and manage them entirely from the TrizLink dashboard, signing in with your Google account. Short links keep the destination editable and measurable while giving you a clean, brandable URL to share anywhere.
+A Trizlink short link is a short address at `https://trizlink.com/<code>` that resolves to a destination you
+control and can change later without reprinting anything. Every link records its own clicks, can be gated
+behind a password or a sign-in, can stop working on a date or after a number of clicks, and can send different
+visitors to different places based on country, device or an A/B split.
 
-## What you can do
+## On this page
 
-You can turn any long URL into a short link, optionally set a memorable custom alias instead of a random code, lock a link behind a password, and schedule an expiry date. Every short link comes with a downloadable QR code and live click stats, and you organise all of them on the dashboard Links page with search and filtering.
+- [The address](#the-address)
+- [What the form offers](#the-form)
+- [Two gates, not one](#gates)
+- [Expiry and ceilings](#expiry)
+- [Targeting, then the split](#targeting)
+- [Campaign tags](#utm)
+- [What a visitor actually gets back](#redirect-behaviour)
+- [Limits](#limits)
+- [FAQ](#faq)
 
-## Use cases
+## The address {#the-address}
 
-- **Share a clean campaign URL.** Replace a long, parameter-heavy marketing URL with a short, readable one you can drop into emails, posts, or print.
-- **Gate access with a password.** Share a resource that should only open for people you give the password to, such as an early-access page or a draft.
-- **Run a time-limited promotion.** Set an expiry date so a flash-sale or event link stops redirecting after the offer ends and shows a clear "link expired" page.
-- **Hand out a memorable link.** Use a custom alias so the short link reads as something people can recognise or type, rather than a random string.
-- **Track engagement.** Watch live click stats to see whether a shared link is actually getting traffic.
+The string Trizlink hands you, and the string it encodes into a QR code and writes into exports, is
+`https://trizlink.com/<code>`. The longer form `https://trizlink.com/l/<code>` also resolves and is a
+permanent part of the contract, but it is the explicit route rather than the address you share.
 
-## How it works
+Codes match `^[A-Za-z0-9][A-Za-z0-9_-]{2,63}$`. A generated one is six characters from a 32-symbol lowercase
+alphabet with `0`, `O`, `1`, `l` and `I` removed, because a code that needs a particular font to read is a
+code that gets mistyped off a poster. Uniqueness is enforced on the lowercased form and is global across the
+product, so `Spring26` and `spring26` cannot both exist — nobody could tell those apart out loud anyway.
 
-1. Sign in with Google and open the dashboard, then go to the Links page.
-2. Click to create a new link, which opens the full-page form at `/dashboard/links/new`.
-3. Paste your long URL, then optionally add a custom alias, a password, and an expiry date.
-4. Save the link to generate its short URL (`trizlink.com/l/<shortCode>`) and its QR code.
-5. Copy the short link or download the QR code, and share it wherever you need.
-6. Return to the Links page anytime to search, filter, edit, or review click stats for each link.
+## What the form offers {#the-form}
 
-## Tips
+`/dashboard/links/new` is one page in ten sections. Only the first is required.
 
-- Choose a short, descriptive custom alias for links you expect people to read or remember.
-- Use a password only when you genuinely need to restrict access, since visitors must enter it on a password entry page before they are redirected.
-- Set an expiry date for anything seasonal so the link automatically stops working when you intend.
-- Remember that TrizLink does not delete expired links automatically; an expired link simply shows a "link expired" page until you remove or edit it.
-- Check live click stats after sharing to confirm the link is reaching people.
+| Section | Holds |
+|---|---|
+| Destination | The URL to send people to |
+| Short code | Your own code, or blank for a generated one, plus the domain |
+| Security | Password, and "only signed-in people may follow this" |
+| Expiry | A date, a click ceiling, and the message shown when either is reached |
+| Targeting | Per-country rules and per-device destinations |
+| A/B split | Two or more weighted variants |
+| UTM | Default campaign tags applied to the destination |
+| QR | Whether scans are counted separately |
+| Pixels | Which of the workspace's tracking pixels fire on this link |
+| Social card | Title, description and image for a link preview, with an X override |
 
-## FAQ
+Links also carry a title, a description, private notes, a folder and a label, and can be switched inactive
+without being deleted.
 
-### What does a TrizLink short link look like?
+## Two gates, not one {#gates}
 
-A short link uses the public redirect path `trizlink.com/l/<shortCode>`, where the code is either auto-generated or the custom alias you chose.
+A **password** and **require sign-in** look similar and defend against different things, which is why they are
+separate switches.
 
-### Can I set my own custom alias?
+- A **password** protects against the link being forwarded. The visitor lands on an entry page and gives the
+  password before Trizlink resolves anything. The password is stored only as a hash, no client role can read
+  that column, and it is checked on the server — a comparison performed in the page is a comparison the
+  visitor can read.
+- **Require sign-in** protects against anyone who does not have a Trizlink account at all. That visitor is
+  sent to sign in and comes straight back, which is why it needs no screen of its own.
 
-Yes. When creating a link you can enter an optional custom alias instead of accepting the random short code, as long as it is available.
+## Expiry and ceilings {#expiry}
 
-### How does password protection work?
+A link can stop for two reasons: a date passes, or a click ceiling is reached. Both show your expiry message
+if you wrote one.
 
-If you add a password, visitors first land on a password entry page and must enter the correct password before TrizLink redirects them to the destination.
+Neither deletes the link. An expired link keeps showing its expiry page until you extend it, remove the
+ceiling, or delete it yourself. Expiry is also checked **before** the password, because asking somebody for a
+password to reach a link that has stopped working is a worse answer than telling them it stopped.
+
+The ceiling is best-effort in the same way every click count is, so treat it as approximate rather than exact.
+
+## Targeting, then the split {#targeting}
+
+Rules are checked in order and the first match wins: country rules, then device destinations, then the A/B
+split. Anything matching nothing falls through to the destination in the first section.
+
+Targeting runs before the split on purpose. A geo rule is a statement about *where this visitor goes*; an A/B
+arm is a statement about *which of two equivalent destinations*. Running the split first would send half the
+traffic away from the country it was aimed at.
+
+There is deliberately **no catch-all geo default**. A default arm would swallow the split, and a link with
+both configured would run its experiment on nobody while looking perfectly configured.
+
+A/B assignment is **sticky per visitor**: the same person following the same link twice lands on the same
+arm. A random draw would re-roll on every click and the experiment would measure the coin toss rather than
+the pages. Weights need not add up to 100.
+
+## Campaign tags {#utm}
+
+A link can carry default `utm_source`, `utm_medium`, `utm_campaign`, `utm_term` and `utm_content` values,
+merged into the destination at redirect time. Precedence has three layers, and it matters:
+
+1. **A tag already written into the destination wins.** Somebody who put `?utm_source=paid` in the destination
+   meant it, and replacing it would change where their own analytics attribute the visit.
+2. **The link's own tags fill in whatever is absent.** That is what "default" means here.
+3. **Tags on the short URL itself are what get recorded on the click** — a paid ad appends its own, and that
+   is the marker attribution reads.
+
+More: [Tracking and UTM](./tracking-and-utm.md).
+
+## What a visitor actually gets back {#redirect-behaviour}
+
+Three different answers, and the difference is deliberate.
+
+| Situation | Status | Why |
+|---|---|---|
+| An ordinary link | **301** | A short link's destination is its identity, so the redirect is permanent and caches happily |
+| Password, expiry, or sign-in required | **302** | The answer changes the moment somebody types the password or the owner extends the expiry, so it must not be cached |
+| The link carries an active tracking pixel | **200** with an interstitial | The pixel's tags have to render on a page, which means a real response rather than a redirect |
+
+The 302 is the one worth understanding. If a password screen were served as a permanent redirect, a visitor
+whose browser cached it would keep being sent to the password page after you removed the password. Refusals
+are temporary by nature, so they are answered temporarily.
+
+Every one of those outcomes is recorded, including the refusals. See [Analytics](./analytics.md).
+
+## Limits {#limits}
+
+- Short links per workspace: **1,000** on Free, **50,000** on Pro, fair use on Team.
+- Tracked clicks per month: **50,000**, **500,000**, **2,000,000**. Over the allowance nothing new is
+  recorded and every link keeps resolving — a storage limit must not break somebody's live links.
+- Click totals are maintained by the database from the click rows themselves. No caller writes them, which is
+  why the number on the list and the number on the analytics page cannot disagree.
+- There is no bulk edit of destinations; changes are per link, or through
+  the [API](./api-access.md).
+
+## FAQ {#faq}
+
+### What does a short link look like?
+
+`https://trizlink.com/<code>`, where the code is generated or chosen by you. The `/l/<code>` form resolves as
+well but is not the address you are handed.
+
+### Can I change the destination after sharing the link?
+
+Yes, and the short address does not change. That is the main reason to use one.
+
+### Can I reuse a code somebody deleted?
+
+Yes, if nothing else has taken it since. Codes are unique among live links, not reserved forever.
 
 ### What happens when a link expires?
 
-Visitors to an expired link see a "link expired" page instead of being redirected. TrizLink does not delete expired links automatically, so you stay in control of when to remove them.
+Visitors see an expiry page carrying your message, if you wrote one. Nothing is deleted, and the visit is
+still recorded as a refused one.
 
-### Does every short link get a QR code?
+### Does a password stop the click being counted?
 
-Yes. Every short link is created with its own QR code that you can view, customise, and download for screens or print.
+No. A password prompt is recorded as an outcome of its own, so you can see that people are arriving and being
+asked.
 
-### Where do I manage my links?
+### Can two links share a code?
 
-All your links live on the dashboard Links page, where you can search and filter, then open any link to edit it or view its analytics.
+No. Codes are unique case-insensitively across the whole product, including across custom domains.
 
-### Is creating short links free?
+### Can I turn tracking off for one link?
 
-Yes. TrizLink is a free link-management platform, and short link creation is part of it. Sign-in is with your Google account.
+Yes. A link can be set not to record clicks, and the redirect still works normally.
 
 ## Related
 
-- [QR codes](/features/qr-codes)
-- [Analytics](/features/analytics)
-- [Custom domains](/features/custom-domains)
-- [Link organization](/features/link-organization)
+- [QR codes](./qr-codes.md)
+- [Analytics](./analytics.md)
+- [Custom domains](./custom-domains.md)
+- [Link organisation](./link-organization.md)
