@@ -9,8 +9,8 @@
   "author": "Ahsan Mahmood",
   "seoFloorPerPage": "definition-first intro, use cases, how-it-works steps, tips, 5-7 FAQ, distinct title + meta description, ~700-1000 unique words",
   "totalPages": 23,
-  "completePages": 19,
-  "remainingPages": 4,
+  "completePages": 23,
+  "remainingPages": 0,
   "pages": [
     {
       "path": "intro",
@@ -129,22 +129,26 @@
     {
       "path": "guides/faq",
       "title": "FAQ",
-      "status": "pending"
+      "status": "complete",
+      "lastDerived": "2026-09-04"
     },
     {
       "path": "about/privacy-and-data",
       "title": "Privacy & data",
-      "status": "pending"
+      "status": "complete",
+      "lastDerived": "2026-09-04"
     },
     {
       "path": "about/changelog",
       "title": "Changelog",
-      "status": "pending"
+      "status": "complete",
+      "lastDerived": "2026-09-04"
     },
     {
       "path": "about/about-the-author",
       "title": "About the author",
-      "status": "pending"
+      "status": "complete",
+      "lastDerived": "2026-09-04"
     }
   ],
   "runHistory": [
@@ -163,9 +167,13 @@
     {
       "date": "2026-09-04",
       "summary": "Batch 2 of 3: 10 feature pages, 10,983 words. Removed a Threads platform that does not exist, a share modal and OS share sheet that do not exist, image/hashtag/forecast AI features that do not exist, an \"editor\" role that does not exist, \"powered by Radix UI\" (it is React Aria), \"sync to your account in Firestore\" (no sync, no Firestore), free-text multi-tag labels (one label per link, four tones), and \"40+ tools in your browser\" (a directory of 48 links to ZTools, whose suite was retired July 2026). api-access gained the 18-endpoint table, 8 scopes, 3 destructive permissions and the real rate limits. browser-extension rewritten as the honest page at the same URL. Three briefing errors corrected from source: there are no custom roles, LinkedIn IS supplied (the brief said the opposite), and the theme control has 10 axes not 11 - the 11th (side) is pre-painted but deliberately not in the panel."
+    },
+    {
+      "date": "2026-09-04",
+      "summary": "Batch 3 of 3: faq, privacy-and-data, changelog, about-the-author (4,020 words). privacy-and-data claimed two permissions the app does not hold - camera for QR scanning and optional approximate location; it declares INTERNET and AD_ID only. The 2.13.0 entry leads the changelog with the data reset as its FIRST subsection, not a footnote. Main session also rewrote static/llms.txt, which was hand-written and still carried every claim the pages had just lost, and replaced the JSON-LD offers - a bare price 0 told every rich-result consumer the product is free - with the real three-tier AggregateOffer. 23/23 complete."
     }
   ],
   "nextSteps": [
-    "Re-derive each page against ../trizlink/ source; flip its row to complete only when written and built green."
+    "All 23 pages re-derived against the rebuilt app on 2026-09-04. Next: keep them true — a page is re-checked when the feature it describes changes, not on a calendar."
   ]
 }

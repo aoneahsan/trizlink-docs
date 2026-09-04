@@ -84,12 +84,27 @@ const config: Config = {
         name: 'Trizlink',
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web, Android',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        // 🔴 THE REAL PLAN SET, NOT `price: '0'`. A bare zero-price Offer told every rich-result
+        // consumer this product is free; it has a Free tier and two paid ones, and
+        // `00-house-rules.md` forbids stating anywhere that there is no paid tier. Figures come
+        // from ../trizlink/src/content/plans.ts and must move with it.
+        offers: {
+          '@type': 'AggregateOffer',
+          priceCurrency: 'USD',
+          lowPrice: '0',
+          highPrice: '18',
+          offerCount: '3',
+          offers: [
+            { '@type': 'Offer', name: 'Free', price: '0', priceCurrency: 'USD' },
+            { '@type': 'Offer', name: 'Pro', price: '6', priceCurrency: 'USD' },
+            { '@type': 'Offer', name: 'Team', price: '18', priceCurrency: 'USD' },
+          ],
+        },
         url: APP_URL,
         sameAs: PLAY_URL,
         author: { '@type': 'Person', name: 'Ahsan Mahmood', url: 'https://aoneahsan.com' },
         description:
-          'Trizlink is a link-management platform: branded short links, bio pages, QR codes, click analytics, workspaces, and a companion browser extension. Sign in with Google.',
+          'Trizlink is a link-management platform: branded short links, bio pages, QR codes, click analytics and shared workspaces. Sign in with Google. There is no browser extension.',
       }),
     },
     {

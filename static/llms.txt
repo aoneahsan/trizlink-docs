@@ -1,44 +1,65 @@
-# TrizLink — Documentation Index
+# Trizlink — Documentation Index
 
-> TrizLink is a link-management platform for creating branded short links, link-in-bio pages, QR codes, and reading click analytics. It also includes workspaces and teams, custom domains, UTM and tracking tools, an API, a browser extension, bring-your-own-key AI helpers, and a set of free client-side utility tools. Sign-in is Google-only. Product: https://trizlink.com. Author: Ahsan Mahmood (https://aoneahsan.com).
+> Trizlink is a link-management platform: branded short links, bio pages, QR codes, and the click analytics
+> that tie them together, inside workspaces several people can share. Sign-in is Google-only. Plans are Free,
+> Pro ($6/month) and Team ($18/month), billed annually at two months free. Product: https://trizlink.com.
+> Author: Ahsan Mahmood (https://aoneahsan.com).
 
 ## About
 
-TrizLink turns long URLs into short, shareable links and gives each one a QR code plus live click stats broken down by country, referrer, device, browser, and OS. Beyond shortening, it offers drag-and-drop link-in-bio pages, custom domains, workspaces with role-based teams, UTM templates, tracking pixels, webhooks, embeddable widgets, social-post scheduling, and an in-app API. AI features are opt-in and run on your own OpenAI or Anthropic API key (bring-your-own-key) — TrizLink never charges for AI usage.
+Trizlink turns long URLs into short links and gives each one a QR code plus click statistics broken down by
+country, referrer, device and browser. Around that it offers bio pages, custom domains, workspaces with four
+fixed roles, UTM templates, tracking pixels, webhooks, embeddable widgets, a social composer, and a public
+HTTP API of 18 endpoints at https://api.trizlink.com/v1.
 
-This `llms.txt` follows the [llmstxt.org](https://llmstxt.org) spec — a structured index for large language models.
+This `llms.txt` follows the [llmstxt.org](https://llmstxt.org) spec — a structured index for large language
+models. It is rewritten with the documentation it indexes, so a claim here is a claim on a page.
+
+## What Trizlink does not do — stated because these are the questions most often asked wrongly
+
+- **There is no browser extension**, for any browser, and none is planned.
+- **Custom domains can be added and verified, but do not serve links yet.** That is waiting on infrastructure,
+  not on the reader.
+- **Social publishing is built but inert.** No post is published today; the switch that enables it fails
+  closed deliberately, because a wrong post under somebody's name cannot be undone.
+- **AI is metered, not bring-your-own-key-only.** It runs on the house key within a monthly allowance;
+  supplying your own OpenAI or Anthropic key removes the limit on every plan, including Free.
+- **There is no QR download button.** The code is an SVG regenerated from the link each time it is shown.
+- **There is no share modal and no native OS share sheet.**
+- **The utility tools are a directory of links to a separate site**, not tools that run inside Trizlink.
+- **The public API is on Pro and Team.** A Free account can create zero API keys.
 
 ## Getting Started
 
-- [Introduction](https://docs.trizlink.com/intro): What TrizLink is, who it's for, and the feature areas it covers.
-- [Create your account](https://docs.trizlink.com/getting-started/create-account): Sign in with Google and set up your first workspace.
-- [Quick Start](https://docs.trizlink.com/getting-started/quick-start): Create your first short link and bio page in five minutes.
+- [Introduction](https://docs.trizlink.com/intro): What Trizlink is, who it is for, and which parts are live.
+- [Create your account](https://docs.trizlink.com/getting-started/create-account): Google-only sign-in and your first workspace.
+- [Quick Start](https://docs.trizlink.com/getting-started/quick-start): Your first short link and bio page.
 
 ## Features
 
-- [Short links](https://docs.trizlink.com/features/short-links): Custom aliases, passwords, expiry, and per-link click stats.
-- [Link-in-bio pages](https://docs.trizlink.com/features/link-in-bio): Drag-and-drop bio pages with templates and a custom slug.
-- [QR codes](https://docs.trizlink.com/features/qr-codes): Generate and download QR codes for any link.
-- [Analytics](https://docs.trizlink.com/features/analytics): Clicks over time by country, referrer, device, browser, and OS.
-- [Custom domains](https://docs.trizlink.com/features/custom-domains): Use your own domain for branded short links.
-- [Link organization](https://docs.trizlink.com/features/link-organization): Labels, search, filters, and CSV bulk import.
-- [Tracking & UTM](https://docs.trizlink.com/features/tracking-and-utm): UTM templates, tracking pixels, and webhooks.
-- [Workspaces & teams](https://docs.trizlink.com/features/workspaces-and-teams): Separate workspaces with admin, editor, and viewer roles.
-- [Social media](https://docs.trizlink.com/features/social-media): Connect accounts, compose, and schedule posts.
-- [Widgets](https://docs.trizlink.com/features/widgets): Embed link lists or bio pages on any website.
-- [AI features (BYOK)](https://docs.trizlink.com/features/ai-features-byok): Use your own OpenAI/Anthropic key for captions, hashtags, and forecasts.
-- [API access](https://docs.trizlink.com/features/api-access): Create API keys and manage links programmatically.
-- [Utility tools](https://docs.trizlink.com/features/utility-tools): 40+ free, client-side PDF, image, text, code, color, and SEO tools.
-- [Browser extension](https://docs.trizlink.com/features/browser-extension): Shorten the current tab from your toolbar.
-- [Theme customizer](https://docs.trizlink.com/features/theme-customizer): Appearance, accent color, radius, and scaling.
-- [Sharing](https://docs.trizlink.com/features/sharing): Share links over the web or the native OS share sheet.
+- [Short links](https://docs.trizlink.com/features/short-links): Custom codes, passwords, expiry, targeting, A/B splits, and the 301/302/200 redirect rules.
+- [Bio pages](https://docs.trizlink.com/features/link-in-bio): Three layouts, fifteen block types, and a public slug.
+- [QR codes](https://docs.trizlink.com/features/qr-codes): Derived from the link, four error-correction levels, scans counted separately.
+- [Analytics](https://docs.trizlink.com/features/analytics): Clicks over time by country, referrer, device and browser — with no IP address stored.
+- [Custom domains](https://docs.trizlink.com/features/custom-domains): Adding and verifying a domain, and what is not live yet.
+- [Link organization](https://docs.trizlink.com/features/link-organization): One label per link, folders, collections, and CSV import.
+- [Tracking & UTM](https://docs.trizlink.com/features/tracking-and-utm): UTM templates, tracking pixels, and ten webhook events.
+- [Workspaces & teams](https://docs.trizlink.com/features/workspaces-and-teams): Four fixed roles; teams and the audit log are Team-plan.
+- [Social media](https://docs.trizlink.com/features/social-media): Connecting accounts and composing posts, and why nothing publishes yet.
+- [Widgets](https://docs.trizlink.com/features/widgets): Embed a link list, a collection or a bio page on any site.
+- [AI features](https://docs.trizlink.com/features/ai-features-byok): Three text panels, metered on the house key, unmetered with your own.
+- [API access](https://docs.trizlink.com/features/api-access): 18 endpoints, eight scopes, separate destructive permissions.
+- [Utility tools](https://docs.trizlink.com/features/utility-tools): A directory of links to a separate free tools site.
+- [Browser extension](https://docs.trizlink.com/features/browser-extension): There is none — what to use instead.
+- [Theme customizer](https://docs.trizlink.com/features/theme-customizer): Ten axes in one control, applied before first paint.
+- [Sharing](https://docs.trizlink.com/features/sharing): How a link travels, and what the product does not do here.
 
 ## Guides
 
-- [FAQ](https://docs.trizlink.com/guides/faq): Common questions about accounts, pricing, privacy, and limits.
+- [FAQ](https://docs.trizlink.com/guides/faq): Accounts, pricing, privacy, limits, and the honest answers to what is missing.
 
 ## About
 
-- [Privacy & data](https://docs.trizlink.com/about/privacy-and-data): What TrizLink stores and how to delete it.
-- [Changelog](https://docs.trizlink.com/about/changelog): Notable documentation and product updates.
-- [About the author](https://docs.trizlink.com/about/about-the-author): Ahsan Mahmood, the developer behind TrizLink.
+- [Privacy & data](https://docs.trizlink.com/about/privacy-and-data): No IP stored, a salted visitor hash, and how to delete everything.
+- [Changelog](https://docs.trizlink.com/about/changelog): Product and documentation history, including the 2.13.0 rebuild and its data reset.
+- [About the author](https://docs.trizlink.com/about/about-the-author): Ahsan Mahmood, the developer behind Trizlink.
