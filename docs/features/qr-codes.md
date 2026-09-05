@@ -14,6 +14,7 @@ moment you changed the code, and a printed poster would then point at nothing.
 - [How it is produced](#how-it-works)
 - [Error correction](#error-correction)
 - [Counting scans](#counting-scans)
+- [Downloading it](#download)
 - [What this does not include](#not-included)
 - [Printing advice](#printing)
 - [FAQ](#faq)
@@ -61,10 +62,24 @@ because a printed code carrying the wrong choice cannot be changed.
 Scans that are counted show up alongside clicks in [Analytics](./analytics.md), with the same country, device,
 referrer and browser breakdowns.
 
+## Downloading it {#download}
+
+Two buttons under the code, and both draw the file in your browser from the short URL — nothing is uploaded
+and nothing is held server-side.
+
+- **PNG** is 1,024 pixels square, which is enough for a poster or a print shop. The quiet zone around it is
+  painted white deliberately: a transparent PNG placed on a dark background is a code no scanner will read,
+  and that is a failure you would only find after printing.
+- **SVG** scales to any size without softening. Use it if a designer is placing the code, or if it is going
+  on anything larger than a page.
+
+The file is named for the link and the error-correction level you had selected, so two codes for the same
+link at different levels do not overwrite each other in your downloads folder. Whichever you take, it is the
+code you were looking at — the file is serialised from what is on screen rather than encoded a second time,
+so a printed code cannot differ from the one you approved.
+
 ## What this does not include {#not-included}
 
-- **There is no download button.** The code is an SVG in the page; save it the way your browser saves any
-  image, or take a screenshot. Nothing about the code is held server-side to download.
 - **There is no appearance customisation.** No colours, no logo in the middle, no rounded modules. Error
   correction is the only control.
 - **There is no batch export.** One code, one link, one panel.

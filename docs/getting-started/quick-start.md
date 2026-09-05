@@ -49,8 +49,9 @@ stored — which is what stops it from ever disagreeing with the link.
 The one control is the error-correction level: **L**, **M** (the default), **Q** or **H**. Higher correction
 survives more damage and makes the code denser.
 
-There is **no download button**. Save the code the way you save any image in your browser, or screenshot it.
-More, including what counting scans costs you: [QR codes](../features/qr-codes.md).
+Two buttons under the code download it: **PNG** at 1,024 pixels square for print, or **SVG** for any size.
+Both are drawn in your browser from the short URL. More, including what counting scans costs you:
+[QR codes](../features/qr-codes.md).
 
 ## 3. Publish a bio page {#step-3}
 
