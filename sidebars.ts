@@ -37,6 +37,7 @@ const sidebars: SidebarsConfig = {
         'features/browser-extension',
         'features/theme-customizer',
         'features/sharing',
+        'features/referrals',
       ],
     },
     {
