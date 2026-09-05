@@ -14,7 +14,14 @@ const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.trizlink.app
 
 const config: Config = {
   title: 'Trizlink Docs',
-  tagline: 'Short links, bio pages, QR codes, and click analytics — documented.',
+  /* Slot 4 — the approved product tagline (`src/content/site.ts`), adopted at GATE 4 on
+     2026-09-05 so the docs hero says what every other surface says.
+     🔴 IT NAMES SOCIAL PUBLISHING, WHICH IS BUILT AND SWITCHED OFF, so the landing page's
+     lede qualifies it in the next breath and the limit band names it outright. That is only
+     true ON THIS PAGE — which is exactly why the site-wide `description` below no longer
+     derives from this string. Owner ruling, same gate: point the site-wide description at
+     the honest text instead of amending the approved tagline. */
+  tagline: 'Short links, bio pages and social publishing in one workspace, with the analytics that tie them together.',
   favicon: 'img/favicon.svg',
 
   // Production URL — served by GitHub Pages only (custom domain docs.trizlink.com).
@@ -176,7 +183,15 @@ const config: Config = {
   themeConfig: {
     image: 'img/social-card.svg',
     metadata: [
-      { name: 'description', content: 'Documentation for Trizlink — branded short links, bio pages, QR codes, and click analytics. Maintained by Ahsan Mahmood.' },
+      /* 🔴 THE SITE-WIDE DEFAULT, AND IT DELIBERATELY DOES NOT DERIVE FROM `tagline`.
+         Docusaurus reuses the tagline as a default description on every page that does not
+         set its own — 22 of them — and the tagline names social publishing, which is built
+         and switched off. On the landing page a lede qualifies it one paragraph later; on
+         those 22 nothing does, and an unqualified claim in a search result is read by people
+         who never reach the page that would have corrected them. Owner ruling 2026-09-05:
+         repoint the description rather than amend an approved string. This is slot 2's text,
+         which was written to be true on its own. */
+      { name: 'description', content: 'How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on.' },
       { name: 'keywords', content: 'trizlink, url shortener, short links, link in bio, bio link, qr code generator, link analytics, branded links, custom domains, utm builder, link management, link shortener docs' },
       { name: 'author', content: 'Ahsan Mahmood' },
       { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },

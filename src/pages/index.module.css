@@ -73,3 +73,29 @@
     padding: 3rem 1rem 2rem;
   }
 }
+
+/* Slot 5 — the lede under the hero tagline. It exists so the tagline's one unqualified
+   claim is answered in the next breath rather than a paragraph later. */
+.heroLede {
+  max-width: 44rem;
+  margin: 1.25rem auto 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  opacity: 0.92;
+}
+
+/* Slot 8 — the limit band. Deliberately not styled as a warning: these are states, not
+   faults, and a red panel would tell a reader something is broken. */
+.limitBand {
+  padding: 2.5rem 0 3rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+.limitTitle {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+.limitBody {
+  max-width: 48rem;
+  line-height: 1.7;
+  margin: 0;
+}

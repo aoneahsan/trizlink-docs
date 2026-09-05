@@ -13,28 +13,34 @@ type Feature = {
 
 const FEATURES: Feature[] = [
   {
-    title: 'Branded short links',
-    body: 'Turn long URLs into short, shareable links with optional custom aliases, passwords, and expiry dates. Every link gets a QR code and live click stats.',
+    title: 'Short links',
+    body: 'A slug you choose, a QR code, an expiry date, a password, UTM values in the address. The redirect resolves at the edge, and every visit is recorded — the refused ones included.',
   },
   {
     title: 'Bio pages',
-    body: 'Build one page for all your links from fifteen block types and three layouts. Publish it to a slug like trizlink.com/yourname, which shares an address space with your short links.',
+    body: 'One page at trizlink.com/your-slug, built from blocks. Reorder them by dragging or with the arrow buttons — a drag-only editor cannot be used by keyboard at all.',
   },
   {
     title: 'Click analytics',
-    body: 'See clicks over time plus a breakdown by country, referrer, device and browser, per link and across a whole workspace. No visitor IP is ever stored, and click counts are best-effort everywhere, ours included.',
+    body: 'One append-only row per visit: country, device, browser, referrer host, and whether it was refused. The database writes the totals from those rows. No caller can set one, including you. Real click counts are best-effort everywhere — bots, prefetching and privacy blockers all distort them.',
   },
   {
+    /* 🔴 AMENDED AT PUBLISH, 2026-09-05. The approved slot read "Four error-correction
+       levels, and nothing else to set", which was written BEFORE the QR download shipped
+       earlier the same day. Left as approved it would have put this landing page at odds
+       with its own feature page, which now documents the download — the third instance of
+       one pattern this week, and the one TASK-033 exists for. A truth correction, in the
+       same class as removing `yet` from the band heading. */
     title: 'QR codes',
-    body: 'Every short link has a QR code, derived from the link rather than stored, with four error-correction levels. Scans are counted separately from ordinary clicks.',
+    body: 'Every short link has one, drawn from the link rather than stored. Download it as PNG or SVG; four error-correction levels, and nothing else to set — a printed code cannot be changed, which is why suspending a workspace never stops its short links resolving.',
   },
   {
-    title: 'Workspaces & teams',
-    body: 'Keep links, bio pages and analytics separate per workspace. Four fixed roles: owner, admin, member and viewer. Teams and the audit log are on the Team plan.'
+    title: 'Workspaces and teams',
+    body: 'Links, bio pages and analytics are scoped to a workspace: 5 on Free, 25 on Pro, 100 on Team. Every plan has roles. Owner, admin, member, viewer. Teams and the workspace audit log need the Team plan.',
   },
   {
-    title: 'Bring-your-own-key AI',
-    body: 'AI drafts a bio tagline, a social post and an analytics summary. It is metered on the Free plan; adding your own OpenAI or Anthropic key removes that limit on every plan, including Free.'
+    title: 'AI, and your own key',
+    body: 'Three suggestion panels, one a read of the numbers already on screen. Metered at 50 a month on Free. Your own OpenAI or Anthropic key takes the meter off on every plan, Free included, because a request you pay for costs us nothing.',
   },
 ];
 
@@ -45,12 +51,25 @@ function HomepageHeader(): ReactNode {
       <div className="container">
         <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
         <p className={styles.heroTagline}>{siteConfig.tagline}</p>
+        {/* Slot 5 — the lede. It qualifies the tagline above it in the next breath, which is
+            the whole reason it sits here rather than below the cards. */}
+        <p className={styles.heroLede}>
+          A shortener you already have. What Trizlink adds is the bio page and the scheduled posts
+          sitting in the same workspace, so the clicks land in one report instead of three — though
+          publishing itself is built and not switched on yet. These 23 pages say how each part works,
+          and 15 carry a section on what that part cannot do.
+        </p>
         <div className={styles.buttons}>
-          <Link className="button button--primary button--lg" to="/getting-started/quick-start">
-            Quick Start — 5 min
+          {/* 🔴 `Read the docs` takes the primary position — it is the content map's CTA. The old
+              secondary button asked "What is Trizlink?", which the fingerprint's ban on the
+              rhetorical opener rules out and which a reader on the docs site has already answered
+              by arriving. The old primary promised "5 min" while quick-start.md says "about five
+              minutes"; rather than pick a number, the button names the page. */}
+          <Link className="button button--primary button--lg" to="/intro">
+            Read the docs
           </Link>
-          <Link className="button button--secondary button--lg" to="/intro">
-            What is Trizlink?
+          <Link className="button button--secondary button--lg" to="/getting-started/quick-start">
+            Quick start
           </Link>
           <Link className="button button--outline button--lg" href="https://trizlink.com">
             Open Trizlink
@@ -80,6 +99,32 @@ function HomepageFeatures(): ReactNode {
   );
 }
 
+/**
+ * Slot 8 — the limit band.
+ *
+ * 🔴 THE HEADING IS "What is not switched on", NOT "…yet". `D-CUSTOM-DOMAINS-DEFERRED`
+ * made `yet` false for one of these three: serving from a custom domain is a declined
+ * spend decision, not a queue position, and `yet` told a reader all three were coming.
+ * The per-item wording carries the timeline where a timeline exists, which is more
+ * honest than a heading flattening three different states into one word.
+ */
+function LimitBand(): ReactNode {
+  return (
+    <section className={styles.limitBand}>
+      <div className="container">
+        <h2 className={styles.limitTitle}>What is not switched on</h2>
+        <p className={styles.limitBody}>
+          Three things are further along in the code than in your hands. There is no browser
+          extension. It is deferred until web and Android are finished, and it is not cancelled.
+          Social publishing is built and switched off, because a wrong post under somebody&apos;s
+          name cannot be taken back. And custom domains verify but do not serve — you can add a
+          host and prove you own it today; requests arriving there go nowhere.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function AuthorStrip(): ReactNode {
   return (
     <section className={styles.authorStrip}>
@@ -104,12 +149,13 @@ export default function Home(): ReactNode {
          ` | ${siteTitle}`, so including it produced `Trizlink Docs — … | Trizlink Docs` —
          the brand twice, 76 chars, pushing the unique words past the ~60-char truncation.
          Measured live 2026-09-05. Verify in `build/`, never here. */
-      title="Short links, bio pages, QR codes & analytics"
-      description="Documentation for Trizlink: branded short links, bio pages, QR codes, click analytics, workspaces and a public API. Sign in with Google."
+      title="Short links, bio pages, click analytics, API"
+      description="How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on."
     >
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <LimitBand />
         <AuthorStrip />
       </main>
     </Layout>
