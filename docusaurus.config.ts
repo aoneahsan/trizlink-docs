@@ -1,6 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import discoveryFeed from './src/plugins/discoveryFeed';
 
 // ---------------------------------------------------------------------------
 // Trizlink — Documentation site config
@@ -11,6 +12,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 const SITE_URL = 'https://docs.trizlink.com';
 const APP_URL = 'https://trizlink.com';
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.trizlink.app';
+const DISCOVERY_DESCRIPTION =
+  'How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on.';
 
 const config: Config = {
   title: 'Trizlink Docs',
@@ -46,6 +49,15 @@ const config: Config = {
     // while every build stays green. Docusaurus already emits a correct per-page canonical
     // from `url` + `baseUrl`; this entry only ever competed with it. Removed 2026-09-04
     // (found during the TASK-001 re-derivation). Verify in `build/`, never in this file.
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'alternate',
+        type: 'application/rss+xml',
+        title: 'Trizlink documentation updates',
+        href: `${SITE_URL}/feed.xml`,
+      },
+    },
     {
       tagName: 'meta',
       attributes: { name: 'application-name', content: 'Trizlink Docs' },
@@ -180,6 +192,8 @@ const config: Config = {
     ],
   ],
 
+  plugins: [[discoveryFeed, { description: DISCOVERY_DESCRIPTION }]],
+
   themeConfig: {
     image: 'img/social-card.svg',
     metadata: [
@@ -191,7 +205,7 @@ const config: Config = {
          who never reach the page that would have corrected them. Owner ruling 2026-09-05:
          repoint the description rather than amend an approved string. This is slot 2's text,
          which was written to be true on its own. */
-      { name: 'description', content: 'How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on.' },
+      { name: 'description', content: DISCOVERY_DESCRIPTION },
       { name: 'keywords', content: 'trizlink, url shortener, short links, link in bio, bio link, qr code generator, link analytics, branded links, custom domains, utm builder, link management, link shortener docs' },
       { name: 'author', content: 'Ahsan Mahmood' },
       { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },

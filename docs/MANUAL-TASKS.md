@@ -3,20 +3,17 @@
 > The ONE place for everything only you (the human) can do. Fixed path: `docs/MANUAL-TASKS.md`.
 > Global spec: `~/.claude/rules/manual-tasks.md`. Excluded from the published site (see
 > `docusaurus.config.ts` → `docs.exclude`) because this repo is public.
-> Last updated: 2026-07-25
+> Last updated: 2026-09-12
 
 ## ⏳ Pending manual tasks
 
 | # | Task | Why only you | Status |
 |---|------|--------------|--------|
-| 1 | **Add DNS.** In Hostinger, add a `CNAME` record `docs` → `aoneahsan.github.io` on `trizlink.com`. | Only you control the `trizlink.com` DNS zone. | ☐ Not started |
-| 2 | **Configure GitHub Pages.** Repo **Settings → Pages**: source = **GitHub Actions**, custom domain = `docs.trizlink.com`, then **Enforce HTTPS** once the certificate provisions. | Repo settings are owner-only. | ☐ Not started |
-
-`static/CNAME` already ships `docs.trizlink.com` inside `build/`, and `.github/workflows/deploy-pages.yml` builds and
-publishes on every push to `main` — these steps are all that remain.
+| — | Nothing pending. The Search Console sitemap submission for this site (runner finding `fnd-sitemap-not-submitted-a072dac01e`, 2026-09-08) is being attempted by the agent through the Search Console API first, by your ruling of 2026-09-12 (`../../DECISIONS-LOG.md` → `D-AUDIT-2026-09-12`, R6). A row appears here only if that call is refused. | | |
 
 ## ✅ Completed manual tasks
 
 | # | Task | Resolution | Date |
 |---|------|-----------|------|
-| — | — | — | — |
+| 1 | **Add DNS.** `CNAME docs → aoneahsan.github.io` on `trizlink.com` | Done — the zone moved to Cloudflare on 2026-08-28 carrying the `docs` CNAME; `curl -sI https://docs.trizlink.com/` answers `server: GitHub.com` (measured 2026-09-03 and 2026-09-12). Moved on that evidence at the 2026-09-12 audit | 2026-08-28 |
+| 2 | **Configure GitHub Pages.** Source = GitHub Actions, custom domain `docs.trizlink.com`, HTTPS enforced | Done — every push to `main` deploys (`Deploy to GitHub Pages` runs green, last 2026-09-05) and the site serves over HTTPS at the custom domain. Moved on that evidence at the 2026-09-12 audit | before 2026-09-03 |
