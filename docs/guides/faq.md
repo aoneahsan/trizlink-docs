@@ -33,7 +33,7 @@ things worth knowing before you build a workflow on it.
 ### Is Trizlink free?
 
 There is a Free plan that costs nothing and asks for no card: 1,000 short links, 30 bio pages, 30 members,
-50,000 tracked clicks a month and 90 days of analytics history. **Pro is $6 a month and Team is $18**, and
+50,000 tracked clicks a month and 90 days of analytics history. **Pro is $9.99 a month and Team is $8.99 per seat a month, from three seats**, and
 annual billing charges ten months for twelve. The full table is in the
 [Introduction](../intro.md#plans).
 

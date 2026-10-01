@@ -75,8 +75,8 @@ Trizlink has three plans. The Free plan costs nothing and asks for no card; Pro 
 
 | | Free | Pro | Team |
 |---|---|---|---|
-| Price, monthly | $0 | $6 | $18 |
-| Price, annual | $0 | $5/month | $15/month |
+| Price, monthly | $0 | $9.99 | $8.99 per seat, from 3 seats |
+| Price, annual | $0 | $8.33/month ($99.90 a year) | $7.49 per seat/month ($89.90 a year) |
 | Short links | 1,000 | 50,000 | Fair use |
 | Bio pages, published | 30 | 100 | 500 |
 | Tracked clicks per month | 50,000 | 500,000 | 2,000,000 |
@@ -87,8 +87,11 @@ Trizlink has three plans. The Free plan costs nothing and asks for no card; Pro 
 | Social publishing | — | Yes | Yes |
 | Teams, custom roles, audit log | — | — | Yes |
 
-Annual billing charges ten months for twelve, which is where the $5 and $15 figures come from. Payment is
-handled at [aoneahsan.com/payment](https://aoneahsan.com/payment); there is no card form inside the product.
+Annual billing charges ten months for twelve, which is where the $8.33 and $7.49 figures come from. On Team a
+seat is one person, the owner included, and the seats you pay for are the people your workspaces can hold.
+You pay from the plans page inside your account: by card through Polar, our payment partner, where that
+option is shown, or another way through [aoneahsan.com/payment](https://aoneahsan.com/payment). Card details
+are entered on Polar's page and never reach Trizlink.
 
 ## How it works underneath {#how-it-works}
 

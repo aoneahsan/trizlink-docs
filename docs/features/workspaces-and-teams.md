@@ -117,7 +117,7 @@ Three properties of the log itself:
 | | Free | Pro | Team |
 |---|---|---|---|
 | Workspaces | 5 | 25 | 100 |
-| Members | 30 | 100 | 500 |
+| Members besides the owner | 30 | 100 | Your seats, less your own (up to 499) |
 | Roles | Yes | Yes | Yes |
 | Teams and the audit log | — | — | Yes |
 

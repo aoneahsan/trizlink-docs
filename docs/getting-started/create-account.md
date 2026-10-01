@@ -104,7 +104,7 @@ page because neither has anything to do.
 
 ### Does creating an account cost anything?
 
-No. The Free plan is $0 and asks for no card. Pro at $6 a month and Team at $18 a month are the paid plans,
+No. The Free plan is $0 and asks for no card. Pro at $9.99 a month and Team at $8.99 per seat a month, from three seats, are the paid plans,
 and you can stay on Free indefinitely.
 
 ### What does Trizlink receive from Google?
