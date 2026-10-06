@@ -89,8 +89,8 @@ Trizlink has three plans. The Free plan costs nothing and asks for no card; Pro 
 
 Annual billing charges ten months for twelve, which is where the $8.33 and $7.49 figures come from. On Team a
 seat is one person, the owner included, and the seats you pay for are the people your workspaces can hold.
-You pay from the plans page inside your account: by card through Polar, our payment partner, where that
-option is shown, or another way through [aoneahsan.com/payment](https://aoneahsan.com/payment). Card details
+You pay from the plans page inside your account: by card through Polar, our payment partner, or
+another way through [aoneahsan.com/payment](https://aoneahsan.com/payment). Card details
 are entered on Polar's page and never reach Trizlink.
 
 ## How it works underneath {#how-it-works}
