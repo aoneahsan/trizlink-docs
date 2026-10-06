@@ -37,11 +37,9 @@ There is a Free plan that costs nothing and asks for no card: 1,000 short links,
 annual billing charges ten months for twelve. The full table is in the
 [Introduction](../intro.md#plans).
 
-### Do you give refunds?
+### Can I cancel?
 
-No. Payments already made are not refunded, including for a period you did not use. That is why the Free plan
-is the whole product at a smaller size and not a trial: you can run everything you intend to run before you pay.
-You can cancel at any time. Cancelling stops the next renewal, and you keep the plan until the end of the
+Yes, at any time. Cancelling stops the next renewal, and you keep the plan until the end of the
 period you have already paid for.
 
 ### How do I sign in?
