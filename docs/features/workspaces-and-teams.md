@@ -84,8 +84,9 @@ A team is a named group of members *inside* a workspace. It does not own links, 
 analytics and does not create a second silo — it exists so responsibilities stay legible when a workspace has
 more people than you can hold in your head.
 
-**Teams are part of the Team plan.** So is the audit log. The plan's own line for this is *"Roles, teams
-and an audit log"* — roles are on every plan; the teams and the log are what Team adds.
+**Teams are part of the Team plan.** So is the audit log. The plan's own line for this is *"Teams and the
+workspace audit log"*. Roles are on every plan; the teams and the log are what Team adds, and the server
+refuses a team on any other plan, whichever way it is asked.
 
 ## The audit log {#audit}
 
@@ -117,7 +118,7 @@ Three properties of the log itself:
 | | Free | Pro | Team |
 |---|---|---|---|
 | Workspaces | 5 | 25 | 100 |
-| Members besides the owner | 30 | 100 | Your seats, less your own (up to 499) |
+| Members besides the owner | 30 | 100 | Your seats, less your own, never fewer than Free's 30 (up to 499) |
 | Roles | Yes | Yes | Yes |
 | Teams and the audit log | — | — | Yes |
 
