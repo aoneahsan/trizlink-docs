@@ -1,5 +1,10 @@
 # Trizlink Docs
 
+**Maintenance check (2026-10-14):** Immutable Yarn install, typecheck and production build pass.
+The built documentation home rendered in controlled Chrome at desktop and mobile widths.
+The product's current queue and 30-day context checkpoint are recorded in the parent kit
+and workspace fleet tracker. This check did not change approved documentation content.
+
 Public documentation site for **[Trizlink](https://trizlink.com)** — short links, link-in-bio pages, QR codes and
 click analytics, in one workspace.
 
