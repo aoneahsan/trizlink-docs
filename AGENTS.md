@@ -1,6 +1,6 @@
 # AGENTS.md — trizlink-docs
 
-**Last Updated:** 2026-10-14
+**Last Updated:** 2026-10-20
 **Mirror of `CLAUDE.md`** — identical except this header. Update one, update the other.
 
 | Context Budget Last Verified | 2026-10-14 — this guide **5.6 KB** / PENDING-TASKS.md **0.4 KB**; root and docs ancestor chain is under 32 KiB. Re-check due 2026-11-13. This maintenance pass changed no approved page copy. |
@@ -84,3 +84,9 @@ quote any `Bypassed rule violations` line. Full law: `~/.claude/rules/docs-sites
 <!-- The markers below are kept so the fleet writes that placed them stay no-ops. The prose each one guarded
      restated global law that auto-loads anyway, and was deleted on 2026-08-17. -->
 <!-- RULE:main-context-model-workflow v2026-07-16 -->
+
+## Stop-work Git gate
+
+<!-- RULE:stop-work-git-gate v2026-10-20 -->
+
+Before stopping, commit every legitimate change and work-progress checkpoint in this repository and each independent nested repository, fetch and merge the designated upstream, push the documented working branch, then verify an empty worktree and `0 0` ahead/behind. Never stash, discard, reset, rebase, or force-push. If synchronization is blocked, report the exact repository, branch, blocker, and next action instead of calling the work complete. The full workflow remains authoritative in `~/.claude/rules/git-workflow.md`.
