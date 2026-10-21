@@ -2,7 +2,7 @@
   "name": "trizlink-docs",
   "version": "0.1.0",
   "private": true,
-  "description": "Public documentation site for TrizLink (https://trizlink.com) — a link-management platform for short links, link-in-bio pages, QR codes, and analytics. Built with Docusaurus, deployed to Firebase Hosting + GitHub Pages.",
+  "description": "Public documentation for Trizlink, built with Docusaurus and deployed to GitHub Pages.",
   "author": {
     "name": "Ahsan Mahmood",
     "email": "aoneahsan@gmail.com",
@@ -29,19 +29,21 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.10.1",
-    "@docusaurus/preset-classic": "^3.10.1",
-    "@docusaurus/theme-mermaid": "^3.10.1",
+    "@docusaurus/core": "^3.10.2",
+    "@docusaurus/preset-classic": "^3.10.2",
+    "@docusaurus/theme-mermaid": "^3.10.2",
     "@mdx-js/react": "^3.1.1",
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.10.1",
-    "@docusaurus/tsconfig": "^3.10.1",
-    "@docusaurus/types": "^3.10.1",
+    "@docusaurus/module-type-aliases": "^3.10.2",
+    "@docusaurus/tsconfig": "^3.10.2",
+    "@docusaurus/types": "^3.10.2",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
     "typescript": "~6.0.3"
   },
   "browserslist": {
@@ -56,5 +58,5 @@
       "last 5 safari version"
     ]
   },
-  "packageManager": "yarn@4.17.1"
+  "packageManager": "yarn@4.18.1"
 }

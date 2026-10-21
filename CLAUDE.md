@@ -1,9 +1,9 @@
 # CLAUDE.md — trizlink-docs
 
-**Last Updated:** 2026-10-20
+**Last Updated:** 2026-10-21
 **Mirror of `AGENTS.md`** — identical except this header. Update one, update the other.
 
-| Context Budget Last Verified | 2026-10-14 — this guide **5.6 KB** / PENDING-TASKS.md **0.4 KB**; root and docs ancestor chain is under 32 KiB. Re-check due 2026-11-13. This maintenance pass changed no approved page copy. |
+| Context Budget Last Verified | 2026-10-21 — root and docs ancestor chain is under 32 KiB. Re-check due 2026-11-20. This maintenance pass changed no approved page copy. |
 |---|---|
 
 Public Docusaurus documentation site for **Trizlink** (https://trizlink.com), a link-management platform.
