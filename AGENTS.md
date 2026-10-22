@@ -62,7 +62,8 @@ docs/
   getting-started/{create-account, quick-start}.md
   features/{short-links, link-in-bio, qr-codes, analytics, custom-domains, link-organization,
             tracking-and-utm, workspaces-and-teams, social-media, widgets, ai-features-byok,
-            api-access, utility-tools, browser-extension, theme-customizer, sharing, referrals}.md
+            api-access, utility-tools, browser-extension, theme-customizer, sharing,
+            page-tours-and-walkthrough, referrals}.md
   guides/faq.md
   about/{privacy-and-data, changelog, about-the-author}.md
   MANUAL-TASKS.md · DONE-TASKS.md            (excluded from the build)

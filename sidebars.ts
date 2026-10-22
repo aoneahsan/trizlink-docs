@@ -38,6 +38,7 @@ const sidebars: SidebarsConfig = {
         'features/browser-extension',
         'features/theme-customizer',
         'features/sharing',
+        'features/page-tours-and-walkthrough',
         'features/referrals',
       ],
     },
