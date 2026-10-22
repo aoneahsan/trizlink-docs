@@ -32,6 +32,7 @@ const sidebars: SidebarsConfig = {
         'features/social-media',
         'features/widgets',
         'features/ai-features-byok',
+        'features/ai-levels-and-voice',
         'features/api-access',
         'features/utility-tools',
         'features/browser-extension',

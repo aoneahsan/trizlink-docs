@@ -14,6 +14,10 @@ const APP_URL = 'https://trizlink.com';
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.trizlink.app';
 const DISCOVERY_DESCRIPTION =
   'How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on.';
+/* Products speak as a team (owner-approved 2026-10-22): the site-wide JSON-LD names the
+   Organization "The Trizlink team" as publisher and author; the owner stays its `founder`. */
+const ORG_ID = `${SITE_URL}/#organization`;
+const ORG_REF = { '@type': 'Organization', '@id': ORG_ID, name: 'The Trizlink team', url: APP_URL };
 
 const config: Config = {
   title: 'Trizlink Docs',
@@ -79,19 +83,9 @@ const config: Config = {
         name: 'Trizlink Documentation',
         url: SITE_URL,
         description:
-          'Documentation for Trizlink, a link-management platform for short links, bio pages, QR codes, and click analytics. Author: Ahsan Mahmood.',
+          'Documentation for Trizlink, a link-management platform for short links, bio pages, QR codes, and click analytics.',
         inLanguage: 'en',
-        publisher: {
-          '@type': 'Person',
-          name: 'Ahsan Mahmood',
-          url: 'https://aoneahsan.com',
-          email: 'aoneahsan@gmail.com',
-          sameAs: [
-            'https://linkedin.com/in/aoneahsan',
-            'https://github.com/aoneahsan',
-            'https://www.npmjs.com/~aoneahsan',
-          ],
-        },
+        publisher: ORG_REF,
       }),
     },
     {
@@ -121,7 +115,7 @@ const config: Config = {
         },
         url: APP_URL,
         sameAs: PLAY_URL,
-        author: { '@type': 'Person', name: 'Ahsan Mahmood', url: 'https://aoneahsan.com' },
+        author: ORG_REF,
         description:
           'Trizlink is a link-management platform: branded short links, bio pages, QR codes, click analytics and shared workspaces. Sign in with Google. There is no browser extension yet; it is deferred, not cancelled.',
       }),
@@ -132,17 +126,19 @@ const config: Config = {
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Organization',
-        name: 'Ahsan Mahmood',
-        alternateName: 'aoneahsan',
-        url: 'https://aoneahsan.com',
-        email: 'aoneahsan@gmail.com',
-        sameAs: [
-          'https://linkedin.com/in/aoneahsan',
-          'https://github.com/aoneahsan',
-          'https://www.npmjs.com/~aoneahsan',
-          'https://aoneahsan.com',
-        ],
-        founder: { '@type': 'Person', name: 'Ahsan Mahmood' },
+        '@id': ORG_ID,
+        name: 'The Trizlink team',
+        url: APP_URL,
+        founder: {
+          '@type': 'Person',
+          name: 'Ahsan Mahmood',
+          url: 'https://aoneahsan.com',
+          sameAs: [
+            'https://linkedin.com/in/aoneahsan',
+            'https://github.com/aoneahsan',
+            'https://www.npmjs.com/~aoneahsan',
+          ],
+        },
       }),
     },
   ],
