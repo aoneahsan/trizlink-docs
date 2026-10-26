@@ -1,24 +1,24 @@
 ---
 title: Theme control
-description: One panel, ten appearance axes, applied before the first paint from a single registry. Preferences are held on the device rather than synced to your account.
+description: One panel, nine appearance axes, applied before the first paint from a single registry. Preferences are held on the device rather than synced to your account.
 sidebar_position: 15
-keywords: [theme control, dark mode, appearance settings, colour palette, ui density, reduced motion, custom cursor]
+keywords: [theme control, dark mode, appearance settings, colour palette, ui density, reduced motion]
 ---
 
-The theme control is one panel, reached from one icon, carrying every appearance setting Trizlink has. Ten
-axes live in it, an eleventh is pre-painted alongside them, and all of them are applied before the page first
+The theme control is one panel, reached from one icon, carrying every appearance setting Trizlink has. Nine
+axes live in it, a tenth is pre-painted alongside them, and all of them are applied before the page first
 paints rather than after.
 
 ## On this page
 
-- [The ten axes](#axes)
-- [The eleventh, and why it is not in the panel](#sidebar)
+- [The nine axes](#axes)
+- [The tenth, and why it is not in the panel](#sidebar)
 - [Applied before the first paint](#prepaint)
 - [Where your choices are kept](#storage)
 - [Limits](#limits)
 - [FAQ](#faq)
 
-## The ten axes {#axes}
+## The nine axes {#axes}
 
 | Control | Values |
 |---|---|
@@ -29,7 +29,6 @@ paints rather than after.
 | Text size | Small · Medium · Large |
 | Typeface | Grotesque · Plain · Mono |
 | Panels | Solid · Translucent |
-| Custom cursor | On · Off |
 | Motion | System · Full · Reduced |
 | Sound | On · Off |
 
@@ -43,7 +42,7 @@ system's reduced-motion setting; `Reduced` forces it regardless.
 A value stored outside an axis's allowed list is discarded rather than trusted, so an edited storage entry
 falls back to the default instead of producing an unstyled page.
 
-## The eleventh, and why it is not in the panel {#sidebar}
+## The tenth, and why it is not in the panel {#sidebar}
 
 The dashboard sidebar's collapsed state is pre-painted exactly like an appearance axis, but it is deliberately
 **not** a row in the theme panel: it already has a control, the button on the top bar. Two controls for one
@@ -72,7 +71,7 @@ simply be invisible to the control, which is why there are none.
 **On the device, in that browser's storage. They are not synced to your account.**
 
 So your theme follows you between tabs and across visits in the same browser, and it does not follow you to a
-different browser, a different machine, or the Android app. Set it again there — it is ten choices, and it
+different browser, a different machine, or the Android app. Set it again there — it is nine choices, and it
 takes a moment.
 
 This is worth being plain about because a settings panel is exactly where people assume an account sync
