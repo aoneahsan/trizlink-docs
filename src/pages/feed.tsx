@@ -17,7 +17,7 @@ export default function FeedPage(): ReactNode {
       <main className="container margin-vert--lg">
         <h1>Feed</h1>
         <p>
-          Every documentation page, newest change first. Subscribe with <Link href="/feed.xml">/feed.xml</Link>.
+          Every documentation page, newest change first. Subscribe with <Link href="pathname:///feed.xml">/feed.xml</Link>.
         </p>
         <ol>
           {items.map((item) => (

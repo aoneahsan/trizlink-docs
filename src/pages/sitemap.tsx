@@ -17,7 +17,7 @@ export default function SitemapPage(): ReactNode {
       <main className="container margin-vert--lg">
         <h1>Sitemap</h1>
         <p>
-          Every page of this documentation, by section. Search engines read <Link href="/sitemap.xml">/sitemap.xml</Link>.
+          Every page of this documentation, by section. Search engines read <Link href="pathname:///sitemap.xml">/sitemap.xml</Link>.
         </p>
         {sections.map((section) => (
           <section key={section} className="margin-bottom--lg">
