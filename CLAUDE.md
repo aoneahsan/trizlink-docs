@@ -1,6 +1,6 @@
 # CLAUDE.md — trizlink-docs
 
-**Last Updated:** 2026-10-21
+**Last Updated:** 2026-10-30
 **Mirror of `AGENTS.md`** — identical except this header. Update one, update the other.
 
 | Context Budget Last Verified | 2026-10-21 — root and docs ancestor chain is under 32 KiB. Re-check due 2026-11-20. This maintenance pass changed no approved page copy. |
@@ -26,8 +26,8 @@ file carries only what is true of *this* repo.
 | Node | >=18 (`.nvmrc` = 22) |
 | Author | Ahsan Mahmood ([aoneahsan@gmail.com](mailto:aoneahsan@gmail.com)) |
 | Live URL | https://docs.trizlink.com — **GitHub Pages only** (`server: GitHub.com`; `DONE-002` removed the Firebase offer) |
-| Product (app) | https://trizlink.com · Android: https://play.google.com/store/apps/details?id=com.trizlink.app (the rebuild's AAB is not yet uploaded — the listing still serves the old build) |
-| Sibling projects | **`../trizlink/`** — the LIVE rebuilt app (PRIVATE, branch `redevelop-v1`): the ONLY source of truth for product facts · `../trizlink-old/` — legacy, read-only, never a source · the kit records one level up (`../docs/PROJECT-CONTEXT.md`, `../remaining-work.md`, `../what-this-project-consists-of.md`) |
+| Product (app) | https://trizlink.com · Android: https://play.google.com/store/apps/details?id=com.trizlink.app (Play serves the rebuild since 2.15.0, owner-confirmed 2026-10-28) |
+| Sibling projects | **`../trizlink/`** — the LIVE rebuilt app (PRIVATE, branch `main` since the 2026-10-27 cutover): the ONLY source of truth for product facts · `../trizlink-old/` — legacy, read-only, never a source · the kit records one level up (`../docs/PROJECT-CONTEXT.md`, `../remaining-work.md`, `../what-this-project-consists-of.md`) |
 | Dev ports | start 5962 · serve 5963 |
 | Content tracker | `docs/tracking/trizlink-docs-content-tracker.json` |
 | Search discovery | enrolled as surface `docs` of project `aoneahsan/trizlink`; findings land in `../trizlink/SEARCH-DISCOVERY-ISSUES.md`; the IndexNow key file is `static/5ec21df431ff3d1dbf8dd7052aad9671.txt` |
@@ -65,9 +65,9 @@ docs/
             api-access, utility-tools, browser-extension, theme-customizer, sharing,
             page-tours-and-walkthrough, referrals}.md
   guides/faq.md
-  about/{privacy-and-data, changelog, about-the-author}.md
+  about/{privacy-and-data, changelog, about-the-author}.md   (about-the-author is the team page since 2026-10-30)
   MANUAL-TASKS.md · DONE-TASKS.md            (excluded from the build)
-src/css/custom.css · src/pages/index.tsx · src/plugins/discoveryFeed.ts
+src/css/custom.css · src/pages/{index,feed,sitemap}.tsx · src/plugins/discoveryFeed.ts
 static/{robots.txt, llms.txt, humans.txt, CNAME, 5ec21df431ff3d1dbf8dd7052aad9671.txt, img/*}
 docusaurus.config.ts · sidebars.ts
 .github/workflows/deploy-pages.yml (GitHub Pages)

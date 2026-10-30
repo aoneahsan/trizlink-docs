@@ -130,11 +130,9 @@ function AuthorStrip(): ReactNode {
     <section className={styles.authorStrip}>
       <div className="container">
         <p>
-          Built and maintained by{' '}
-          <Link href="https://aoneahsan.com">Ahsan Mahmood</Link> —{' '}
-          <Link href="https://linkedin.com/in/aoneahsan">LinkedIn</Link> ·{' '}
-          <Link href="https://github.com/aoneahsan">GitHub</Link> ·{' '}
-          <Link href="https://www.npmjs.com/~aoneahsan">npm</Link>
+          Built and maintained by the Trizlink team —{' '}
+          <Link href="https://trizlink.com/contact">Contact</Link> ·{' '}
+          <Link href="mailto:support@trizlink.com">support@trizlink.com</Link>
         </p>
       </div>
     </section>

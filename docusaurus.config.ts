@@ -5,7 +5,7 @@ import discoveryFeed from './src/plugins/discoveryFeed';
 
 // ---------------------------------------------------------------------------
 // Trizlink — Documentation site config
-// Author: Ahsan Mahmood (https://aoneahsan.com)
+// Maintained by the Trizlink team
 // Product: https://trizlink.com
 // ---------------------------------------------------------------------------
 
@@ -105,12 +105,17 @@ const config: Config = {
           '@type': 'AggregateOffer',
           priceCurrency: 'USD',
           lowPrice: '0',
-          highPrice: '18',
+          highPrice: '9.99',
           offerCount: '3',
+          /* Monthly billing, per month. Team is priced by the seat, from three seats (plans.ts → `perSeat`,
+             `minSeats`); saying "$8.99" without the unit would be a third of what three seats cost. Corrected
+             2026-10-30 (search audit AI-05): these read $6 / $18, the old app's prices. */
           offers: [
             { '@type': 'Offer', name: 'Free', price: '0', priceCurrency: 'USD' },
-            { '@type': 'Offer', name: 'Pro', price: '6', priceCurrency: 'USD' },
-            { '@type': 'Offer', name: 'Team', price: '18', priceCurrency: 'USD' },
+            { '@type': 'Offer', name: 'Pro', price: '9.99', priceCurrency: 'USD',
+              priceSpecification: { '@type': 'UnitPriceSpecification', price: '9.99', priceCurrency: 'USD', unitText: 'MONTH' } },
+            { '@type': 'Offer', name: 'Team', price: '8.99', priceCurrency: 'USD',
+              priceSpecification: { '@type': 'UnitPriceSpecification', price: '8.99', priceCurrency: 'USD', unitText: 'seat per month, from 3 seats' } },
           ],
         },
         url: APP_URL,
@@ -183,7 +188,9 @@ const config: Config = {
         },
         blog: false,
         theme: { customCss: './src/css/custom.css' },
-        sitemap: { changefreq: 'weekly', priority: 0.7, lastmod: 'date' },
+        /* No changefreq or priority (search audit 2026-10-30): Google ignores both, and a constant one on every URL
+           says nothing true. lastmod stays, from git, the day the page's words changed. */
+        sitemap: { changefreq: null, priority: null, lastmod: 'date' },
       } satisfies Preset.Options,
     ],
   ],
@@ -191,7 +198,7 @@ const config: Config = {
   plugins: [[discoveryFeed, { description: DISCOVERY_DESCRIPTION }]],
 
   themeConfig: {
-    image: 'img/social-card.svg',
+    image: 'img/social-card.png',
     metadata: [
       /* 🔴 THE SITE-WIDE DEFAULT, AND IT DELIBERATELY DOES NOT DERIVE FROM `tagline`.
          Docusaurus reuses the tagline as a default description on every page that does not
@@ -203,17 +210,15 @@ const config: Config = {
          which was written to be true on its own. */
       { name: 'description', content: DISCOVERY_DESCRIPTION },
       { name: 'keywords', content: 'trizlink, url shortener, short links, link in bio, bio link, qr code generator, link analytics, branded links, custom domains, utm builder, link management, link shortener docs' },
-      { name: 'author', content: 'Ahsan Mahmood' },
+      { name: 'author', content: 'The Trizlink team' },
       { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:creator', content: '@aoneahsan' },
-      { name: 'twitter:site', content: '@aoneahsan' },
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Trizlink Docs' },
       { property: 'og:locale', content: 'en_US' },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '630' },
-      { property: 'article:author', content: 'Ahsan Mahmood' },
+      { property: 'article:author', content: 'The Trizlink team' },
     ],
     colorMode: {
       defaultMode: 'light',
@@ -235,7 +240,6 @@ const config: Config = {
       items: [
         { type: 'docSidebar', sidebarId: 'mainSidebar', position: 'left', label: 'Docs' },
         { to: '/getting-started/quick-start', label: 'Quick Start', position: 'left' },
-        { to: '/about/about-the-author', label: 'Author', position: 'right' },
         { href: APP_URL, label: 'Open Trizlink', position: 'right' },
         { href: PLAY_URL, label: 'Android app', position: 'right' },
         { href: 'https://github.com/aoneahsan/trizlink-docs', label: 'GitHub', position: 'right' },
@@ -251,6 +255,8 @@ const config: Config = {
             { label: 'Create your account', to: '/getting-started/create-account' },
             { label: 'Quick Start', to: '/getting-started/quick-start' },
             { label: 'FAQ', to: '/guides/faq' },
+            { label: 'Sitemap', to: '/sitemap' },
+            { label: 'Feed', to: '/feed' },
           ],
         },
         {
@@ -263,16 +269,15 @@ const config: Config = {
           ],
         },
         {
-          title: 'Built by Ahsan Mahmood',
+          title: 'The Trizlink team',
           items: [
-            { label: 'aoneahsan.com', href: 'https://aoneahsan.com' },
-            { label: 'LinkedIn', href: 'https://linkedin.com/in/aoneahsan' },
-            { label: 'GitHub', href: 'https://github.com/aoneahsan' },
-            { label: 'npm packages', href: 'https://www.npmjs.com/~aoneahsan' },
+            { label: 'About the team', to: '/about/about-the-author' },
+            { label: 'Contact', href: `${APP_URL}/contact` },
+            { label: 'support@trizlink.com', href: 'mailto:support@trizlink.com' },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Ahsan Mahmood. Built with Docusaurus. Trizlink — trizlink.com.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Trizlink. Built with Docusaurus. Trizlink — trizlink.com.`,
     },
     prism: {
       theme: prismThemes.github,

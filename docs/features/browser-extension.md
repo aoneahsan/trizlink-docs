@@ -22,7 +22,7 @@ so that anything linking here still works, and answers the question honestly ins
 
 ## Why there is not one {#why-not}
 
-Trizlink is built by one developer, and the surfaces were chosen deliberately: web and Android first,
+The Trizlink team chose the surfaces deliberately: web and Android first,
 together, verified module by module. An extension is a third store, a third review process and a third
 permission model. Shipping it half-finished would be worse than not shipping it, so it is **deferred until
 the first two are complete — not cancelled, and not quietly dropped.**

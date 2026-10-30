@@ -2,8 +2,8 @@
 
 > Trizlink is a link-management platform: branded short links, bio pages, QR codes, and the click analytics
 > that tie them together, inside workspaces several people can share. Sign-in is Google-only. Plans are Free,
-> Pro ($6/month) and Team ($18/month), billed annually at two months free. Product: https://trizlink.com.
-> Author: Ahsan Mahmood (https://aoneahsan.com).
+> Pro ($9.99/month) and Team ($8.99/seat/month, from 3 seats); annual billing charges ten months for twelve.
+> Product: https://trizlink.com. Made by the Trizlink team (support@trizlink.com).
 
 ## About
 
@@ -63,4 +63,4 @@ models. It is rewritten with the documentation it indexes, so a claim here is a 
 
 - [Privacy & data](https://docs.trizlink.com/about/privacy-and-data): No IP stored, a salted visitor hash, and how to delete everything.
 - [Changelog](https://docs.trizlink.com/about/changelog): Product and documentation history, including the 2.13.0 rebuild and its data reset.
-- [About the author](https://docs.trizlink.com/about/about-the-author): Ahsan Mahmood, the developer behind Trizlink.
+- [About the Trizlink team](https://docs.trizlink.com/about/about-the-author): who maintains Trizlink and how to reach support.

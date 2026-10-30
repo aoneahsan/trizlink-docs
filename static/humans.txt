@@ -1,13 +1,11 @@
 /* TEAM */
-  Developer: Ahsan Mahmood
-  Site: https://aoneahsan.com
-  Contact: aoneahsan [at] gmail.com
-  GitHub: https://github.com/aoneahsan
-  LinkedIn: https://linkedin.com/in/aoneahsan
+  Team: the Trizlink team
+  Contact: support@trizlink.com
+  Site: https://trizlink.com
 
 /* SITE */
-  Product: TrizLink (https://trizlink.com)
+  Product: Trizlink (https://trizlink.com)
   Docs: https://docs.trizlink.com
   Built with: Docusaurus, React, TypeScript
-  Hosting: Firebase Hosting + GitHub Pages
+  Hosting: GitHub Pages
   Language: English

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="TrizLink documentation social card">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Trizlink documentation social card">
   <defs>
     <linearGradient id="tz-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0b1220"/>
@@ -16,8 +16,8 @@
     <path d="M16,-24 L32,-24 A24,24 0 0,1 32,24 L16,24"/>
     <line x1="-24" y1="0" x2="24" y2="0"/>
   </g>
-  <text x="240" y="225" font-family="Inter, system-ui, sans-serif" font-size="78" font-weight="800" fill="#ffffff">TrizLink Docs</text>
+  <text x="240" y="225" font-family="Inter, system-ui, sans-serif" font-size="78" font-weight="800" fill="#ffffff">Trizlink Docs</text>
   <text x="82" y="360" font-family="Inter, system-ui, sans-serif" font-size="40" font-weight="600" fill="#93c5fd">Short links, link-in-bio, QR codes &amp; analytics</text>
-  <text x="82" y="430" font-family="Inter, system-ui, sans-serif" font-size="30" fill="#cbd5e1">Documentation for the TrizLink link-management platform</text>
-  <text x="82" y="540" font-family="Inter, system-ui, sans-serif" font-size="26" fill="#64748b">trizlink.com · Built by Ahsan Mahmood (aoneahsan.com)</text>
+  <text x="82" y="430" font-family="Inter, system-ui, sans-serif" font-size="30" fill="#cbd5e1">Documentation for the Trizlink link-management platform</text>
+  <text x="82" y="540" font-family="Inter, system-ui, sans-serif" font-size="26" fill="#64748b">trizlink.com · Made by the Trizlink team</text>
 </svg>

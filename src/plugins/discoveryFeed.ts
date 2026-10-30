@@ -9,7 +9,27 @@ type FeedItem = {
   description: string;
   permalink: string;
   updatedAt: Date;
+  /** The section a page lives in, from its first path segment (search audit SA-P05, 2026-10-30). */
+  category: string;
 };
+
+/** What the readable `/feed` and `/sitemap` pages receive (`usePluginData('discovery-feed')`). */
+export type DiscoveryFeedData = {
+  items: { title: string; description: string; permalink: string; updatedAt: string; category: string }[];
+};
+
+/** Section names as the sidebar shows them. A page outside these folders is "Overview". */
+const CATEGORY: Record<string, string> = {
+  'getting-started': 'Getting started',
+  features: 'Features',
+  guides: 'Guides',
+  about: 'About',
+};
+
+function categoryOf(permalink: string): string {
+  const first = permalink.split('/').filter(Boolean)[0] ?? '';
+  return CATEGORY[first] ?? 'Overview';
+}
 
 type DiscoveryFeedOptions = {
   description: string;
@@ -23,11 +43,15 @@ export default function discoveryFeed(
   let items: FeedItem[] = [];
   return {
     name: 'discovery-feed',
-    allContentLoaded({ allContent }) {
+    allContentLoaded({ allContent, actions }) {
       items = docsFeedItems(allContent);
       if (items.length === 0) {
         throw new Error('discovery-feed: no dated documentation pages were found');
       }
+      const data: DiscoveryFeedData = {
+        items: items.map((item) => ({ ...item, updatedAt: item.updatedAt.toISOString() })),
+      };
+      actions.setGlobalData(data);
     },
     async postBuild({ outDir, siteConfig }) {
       const siteUrl = new URL(siteConfig.baseUrl, siteConfig.url).toString();
@@ -75,6 +99,7 @@ function docsFeedItems(allContent: AllContent): FeedItem[] {
               description: doc.description,
               permalink: doc.permalink,
               updatedAt,
+              category: categoryOf(doc.permalink),
             }]
           : [];
       }),
@@ -101,6 +126,7 @@ function renderFeed(
       <link>${xml(permalink)}</link>
       <guid isPermaLink="true">${xml(permalink)}</guid>
       <pubDate>${item.updatedAt.toUTCString()}</pubDate>
+      <category>${xml(item.category)}</category>
       <description><![CDATA[${cdata(item.description)}]]></description>
     </item>`;
     })

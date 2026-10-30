@@ -1,5 +1,5 @@
-# TrizLink Docs — robots.txt
-# Maintained by Ahsan Mahmood (https://aoneahsan.com)
+# Trizlink Docs — robots.txt
+# Maintained by the Trizlink team (https://trizlink.com)
 # Last updated: 2026-06-22
 #
 # Public crawl policy for https://docs.trizlink.com. We allow every reputable
