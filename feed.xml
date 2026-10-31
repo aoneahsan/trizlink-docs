@@ -5,8 +5,16 @@
     <link>https://docs.trizlink.com/</link>
     <description><![CDATA[How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on.]]></description>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Oct 2026 18:56:26 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://docs.trizlink.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use Trizlink on your phone</title>
+      <link>https://docs.trizlink.com/features/phone-app-view</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/phone-app-view</guid>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Find the four bottom tabs, open the full workspace menu and locate New link on Dashboard or Links.]]></description>
+    </item>
     <item>
       <title>About the Trizlink team</title>
       <link>https://docs.trizlink.com/about/about-the-author</link>
