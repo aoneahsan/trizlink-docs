@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trizlink Docs</title>
+    <link>https://docs.trizlink.com/</link>
+    <description><![CDATA[How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on.]]></description>
+    <language>en</language>
+    <lastBuildDate>Fri, 30 Oct 2026 18:56:26 GMT</lastBuildDate>
+    <atom:link href="https://docs.trizlink.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About the Trizlink team</title>
+      <link>https://docs.trizlink.com/about/about-the-author</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/about/about-the-author</guid>
+      <pubDate>Fri, 30 Oct 2026 18:56:26 GMT</pubDate>
+      <category>About</category>
+      <description><![CDATA[Trizlink is built and maintained by the Trizlink team. Product questions go to the contact page on trizlink.com, or to support@trizlink.com.]]></description>
+    </item>
+    <item>
+      <title>Browser extension</title>
+      <link>https://docs.trizlink.com/features/browser-extension</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/browser-extension</guid>
+      <pubDate>Fri, 30 Oct 2026 18:56:26 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Trizlink does not offer a browser extension. Here is why, what to use instead to shorten a link quickly, and what would have to be true for one to ship.]]></description>
+    </item>
+    <item>
+      <title>Theme control</title>
+      <link>https://docs.trizlink.com/features/theme-customizer</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/theme-customizer</guid>
+      <pubDate>Mon, 26 Oct 2026 10:13:09 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[One panel, nine appearance axes, applied before the first paint from a single registry. Preferences are held on the device rather than synced to your account.]]></description>
+    </item>
+    <item>
+      <title>AI assistance</title>
+      <link>https://docs.trizlink.com/features/ai-features-byok</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/ai-features-byok</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Trizlink's AI runs on our credit at your plan's level, with monthly AI and voice allowances on every plan; your own Anthropic or OpenAI key lifts both, Free included.]]></description>
+    </item>
+    <item>
+      <title>AI levels and voice</title>
+      <link>https://docs.trizlink.com/features/ai-levels-and-voice</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/ai-levels-and-voice</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Every Trizlink plan includes AI at one of three levels, Spark, Pulse or Surge, with monthly AI and voice allowances. Your own Anthropic or OpenAI key lifts both.]]></description>
+    </item>
+    <item>
+      <title>Page tours and the product walkthrough</title>
+      <link>https://docs.trizlink.com/features/page-tours-and-walkthrough</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/page-tours-and-walkthrough</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Press Tour this page for a short guided tour of the page you are on. The product walkthrough shows how Trizlink works, one real screen per step.]]></description>
+    </item>
+    <item>
+      <title>Frequently asked questions</title>
+      <link>https://docs.trizlink.com/guides/faq</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/guides/faq</guid>
+      <pubDate>Tue, 06 Oct 2026 15:33:19 GMT</pubDate>
+      <category>Guides</category>
+      <description><![CDATA[Short answers to what people actually ask about Trizlink — plans, sign-in, custom domains, the missing browser extension, AI metering, the API and what happened to old links.]]></description>
+    </item>
+    <item>
+      <title>Introduction to Trizlink</title>
+      <link>https://docs.trizlink.com/intro</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/intro</guid>
+      <pubDate>Tue, 06 Oct 2026 15:16:17 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Trizlink runs short links, bio pages and social posts out of one workspace, with a single analytics layer across all three. What it does, what it does not, and where the limits are.]]></description>
+    </item>
+    <item>
+      <title>Workspaces and teams</title>
+      <link>https://docs.trizlink.com/features/workspaces-and-teams</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/workspaces-and-teams</guid>
+      <pubDate>Tue, 06 Oct 2026 09:39:29 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[A Trizlink workspace is the tenant that owns links, bio pages and analytics. Four roles and seven capabilities on every plan; teams and the audit log on Team.]]></description>
+    </item>
+    <item>
+      <title>Create your account</title>
+      <link>https://docs.trizlink.com/getting-started/create-account</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/getting-started/create-account</guid>
+      <pubDate>Thu, 01 Oct 2026 10:01:03 GMT</pubDate>
+      <category>Getting started</category>
+      <description><![CDATA[Sign in to Trizlink with your Google account, meet the workspace created for you, and learn how deletion, the 30-day window and the rebuild data reset work before you start.]]></description>
+    </item>
+    <item>
+      <title>QR codes</title>
+      <link>https://docs.trizlink.com/features/qr-codes</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/qr-codes</guid>
+      <pubDate>Sat, 05 Sep 2026 09:54:17 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Every Trizlink short link can be drawn as a QR code, derived from the address each time rather than stored, with four error-correction levels and optional separate scan counting.]]></description>
+    </item>
+    <item>
+      <title>Quick start</title>
+      <link>https://docs.trizlink.com/getting-started/quick-start</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/getting-started/quick-start</guid>
+      <pubDate>Sat, 05 Sep 2026 09:54:17 GMT</pubDate>
+      <category>Getting started</category>
+      <description><![CDATA[Create your first Trizlink short link, draw its QR code, publish a bio page and read the click breakdowns, with the limits of each step stated as you go.]]></description>
+    </item>
+    <item>
+      <title>Referrals</title>
+      <link>https://docs.trizlink.com/features/referrals</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/referrals</guid>
+      <pubDate>Sat, 05 Sep 2026 09:25:47 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Invite someone to Trizlink and earn points and a dated badge on every confirmed referral, plus a month of a paid plan once you reach the threshold, with every number set in the admin panel rather than fixed in the product.]]></description>
+    </item>
+    <item>
+      <title>Changelog</title>
+      <link>https://docs.trizlink.com/about/changelog</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/about/changelog</guid>
+      <pubDate>Fri, 04 Sep 2026 12:30:23 GMT</pubDate>
+      <category>About</category>
+      <description><![CDATA[Notable changes to Trizlink and to this documentation site, latest first. Version 2.13.0 rebuilt the product on a new database and did not carry old data across.]]></description>
+    </item>
+    <item>
+      <title>Privacy and data</title>
+      <link>https://docs.trizlink.com/about/privacy-and-data</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/about/privacy-and-data</guid>
+      <pubDate>Fri, 04 Sep 2026 09:10:05 GMT</pubDate>
+      <category>About</category>
+      <description><![CDATA[What Trizlink stores, what it deliberately does not store, and why no visitor IP address exists in the database. A plain summary alongside the legal text.]]></description>
+    </item>
+    <item>
+      <title>Public API</title>
+      <link>https://docs.trizlink.com/features/api-access</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/api-access</guid>
+      <pubDate>Fri, 04 Sep 2026 09:00:28 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Eighteen REST endpoints at api.trizlink.com/v1 for links, bio pages, analytics, domains, webhooks and social posts, with per-resource scopes and separate destructive permissions.]]></description>
+    </item>
+    <item>
+      <title>Link organisation</title>
+      <link>https://docs.trizlink.com/features/link-organization</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/link-organization</guid>
+      <pubDate>Fri, 04 Sep 2026 09:00:28 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Folders, labels and collections are three different structures in Trizlink, not three names for one. Plus CSV import of up to 5,000 rows, parsed in your browser.]]></description>
+    </item>
+    <item>
+      <title>Sharing a link</title>
+      <link>https://docs.trizlink.com/features/sharing</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/sharing</guid>
+      <pubDate>Fri, 04 Sep 2026 09:00:28 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[One copy control with an honest fallback, and a per-link social card you control. Trizlink has no share modal and no native share sheet, and this page says so.]]></description>
+    </item>
+    <item>
+      <title>Social publishing</title>
+      <link>https://docs.trizlink.com/features/social-media</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/social-media</guid>
+      <pubDate>Fri, 04 Sep 2026 09:00:28 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Compose one post, preview it per network and queue it per account. Trizlink's social publishing is built and currently publishes nothing, and this page says why.]]></description>
+    </item>
+    <item>
+      <title>Utility tools</title>
+      <link>https://docs.trizlink.com/features/utility-tools</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/utility-tools</guid>
+      <pubDate>Fri, 04 Sep 2026 09:00:28 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[A curated directory of 48 free browser tools hosted on ZTools, a separate product. Trizlink's own tools suite was retired in July 2026 and the directory replaced it.]]></description>
+    </item>
+    <item>
+      <title>Widgets</title>
+      <link>https://docs.trizlink.com/features/widgets</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/widgets</guid>
+      <pubDate>Fri, 04 Sep 2026 09:00:28 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Embed a Trizlink link, bio page or collection on any site in four shapes — inline, button, popup or QR — with a snippet generated from the widget rather than stored.]]></description>
+    </item>
+    <item>
+      <title>Analytics</title>
+      <link>https://docs.trizlink.com/features/analytics</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/analytics</guid>
+      <pubDate>Fri, 04 Sep 2026 08:45:38 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Trizlink records one row per click with country, device, referrer and browser, stores no visitor IP address, and reports refused visits alongside successful ones.]]></description>
+    </item>
+    <item>
+      <title>Custom domains</title>
+      <link>https://docs.trizlink.com/features/custom-domains</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/custom-domains</guid>
+      <pubDate>Fri, 04 Sep 2026 08:45:38 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Add a domain you own to Trizlink and prove it with three DNS records. Verification works today; serving short links on a verified domain is not live yet.]]></description>
+    </item>
+    <item>
+      <title>Bio pages</title>
+      <link>https://docs.trizlink.com/features/link-in-bio</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/link-in-bio</guid>
+      <pubDate>Fri, 04 Sep 2026 08:45:38 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[A Trizlink bio page is one public address holding every link you would otherwise have to choose between, built from fifteen block types on three layouts, with drafts, passwords and view counts.]]></description>
+    </item>
+    <item>
+      <title>Short links</title>
+      <link>https://docs.trizlink.com/features/short-links</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/short-links</guid>
+      <pubDate>Fri, 04 Sep 2026 08:45:38 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[A Trizlink short link is a short address that resolves to a destination you can change, with optional passwords, expiry, click ceilings, geo and device targeting and A/B splits.]]></description>
+    </item>
+    <item>
+      <title>Tracking and UTM</title>
+      <link>https://docs.trizlink.com/features/tracking-and-utm</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/tracking-and-utm</guid>
+      <pubDate>Fri, 04 Sep 2026 08:45:38 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Attach tracking pixels to Trizlink links, save UTM templates, receive webhooks on ten link and workspace events, and record conversions with a beacon that stores no visitor address.]]></description>
+    </item>
+  </channel>
+</rss>

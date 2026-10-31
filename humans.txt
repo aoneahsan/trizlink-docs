@@ -1,0 +1,11 @@
+/* TEAM */
+  Team: the Trizlink team
+  Contact: support@trizlink.com
+  Site: https://trizlink.com
+
+/* SITE */
+  Product: Trizlink (https://trizlink.com)
+  Docs: https://docs.trizlink.com
+  Built with: Docusaurus, React, TypeScript
+  Hosting: GitHub Pages
+  Language: English

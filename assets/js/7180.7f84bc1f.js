@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktrizlink_docs=globalThis.webpackChunktrizlink_docs||[]).push([[7180],{7180(c,e,i){i.d(e,{createPacketServices:()=>s.$});var s=i(4824);i(9302)}}]);

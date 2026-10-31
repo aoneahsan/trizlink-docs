@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktrizlink_docs=globalThis.webpackChunktrizlink_docs||[]).push([[6402],{6402(c,e,i){i.d(e,{createArchitectureServices:()=>r.S});var r=i(5016);i(9302)}}]);
