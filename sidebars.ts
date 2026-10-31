@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
       label: 'Features',
       collapsed: false,
       items: [
+        'features/phone-app-view',
         'features/short-links',
         'features/link-in-bio',
         'features/qr-codes',

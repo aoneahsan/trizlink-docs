@@ -1,6 +1,6 @@
 # AGENTS.md — trizlink-docs
 
-**Last Updated:** 2026-10-30
+**Last Updated:** 2026-10-31
 **Mirror of `CLAUDE.md`** — identical except this header. Update one, update the other.
 
 | Context Budget Last Verified | 2026-10-21 — root and docs ancestor chain is under 32 KiB. Re-check due 2026-11-20. This maintenance pass changed no approved page copy. |
@@ -63,20 +63,19 @@ docs/
   features/{short-links, link-in-bio, qr-codes, analytics, custom-domains, link-organization,
             tracking-and-utm, workspaces-and-teams, social-media, widgets, ai-features-byok,
             api-access, utility-tools, browser-extension, theme-customizer, sharing,
-            page-tours-and-walkthrough, referrals}.md
+            page-tours-and-walkthrough, phone-app-view, referrals}.md
   guides/faq.md
   about/{privacy-and-data, changelog, about-the-author}.md   (about-the-author is the team page since 2026-10-30)
   MANUAL-TASKS.md · DONE-TASKS.md            (excluded from the build)
 src/css/custom.css · src/pages/{index,feed,sitemap}.tsx · src/plugins/discoveryFeed.ts
 static/{robots.txt, llms.txt, humans.txt, CNAME, 5ec21df431ff3d1dbf8dd7052aad9671.txt, img/*}
 docusaurus.config.ts · sidebars.ts
-.github/workflows/deploy-pages.yml (GitHub Pages)
+gh-pages branch (generated build; GitHub Pages)
 ```
 
 ## Deployment
 
-**GitHub Pages only** — a push to `main` runs `.github/workflows/deploy-pages.yml` and that IS the deploy.
-See `DEPLOY.md`. 🔴 Never Firebase: this repo has no `firebase.json` and never had one.
+**GitHub Pages only** — build and verify locally, then publish generated `build/` to `gh-pages` with a normal fast-forward push. A `main` push records source only. See `DEPLOY.md`. 🔴 Never Firebase: this repo has no `firebase.json` and never had one.
 
 **Committing and pushing this repo is NOT owner-only.** It is the docs site of an ordinary own production
 product, so the agent commits and pushes it **directly** — owner directive 2026-08-17. Read the push output and

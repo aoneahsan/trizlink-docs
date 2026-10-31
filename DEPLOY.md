@@ -16,14 +16,15 @@ yarn install
 yarn build        # → ./build  (includes CNAME, robots.txt, llms.txt, sitemap.xml)
 ```
 
-## Deploy — push to `main`
+## Deploy — publish the built tree
 
-1. In the repo: **Settings → Pages → Source = "GitHub Actions"** (one-time).
-2. Push to `main`. The workflow `.github/workflows/deploy-pages.yml` builds and deploys.
-3. The custom domain comes from `static/CNAME` (`docs.trizlink.com`), copied into `build/` automatically.
-   Confirm it under **Settings → Pages → Custom domain**, with **Enforce HTTPS** on.
-
-There is no manual deploy command and no second target. A push to `main` is the deploy.
+GitHub Pages serves the `gh-pages` branch at `/` in legacy branch mode. A push to `main` records source only.
+After `yarn typecheck` and `yarn build`, inspect the built page at phone and desktop widths. Then fetch
+`gh-pages`, add a temporary detached worktree at `o/gh-pages`, and copy `build/` into it with
+`rsync -a --delete --exclude=.git build/ <worktree>/`. Confirm `CNAME` and `.nojekyll`, commit the generated
+tree, and push `HEAD:gh-pages` normally. Do not use Docusaurus deploy or force-push. Request a Pages build with
+`gh api -X POST repos/aoneahsan/trizlink-docs/pages/builds`, then verify the live page and served assets.
+The domain remains `docs.trizlink.com`, with **Enforce HTTPS** on.
 
 ## DNS
 
