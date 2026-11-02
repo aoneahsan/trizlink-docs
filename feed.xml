@@ -16,6 +16,14 @@
       <description><![CDATA[Find the four bottom tabs, open the full workspace menu and locate New link on Dashboard or Links.]]></description>
     </item>
     <item>
+      <title>Share a link</title>
+      <link>https://docs.trizlink.com/features/sharing</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/sharing</guid>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Share your referral link from Referrals, copy a short link, and set the preview a social platform may show.]]></description>
+    </item>
+    <item>
       <title>About the Trizlink team</title>
       <link>https://docs.trizlink.com/about/about-the-author</link>
       <guid isPermaLink="true">https://docs.trizlink.com/about/about-the-author</guid>
@@ -150,14 +158,6 @@
       <pubDate>Fri, 04 Sep 2026 09:00:28 GMT</pubDate>
       <category>Features</category>
       <description><![CDATA[Folders, labels and collections are three different structures in Trizlink, not three names for one. Plus CSV import of up to 5,000 rows, parsed in your browser.]]></description>
-    </item>
-    <item>
-      <title>Sharing a link</title>
-      <link>https://docs.trizlink.com/features/sharing</link>
-      <guid isPermaLink="true">https://docs.trizlink.com/features/sharing</guid>
-      <pubDate>Fri, 04 Sep 2026 09:00:28 GMT</pubDate>
-      <category>Features</category>
-      <description><![CDATA[One copy control with an honest fallback, and a per-link social card you control. Trizlink has no share modal and no native share sheet, and this page says so.]]></description>
     </item>
     <item>
       <title>Social publishing</title>
