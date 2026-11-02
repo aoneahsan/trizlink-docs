@@ -5,8 +5,24 @@
     <link>https://docs.trizlink.com/</link>
     <description><![CDATA[How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on.]]></description>
     <language>en</language>
-    <lastBuildDate>Sat, 31 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 07:01:10 GMT</lastBuildDate>
     <atom:link href="https://docs.trizlink.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Referrals</title>
+      <link>https://docs.trizlink.com/features/referrals</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/referrals</guid>
+      <pubDate>Mon, 02 Nov 2026 07:01:10 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Invite someone to Trizlink and earn points and a dated badge on every confirmed referral, plus a month of a paid plan once you reach the threshold, with every number set in the admin panel rather than fixed in the product.]]></description>
+    </item>
+    <item>
+      <title>Update Trizlink when a release is ready</title>
+      <link>https://docs.trizlink.com/features/app-updates</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/app-updates</guid>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Understand a normal release notice, an urgent update block and what the Update action means.]]></description>
+    </item>
     <item>
       <title>Use Trizlink on your phone</title>
       <link>https://docs.trizlink.com/features/phone-app-view</link>
@@ -14,6 +30,14 @@
       <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
       <category>Features</category>
       <description><![CDATA[Find the four bottom tabs, open the full workspace menu and locate New link on Dashboard or Links.]]></description>
+    </item>
+    <item>
+      <title>Publish a Trizlink release</title>
+      <link>https://docs.trizlink.com/features/release-management</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/release-management</guid>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Choose the platform, channel, version and severity that control when people must update Trizlink.]]></description>
     </item>
     <item>
       <title>Share a link</title>
@@ -118,14 +142,6 @@
       <pubDate>Sat, 05 Sep 2026 09:54:17 GMT</pubDate>
       <category>Getting started</category>
       <description><![CDATA[Create your first Trizlink short link, draw its QR code, publish a bio page and read the click breakdowns, with the limits of each step stated as you go.]]></description>
-    </item>
-    <item>
-      <title>Referrals</title>
-      <link>https://docs.trizlink.com/features/referrals</link>
-      <guid isPermaLink="true">https://docs.trizlink.com/features/referrals</guid>
-      <pubDate>Sat, 05 Sep 2026 09:25:47 GMT</pubDate>
-      <category>Features</category>
-      <description><![CDATA[Invite someone to Trizlink and earn points and a dated badge on every confirmed referral, plus a month of a paid plan once you reach the threshold, with every number set in the admin panel rather than fixed in the product.]]></description>
     </item>
     <item>
       <title>Changelog</title>
