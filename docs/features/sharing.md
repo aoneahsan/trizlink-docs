@@ -1,118 +1,118 @@
 ---
-title: Sharing a link
-description: One copy control with an honest fallback, and a per-link social card you control. Trizlink has no share modal and no native share sheet, and this page says so.
+title: Share a link
+description: Share your referral link from Referrals, copy a short link, and set the preview a social platform may show.
 sidebar_position: 16
-keywords: [copy link, share short link, social card, open graph tags, link preview, twitter card]
+last_update:
+  date: 2026-10-31
+keywords: [share referral link, copy short link, social card, link preview]
 ---
 
-Sharing a Trizlink link means two things: getting the address into your clipboard, and controlling what other
-people see when you paste it somewhere. Both are simple, and one of them is worth understanding properly,
-because a link preview is the first thing most readers meet.
+import Head from '@docusaurus/Head';
 
-This page is short, and deliberately so — see [what is not here](#not-here).
+<Head>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'TechArticle',
+      headline: 'Share a link',
+      description: 'Share your referral link from Referrals, copy a short link, and set the preview a social platform may show.',
+      url: 'https://docs.trizlink.com/features/sharing',
+      inLanguage: 'en',
+      author: { '@type': 'Organization', name: 'The Trizlink team', url: 'https://trizlink.com' },
+      dateModified: '2026-10-31',
+      about: { '@type': 'SoftwareApplication', name: 'Trizlink', url: 'https://trizlink.com' },
+    })}
+  </script>
+</Head>
 
-## On this page
+*By The Trizlink team*
 
-- [Copying a link](#copying)
-- [The social card](#social-card)
-- [The cache problem](#cache)
-- [What is not here](#not-here)
-- [FAQ](#faq)
+## How do I share my referral link?
 
-## Copying a link {#copying}
+Open **Dashboard → Referrals** and press **Share** beside your referral link. On the web, Share opens a dialog
+with **Share on X**, **Share on LinkedIn**, **Share on Email** and **Copy link**. In the Android app, it opens your phone's system share
+sheet. The link in either path is your referral link, not a short link from your Links list.
 
-Copy controls sit beside anything worth copying: a short link in the Links list, a domain's DNS values, a
-widget's snippet, a webhook URL, a UTM template's tags, an API key at the moment it is minted.
+You can also press **Copy link** beside the referral link and paste it yourself. If clipboard access fails, the
+link stays visible in the field for you to select.
 
-They all go through one path, so they all behave the same way. The modern clipboard interface is used where
-the browser offers it, a selection-based fallback is used where it does not, and where **neither** works the
-control says the copy failed and shows you the value to select by hand. It never silently does nothing, which
-is the failure mode a copy button usually has.
+## What happens when I press Share on the web?
 
-## The social card {#social-card}
+Choose **Share on X** or **Share on LinkedIn** to open that site's sharing page; **Share on Email** starts a
+message with your referral link in its body. Press **Copy link** to copy the address and close the dialog.
+The dialog's open state is in the page address, so a refresh can reopen it; closing it clears that state.
+No message goes out automatically.
 
-When somebody pastes your short link into a chat app, a social network or a search result, the preview they
-see comes from tags on the link. You set them per link, in the **Social card** section of the link form.
+Only those destinations appear. For another destination, copy the address and paste it in the app you want
+to use. The web button always opens this dialog, so the available actions are visible before you pick a
+service or close the dialog without sending anything.
 
-| Field | Notes |
+## What happens when I press Share on Android?
+
+Android opens the system share sheet with the referral link. Pick a destination there. Available destinations
+depend on the apps installed on your phone.
+
+Dismiss the sheet to stay on Referrals. Nothing is sent when you close it; the referral link remains in its
+field, ready for you to copy or share again when you choose a destination.
+
+Trizlink does not appear as a destination when you share a page *from* another Android app. This action
+sends your referral link out; it does not make Trizlink a share target.
+
+## How do I share a short link?
+
+Copy its address from **Links** and paste it where you want it. Short link cards have a copy control, but no
+product-wide share dialog. The Referrals Share control applies to the referral link on that page.
+
+The Social card fields below affect how a platform may preview that short link after you paste it, but they
+do not add a share button to the link card or choose a destination for you. An image is optional.
+
+## How do I set a short link's preview?
+
+Open the link form's **Social card** section. When a public short link has saved Social card content, its
+short-link response can carry Open Graph and X tags drawn from these fields:
+
+| Field | What it controls |
 |---|---|
-| Title | What the card headlines |
-| Description | The line under it |
-| Image address | **1200 × 630** is the size that survives every platform's crop |
-| Card shape | Large image · Small thumbnail · Player · App |
-| Site account | The account the page belongs to |
-| Author account | The person who wrote it, if that is somebody else |
+| Title and description | The headline and supporting text |
+| Page type | The kind of page described by the tags |
+| Image address | The image a platform may use; **1200 × 630** is the form's recommendation, not a guarantee |
+| Where X differs | Choose **Large image**, **Small thumbnail**, **Player** or **App**; set X-specific title, description and image if needed |
+| Site and author accounts | The X accounts associated with the page and its author |
 
-Three things the form will tell you, and it is easier to read them here first:
+When you leave an X-specific title, description or image blank, the short-link response uses the general
+field, while the platform still decides which of the supplied tags appear in its own preview. For an eligible
+public link, the redirect depends on the fields present. A short link
+with neither a pixel nor saved Social card content returns a 301 redirect to its destination; a platform may
+follow it and fetch that destination's tags. A pixel link with blank Social fields returns a 200 HTML
+redirect page with pixel markup and no Social tags. A platform may follow that page too, but fetching the
+destination's tags depends on the platform. Trizlink copies no destination tags. If neither image field is
+set, the short-link response emits no image tag.
+The form warns when **Large image** is selected without an image in either place.
 
-- **An image much smaller than 1200 × 630 is refused outright by some platforms** rather than being scaled
-  up.
-- **Large image needs an image at least 300 px wide**, or X quietly falls back to the small card. Selecting
-  large and setting no image gets you the small one without being told by the platform.
-- **With no image set at all**, platforms use whatever the destination page declares, or show a text-only
-  card. That is often fine; it is just not your choice.
+The tags are served on eligible public short links at the shared Trizlink address. Password-protected,
+sign-in-gated, expired, inactive and click-capped links do not expose the card fields; custom-domain serving
+is unavailable. The final card belongs to the platform that reads the tags, so the form preview cannot
+promise that every chat app or social network will draw the same image and text.
 
-X reads its own tags first and falls back to the general ones. There is a **Where X differs** block for when
-it needs to say something different — leave it blank and there is nothing to keep in step.
+## Why does an old preview still appear?
 
-## The cache problem {#cache}
+The platform showing the card may have cached the tags it read earlier. Changing the Social card fields
+cannot replace a preview already held by that platform. Set the fields before sharing the short link widely.
+If an old card persists and the platform offers a preview or refresh tool, use it to ask for a new fetch, then
+check the resulting card on that platform before you share the link again.
 
-Every platform caches what it read the first time somebody shared an address. **Changing these fields does not
-change a card that is already out there.** The old one keeps being shown until that platform re-reads the
-link, which can take days, and Trizlink cannot force it.
+Caches keep copies. Trizlink can save the fields you set on the short link. It cannot tell another platform
+when to discard a card that platform has already stored and shown to somebody else.
 
-The practical consequence: set the card **before** you share the link widely, not after somebody tells you the
-preview looks wrong. If a card is already wrong in the wild, most platforms have their own debugging tool that
-will re-fetch on request — that is the only reliable lever, and it is theirs, not ours.
+## Where can I read more?
 
-## What is not here {#not-here}
+Choose by question. The pages below cover the short-link address and redirect, when a short link earns its
+place, the current plan limits, how Trizlink handles data, and the main site; each has a separate job.
 
-Being plain about the absences, because the shape of this feature is smaller than it sounds:
+- [Short links](./short-links.md) covers the address and redirect.
+- [The comparison with a generic shortener](https://trizlink.com/blog/trizlink-vs-generic-shorteners) explains when a short link earns its place.
+- [Plans and pricing](https://trizlink.com/#pricing) lists the current plan limits.
+- [Privacy Policy](https://trizlink.com/privacy-policy) explains how Trizlink handles data.
+- [Trizlink](https://trizlink.com) is the main site.
 
-- **There is no share modal.** No panel of platform buttons for X, Facebook, WhatsApp, Telegram, Reddit and
-  the rest. Copy the link and paste it where you want it.
-- **There is no native share sheet**, on Android or anywhere else. The Android app does not register itself as
-  a share target, so Trizlink will not appear when you share a page from another app.
-- **There is no share action on a link card** beyond copying it.
-- The one exception is the blog on the product site, where a post carries a small row: copy link, X, LinkedIn
-  and email. That is a blog affordance, not a product-wide share contract.
-
-## FAQ {#faq}
-
-### How do I share a short link?
-
-Copy it and paste it. There is no share dialog to open.
-
-### Can I share to X or WhatsApp from inside Trizlink?
-
-No. There is no in-app share panel. Copy the address and use the app you want.
-
-### Does Trizlink appear in my phone's share sheet?
-
-No. The Android app does not register as a share target.
-
-### Why does my link preview look wrong after I fixed it?
-
-Because the platform cached the old one when the link was first shared. It updates when that platform
-re-reads the address, which can take days. Use that platform's own preview-debugging tool to force a re-fetch.
-
-### What image size should I use?
-
-1200 × 630. Smaller images are cropped unpredictably or refused, and an image under 300 px wide will not
-produce a large card on X.
-
-### What gets shown if I set no card at all?
-
-Whatever the destination page declares, or a plain text card. It still works; you just are not choosing it.
-
-### Is anything private ever exposed by a preview?
-
-The card shows only what you put in those fields plus the destination page's own tags. Your workspace,
-analytics and other links are not part of it.
-
-## Related
-
-- [Short links](./short-links.md)
-- [QR codes](./qr-codes.md)
-- [Widgets](./widgets.md)
-- [Social publishing](./social-media.md)
+**[Open Referrals](https://trizlink.com/dashboard/referrals)**

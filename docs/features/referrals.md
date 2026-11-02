@@ -30,6 +30,10 @@ avatar, and there is an *Invite a friend* row on the dashboard home.
 The page gives you one link. It is yours permanently — the code does not rotate, and it is safe to put in a
 bio page, an email signature or a talk slide.
 
+To send that link, press **Share** on Referrals: the web dialog offers X, LinkedIn, email and Copy, while
+the Android app opens its system share sheet. See [how referral sharing works](./sharing.md) and how to copy a
+short link separately.
+
 If the programme is switched off, those three entry points disappear and the page tells you nothing is being
 counted. Anything you already earned stays exactly where it is.
 
