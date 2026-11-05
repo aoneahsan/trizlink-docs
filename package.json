@@ -27,7 +27,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc --noEmit",
-    "og:png": "rsvg-convert -w 1200 -h 630 static/img/social-card.svg -o static/img/social-card.png"
+    "og:png": "rsvg-convert -w 1200 -h 630 static/img/social-card.svg -o static/img/social-card.png",
+    "deploy": "yarn build && npx -y wrangler@4 pages deploy build --project-name trizlink-docs --branch main --commit-dirty=true"
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.2",
