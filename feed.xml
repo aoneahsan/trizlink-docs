@@ -5,8 +5,312 @@
     <link>https://docs.trizlink.com/</link>
     <description><![CDATA[How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on.]]></description>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Nov 2026 07:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://docs.trizlink.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moving to Trizlink</title>
+      <link>https://docs.trizlink.com/compare</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Step-by-step guides for moving from 37 link shorteners, bio page hosts and social schedulers to Trizlink, with what stays behind and dated facts.]]></description>
+    </item>
+    <item>
+      <title>Moving from Agorapulse to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/agorapulse</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/agorapulse</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Agorapulse today, what stays with Agorapulse, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Beacons to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/beacons</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/beacons</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Rebuild your Beacons page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Beacons's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Bio Link to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/bio-link</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/bio-link</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Rebuild your Bio Link page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Bio Link's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Bitly to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/bitly</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/bitly</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Move your links from Bitly to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from Bitly's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from BL.INK to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/bl-ink</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/bl-ink</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Move your links from BL.INK to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from BL.INK's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Buffer to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/buffer</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/buffer</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Buffer today, what stays with Buffer, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Campsite.bio to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/campsite-bio</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/campsite-bio</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Rebuild your Campsite.bio page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Campsite.bio's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Carrd to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/carrd</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/carrd</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Rebuild your Carrd page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Carrd's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Cuttly to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/cuttly</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/cuttly</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Move your links from Cuttly to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from Cuttly's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Dub to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/dub</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/dub</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Move your links from Dub to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from Dub's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Hootsuite to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/hootsuite</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/hootsuite</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Hootsuite today, what stays with Hootsuite, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Hopp by Wix to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/hopp</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/hopp</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Rebuild your Hopp by Wix page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Hopp by Wix's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Komi to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/komi</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/komi</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Rebuild your Komi page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Komi's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Later to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/later</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/later</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Later today, what stays with Later, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Linkly to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/linkly</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/linkly</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Move your links from Linkly to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from Linkly's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Linktree to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/linktree</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/linktree</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Rebuild your Linktree page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Linktree's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Lnk.Bio to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/lnk-bio</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/lnk-bio</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Rebuild your Lnk.Bio page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Lnk.Bio's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Loomly to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/loomly</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/loomly</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Loomly today, what stays with Loomly, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Metricool to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/metricool</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/metricool</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Metricool today, what stays with Metricool, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Milkshake to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/milkshake</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/milkshake</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Rebuild your Milkshake page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Milkshake's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Mixpost to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/mixpost</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/mixpost</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Mixpost today, what stays with Mixpost, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Pallyy to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/pallyy</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/pallyy</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Pallyy today, what stays with Pallyy, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Pillar to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/pillar</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/pillar</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Rebuild your Pillar page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Pillar's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Planable to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/planable</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/planable</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Planable today, what stays with Planable, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Publer to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/publer</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/publer</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Publer today, what stays with Publer, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Rebrandly to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/rebrandly</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/rebrandly</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Move your links from Rebrandly to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from Rebrandly's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Sendible to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/sendible</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/sendible</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Sendible today, what stays with Sendible, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Short.io to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/short-io</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/short-io</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Move your links from Short.io to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from Short.io's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from SocialBee to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/socialbee</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/socialbee</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside SocialBee today, what stays with SocialBee, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Sprout Social to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/sprout-social</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/sprout-social</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Sprout Social today, what stays with Sprout Social, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from Switchy to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/switchy</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/switchy</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Move your links from Switchy to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from Switchy's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from T2M to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/t2m</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/t2m</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Move your links from T2M to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from T2M's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Taplink to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/taplink</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/taplink</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Rebuild your Taplink page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Taplink's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from TinyURL to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/tinyurl</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/tinyurl</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Move your links from TinyURL to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from TinyURL's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Vista Social to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/vista-social</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/vista-social</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Vista Social today, what stays with Vista Social, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
+    <item>
+      <title>Moving from YOURLS to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/yourls</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/yourls</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Move your links from YOURLS to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from YOURLS's own pages.]]></description>
+    </item>
+    <item>
+      <title>Moving from Zoho Social to Trizlink</title>
+      <link>https://docs.trizlink.com/compare/zoho-social</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/compare/zoho-social</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What you can set up in Trizlink beside Zoho Social today, what stays with Zoho Social, and the dated prices and features from its own pages. Trizlink publishing is switched off.]]></description>
+    </item>
     <item>
       <title>Referrals</title>
       <link>https://docs.trizlink.com/features/referrals</link>
