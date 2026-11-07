@@ -47,6 +47,17 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Moving to Trizlink',
+      collapsed: true,
+      link: { type: 'doc', id: 'compare/index' },
+      items: [
+        { type: 'category', label: 'URL shortening', collapsed: true, items: ['compare/bitly', 'compare/rebrandly', 'compare/short-io', 'compare/tinyurl', 'compare/dub', 'compare/bl-ink', 'compare/cuttly', 'compare/t2m', 'compare/switchy', 'compare/yourls', 'compare/linkly'] },
+        { type: 'category', label: 'Link in bio', collapsed: true, items: ['compare/linktree', 'compare/beacons', 'compare/taplink', 'compare/carrd', 'compare/milkshake', 'compare/campsite-bio', 'compare/lnk-bio', 'compare/bio-link', 'compare/hopp', 'compare/komi', 'compare/pillar'] },
+        { type: 'category', label: 'Social media management', collapsed: true, items: ['compare/buffer', 'compare/planable', 'compare/hootsuite', 'compare/later', 'compare/sprout-social', 'compare/socialbee', 'compare/publer', 'compare/metricool', 'compare/zoho-social', 'compare/agorapulse', 'compare/sendible', 'compare/loomly', 'compare/vista-social', 'compare/pallyy', 'compare/mixpost'] },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Guides',
       collapsed: true,
       items: ['guides/faq'],
