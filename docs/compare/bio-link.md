@@ -1,30 +1,31 @@
 ---
 title: "Moving from Bio Link to Trizlink"
-description: "Rebuild your Bio Link page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Bio Link's own pages."
+description: "Rebuild a Bio Link page in Trizlink; the AI chat and collected emails stay behind. Bio Link's price and the rows its pages left out, dated."
 sidebar_label: "Bio Link"
 last_update:
   date: 2026-11-07
 keywords: ["bio link alternative", "move from bio link", trizlink]
 ---
 
-A bio page with one paid plan that adds an AI visitor chat, a custom domain and email collection. This page is for you if you are on Bio Link now and want to see what moving takes. For who each product suits better, read [Trizlink and Bio Link](https://trizlink.com/compare/bio-link).
+Bio Link is a bio page with one paid plan, and that plan adds an AI chat for visitors, a custom domain and email collection. If an AI chat trained on your content should greet visitors, or one flat plan with unlimited sites is simpler, stay there. Trizlink is the fit for someone who wants a free plan with its limits written down, with the page as one part of links, bio and social drafts on one subscription. See [Trizlink and Bio Link](https://trizlink.com/compare/bio-link).
 
-## Moving your page across {#steps}
+## Bio Link to Trizlink {#steps}
 
-1. **Write down what is on your Bio Link page.** There is no importer for a page from another product, so this is the list you build from.
-2. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-3. **Build the page from [blocks](/features/link-in-bio#blocks).** Pick a [layout](/features/link-in-bio#layouts) first, then add the links, the email form and the contact form you need.
-4. **[Publish it and choose its address](/features/link-in-bio#publishing).** Open it on a phone before you change anything else.
-5. **Put the new address in your profiles.** Leave the Bio Link page up until the new one has been in place for a while, because old posts still point at it.
+1. **Write down every link and its label.** Nothing imports between bio products.
+2. **[Sign in with Google](/getting-started/create-account).** Free covers 30 published pages; the [limits](/features/link-in-bio#limits) list Pro and Team.
+3. **Build the page.** Link, Heading and Text blocks cover most Bio Link pages. Add an Email collection block if you collected emails there.
+4. **Put a password on a page that should not be public.** A [password](/features/link-in-bio#privacy) is stored only as a hash and checked on the server.
+5. **[Publish](/features/link-in-bio#publishing)** and update your profile.
 
-## What does not come with you {#stays}
+## What stays on Bio Link {#stays}
 
-- **Your subscribers and messages.** They stay with Bio Link. This guide has no import step for them.
-- **Your page history.** Views and taps start counting on the new page. See [limits](/features/link-in-bio#limits) for how a page is counted.
+- **The AI visitor chat.** There is no equivalent on a Trizlink page.
+- **Emails it collected.** They stay in Bio Link.
+- **Your custom domain.** Custom domains [do not serve here yet](/features/custom-domains#not-live).
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Bio Link's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://bio.link" target="_blank" rel="noopener noreferrer nofollow">Check Bio Link on its own site</a>.
+These rows come from Bio Link's home page as read that day. <a href="https://bio.link" target="_blank" rel="noopener noreferrer nofollow">Check Bio Link on its own site</a>. It did not state short links, scheduled posts, team roles, a free plan, a contact form or a phone app, so more than half of our usual rows are missing here.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -32,15 +33,9 @@ Prices and features come from Bio Link's own pages, and each row links to the pa
 
 | Feature | Trizlink | Bio Link | Source |
 |---|---|---|---|
-| Short links with click reports | Yes | Not stated on the pages we checked |  |
 | A link-in-bio page | Yes | Yes | <a href="https://bio.link/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Not stated on the pages we checked |  |
-| Team members with roles | Yes | Not stated on the pages we checked |  |
-| A free plan | Yes | Not stated on the pages we checked |  |
 | Your own domain | Partly (You can prove you own it; serving links from it is not switched on) | Yes | <a href="https://bio.link/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Collect emails on the page | Yes | Yes | <a href="https://bio.link/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Contact form on the page | Yes | Not stated on the pages we checked |  |
 | Page views and tap counts | Yes | Yes (Real-time stats) | <a href="https://bio.link/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+One plan on Bio Link; Trizlink's free and paid plans are on its [pricing section](https://trizlink.com/#pricing).

@@ -1,31 +1,31 @@
 ---
 title: "Moving from Rebrandly to Trizlink"
-description: "Move your links from Rebrandly to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from Rebrandly's own pages."
+description: "Bring Rebrandly links across with passwords and end dates intact, and rebuild the link gallery as a bio page. Rebrandly's prices, dated."
 sidebar_label: "Rebrandly"
 last_update:
   date: 2026-11-07
 keywords: ["rebrandly alternative", "move from rebrandly", trizlink]
 ---
 
-A branded-link platform priced by links and QR codes a month, with a free plan and a link gallery. This page is for you if you are on Rebrandly now and want to see what moving takes. For who each product suits better, read [Trizlink and Rebrandly](https://trizlink.com/compare/rebrandly).
+Rebrandly is a branded-link platform. It prices by links and QR codes a month, and the free plan comes with a .bio domain and a link gallery under it. If that bundled domain matters, or you need thousands of QR codes a month billed the way links are, stay with Rebrandly. Ten links a month is a small amount to try a product with; Trizlink's free plan is larger, and its social calendar sits next to the links rather than in another tool. [How the two compare](https://trizlink.com/compare/rebrandly).
 
-## Moving your links across {#steps}
+## From Rebrandly to Trizlink {#steps}
 
-1. **Get your list of links out of Rebrandly.** Look for an export in your Rebrandly account. This guide cannot promise one on your plan, so check there first. If there is no export, build the list by hand for the links you still use.
-2. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-3. **Shape the list into a CSV.** The [importer](/features/link-organization#import) needs a `target_url` column and also reads `custom_code`, `title`, `description` and `expires_at`. A file can hold 5,000 rows and 2 MB.
-4. **Run the import at `/dashboard/links/bulk-import`.** The file is parsed in your browser, and only the last step writes. Every refused row is named with its line number.
-5. **Draw new QR codes for anything you print from now on.** See [QR codes](/features/qr-codes). Codes already printed keep pointing at Rebrandly.
+1. **[Make your Trizlink account](/getting-started/create-account) first.** It takes a Google sign-in and nothing else, so you can look at the importer before deciding how to get the links out.
+2. **Pull the links from Rebrandly.** Check your plan for an export. Without one, list the links you still use by hand, with their destinations and slashtags.
+3. **Bring passwords and end dates with you.** Rebrandly offers both, and the [importer](/features/link-organization#import) has a `password` column and an `expires_at` column, so a protected link arrives protected.
+4. **Import, then file.** Run the file at `/dashboard/links/bulk-import`, then sort the links into [folders and labels](/features/link-organization#structures). A folder holds each link once; a label cuts across folders.
+5. **Rebuild the link gallery as a [bio page](/features/link-in-bio).** A gallery is not a file you can import. Add a Link block for each entry, publish it, and open it on a phone.
 
-## What does not come with you {#stays}
+## What stays on Rebrandly {#stays}
 
-- **Your old short addresses.** They live on Rebrandly, so keep that account while people still click them. Trizlink cannot answer for an address on another company's domain.
-- **Your click history.** Counting starts again from the first click on the new link. See [analytics](/features/analytics).
-- **Your own domain, for now.** You can [add it and prove you own it](/features/custom-domains#not-live), and serving links from it is not switched on, so leave it where it works today.
+- **Links on your branded domains and on .bio.** They answer from Rebrandly. Trizlink can [verify a domain](/features/custom-domains#not-live) you own, and it does not serve links on one yet.
+- **QR codes already printed.** They encode Rebrandly addresses and keep working only while those do.
+- **Click history.** It does not import. Counting starts again on each new link.
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Rebrandly's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://www.rebrandly.com" target="_blank" rel="noopener noreferrer nofollow">Check Rebrandly on its own site</a>.
+The rows come from Rebrandly's pricing page as it read that day, each with its link. <a href="https://www.rebrandly.com" target="_blank" rel="noopener noreferrer nofollow">Check Rebrandly on its own site</a>. That page said nothing about scheduled posts, bulk import, a UTM builder or a phone app, so those rows are not shown.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -39,7 +39,6 @@ Prices and features come from Rebrandly's own pages, and each row links to the p
 |---|---|---|---|
 | Short links with click reports | Yes | Yes | <a href="https://www.rebrandly.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A link-in-bio page | Yes | Yes (Called a link gallery) | <a href="https://www.rebrandly.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Not stated on the pages we checked |  |
 | Team members with roles | Yes | Yes (2 workspaces and teammates on Professional) | <a href="https://www.rebrandly.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A free plan | Yes | Yes | <a href="https://www.rebrandly.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Your own domain | Partly (You can prove you own it; serving links from it is not switched on) | Yes | <a href="https://www.rebrandly.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
@@ -47,8 +46,5 @@ Prices and features come from Rebrandly's own pages, and each row links to the p
 | Password on a link | Yes | Yes (50 on Professional) | <a href="https://www.rebrandly.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Links that expire | Yes | Yes | <a href="https://www.rebrandly.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Public API | Yes | Yes | <a href="https://www.rebrandly.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Bulk import from a file | Yes | Not stated on the pages we checked |  |
-| UTM builder | Yes | Not stated on the pages we checked |  |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+For what Trizlink costs, see the [pricing section](https://trizlink.com/#pricing).

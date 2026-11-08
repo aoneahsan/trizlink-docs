@@ -1,31 +1,31 @@
 ---
 title: "Moving from TinyURL to Trizlink"
-description: "Move your links from TinyURL to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from TinyURL's own pages."
+description: "Move the TinyURL links you still edit into Trizlink and leave the forgotten ones be. TinyURL's prices, and what its page did not say, dated."
 sidebar_label: "TinyURL"
 last_update:
   date: 2026-11-07
 keywords: ["tinyurl alternative", "move from tinyurl", trizlink]
 ---
 
-One of the oldest shorteners, with paid tiers for branded domains, editing and bulk links. This page is for you if you are on TinyURL now and want to see what moving takes. For who each product suits better, read [Trizlink and TinyURL](https://trizlink.com/compare/tinyurl).
+TinyURL is one of the oldest shorteners on the web, with paid tiers for branded domains, editing and bulk links. Somebody making tens of thousands of links a month at a flat price, or who wants a name every reader recognises on the link, is well served there. If 125 links a month on the first paid tier is too tight, Trizlink's Pro gives 50,000, and the links can feed a bio page and a social calendar in the same account. [Trizlink and TinyURL, side by side](https://trizlink.com/compare/tinyurl).
 
-## Moving your links across {#steps}
+## Leaving TinyURL {#steps}
 
-1. **Get your list of links out of TinyURL.** Look for an export in your TinyURL account. This guide cannot promise one on your plan, so check there first. If there is no export, build the list by hand for the links you still use.
-2. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-3. **Shape the list into a CSV.** The [importer](/features/link-organization#import) needs a `target_url` column and also reads `custom_code`, `title`, `description` and `expires_at`. A file can hold 5,000 rows and 2 MB.
-4. **Run the import at `/dashboard/links/bulk-import`.** The file is parsed in your browser, and only the last step writes. Every refused row is named with its line number.
-5. **Draw new QR codes for anything you print from now on.** See [QR codes](/features/qr-codes). Codes already printed keep pointing at TinyURL.
+1. **Sort old links from live ones.** TinyURL addresses get pasted everywhere and forgotten. Move the ones you still edit or measure, and leave the rest where they are.
+2. **Get them out in a file.** TinyURL sells a Bulk 50K plan for making links in bulk; whether your plan exports them is something to check in the account. A short list can be typed.
+3. **[Create a Trizlink account](/getting-started/create-account)** with your Google sign-in.
+4. **Import the file.** At `/dashboard/links/bulk-import` the [importer](/features/link-organization#import) wants `target_url` in every row. The file is read in your browser and never uploaded, and only the fifth step writes.
+5. **Set expiry where TinyURL had it.** Put the date in `expires_at`, or add it afterwards along with a [click ceiling](/features/short-links#expiry), which stops a link after a number of clicks.
 
-## What does not come with you {#stays}
+## What stays on TinyURL {#stays}
 
-- **Your old short addresses.** They live on TinyURL, so keep that account while people still click them. Trizlink cannot answer for an address on another company's domain.
-- **Your click history.** Counting starts again from the first click on the new link. See [analytics](/features/analytics).
-- **Your own domain, for now.** You can [add it and prove you own it](/features/custom-domains#not-live), and serving links from it is not switched on, so leave it where it works today.
+- **The tinyurl.com addresses.** Anyone holding one still reaches TinyURL, so do not let the account lapse while they are in use.
+- **Branded domains.** Trizlink [verifies a domain](/features/custom-domains#not-live) and does not yet serve links from one.
+- **Old click counts.** New links count from their first click.
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from TinyURL's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://tinyurl.com" target="_blank" rel="noopener noreferrer nofollow">Check TinyURL on its own site</a>.
+TinyURL's pricing page, read that day, is the source for each row. <a href="https://tinyurl.com" target="_blank" rel="noopener noreferrer nofollow">Check TinyURL on its own site</a>. Most of what we compare was not on that page: nothing about a bio page, scheduled posts, team roles, a free plan, QR codes, passwords on links, an API, a UTM builder or a phone app. Those rows are left out rather than filled with guesses.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -36,17 +36,8 @@ Prices and features come from TinyURL's own pages, and each row links to the pag
 | Feature | Trizlink | TinyURL | Source |
 |---|---|---|---|
 | Short links with click reports | Yes | Yes | <a href="https://tinyurl.com/app/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A link-in-bio page | Yes | Not stated on the pages we checked |  |
-| Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Not stated on the pages we checked |  |
-| Team members with roles | Yes | Not stated on the pages we checked |  |
-| A free plan | Yes | Not stated on the pages we checked |  |
 | Your own domain | Partly (You can prove you own it; serving links from it is not switched on) | Yes | <a href="https://tinyurl.com/app/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| QR codes | Yes | Not stated on the pages we checked |  |
-| Password on a link | Yes | Not stated on the pages we checked |  |
 | Links that expire | Yes | Yes | <a href="https://tinyurl.com/app/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Public API | Yes | Not stated on the pages we checked |  |
 | Bulk import from a file | Yes | Yes (Bulk 50K plan) | <a href="https://tinyurl.com/app/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| UTM builder | Yes | Not stated on the pages we checked |  |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+TinyURL's first paid tier gives 125 links a month; Trizlink's limits and prices are on the [pricing section](https://trizlink.com/#pricing).

@@ -1,30 +1,31 @@
 ---
 title: "Moving from Hopp by Wix to Trizlink"
-description: "Rebuild your Hopp by Wix page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Hopp by Wix's own pages."
+description: "Move Hopp's shortener links by CSV first, then rebuild the page. Email marketing stays with Wix. Hopp's prices and features, dated."
 sidebar_label: "Hopp by Wix"
 last_update:
   date: 2026-11-07
 keywords: ["hopp by wix alternative", "move from hopp by wix", trizlink]
 ---
 
-Wix's link-in-bio page with forms, email marketing and a branded shortener; free to start. This page is for you if you are on Hopp by Wix now and want to see what moving takes. For who each product suits better, read [Trizlink and Hopp by Wix](https://trizlink.com/compare/hopp).
+Hopp is Wix's link-in-bio page, free to start, with forms, email marketing and a branded shortener. Anyone already running a Wix site who wants welcome emails and cart recovery from the same account belongs there, and so does a page whose followers use its search box. Trizlink suits someone who wants the paid price on the page before signing up, and a social calendar beside the links and the page. [Trizlink and Hopp](https://trizlink.com/compare/hopp).
 
-## Moving your page across {#steps}
+## Off Hopp, links and page {#steps}
 
-1. **Write down what is on your Hopp by Wix page.** There is no importer for a page from another product, so this is the list you build from.
-2. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-3. **Build the page from [blocks](/features/link-in-bio#blocks).** Pick a [layout](/features/link-in-bio#layouts) first, then add the links, the email form and the contact form you need.
-4. **[Publish it and choose its address](/features/link-in-bio#publishing).** Open it on a phone before you change anything else.
-5. **Put the new address in your profiles.** Leave the Hopp by Wix page up until the new one has been in place for a while, because old posts still point at it.
+1. **Move the shortener links first.** Hopp includes a branded link shortener. Export or list those links and bring them through the [CSV importer](/features/link-organization#import) with a `target_url` column.
+2. **[Sign in to Trizlink](/getting-started/create-account).**
+3. **Rebuild the page.** Pick a [layout](/features/link-in-bio#layouts), then add Link blocks, plus the Email collection and Contact form blocks if your Hopp page had forms.
+4. **Use the new short links on the page.** Point Link blocks at them, so a tap and the click that follows are both counted.
+5. **[Publish](/features/link-in-bio#publishing)** and change your bio link.
 
-## What does not come with you {#stays}
+## What stays on Hopp {#stays}
 
-- **Your subscribers and messages.** They stay with Hopp by Wix. This guide has no import step for them.
-- **Your page history.** Views and taps start counting on the new page. See [limits](/features/link-in-bio#limits) for how a page is counted.
+- **Email marketing, welcome emails and cart recovery.** Those belong to your Wix account.
+- **Subscribers and form entries.** No import brings them across.
+- **Short links on Hopp's domain, and your own domain.** Old links keep resolving there; Trizlink cannot [serve a custom domain](/features/custom-domains#not-live) yet.
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Hopp by Wix's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://www.hopp.bio" target="_blank" rel="noopener noreferrer nofollow">Check Hopp by Wix on its own site</a>.
+Rows are from Hopp's plans page as read that day. <a href="https://www.hopp.bio" target="_blank" rel="noopener noreferrer nofollow">Check Hopp by Wix on its own site</a>. It did not state scheduled posts, team roles or a phone app, so those rows are omitted.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -35,13 +36,10 @@ Prices and features come from Hopp by Wix's own pages, and each row links to the
 |---|---|---|---|
 | Short links with click reports | Yes | Yes (Branded link shortener) | <a href="https://www.hopp.bio/plans" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A link-in-bio page | Yes | Yes | <a href="https://www.hopp.bio/plans" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Not stated on the pages we checked |  |
-| Team members with roles | Yes | Not stated on the pages we checked |  |
 | A free plan | Yes | Yes | <a href="https://www.hopp.bio/plans" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Your own domain | Partly (You can prove you own it; serving links from it is not switched on) | Yes | <a href="https://www.hopp.bio/plans" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Collect emails on the page | Yes | Yes | <a href="https://www.hopp.bio/plans" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Contact form on the page | Yes | Yes | <a href="https://www.hopp.bio/plans" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Page views and tap counts | Yes | Yes | <a href="https://www.hopp.bio/plans" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+Trizlink prints its paid prices before sign-up, on the [pricing section](https://trizlink.com/#pricing).

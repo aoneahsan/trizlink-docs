@@ -1,32 +1,32 @@
 ---
 title: "Moving from Sprout Social to Trizlink"
-description: "What you can set up in Trizlink beside Sprout Social today, what stays with Sprout Social, and the dated prices and features from its own pages. Trizlink publishing is switched off."
+description: "Sprout Social keeps publishing and reports; link-making moves to a Trizlink workspace. Sprout's per-seat prices, dated."
 sidebar_label: "Sprout Social"
 last_update:
   date: 2026-11-07
 keywords: ["sprout social alternative", "move from sprout social", trizlink]
 ---
 
-A per-seat enterprise platform with reporting, listening add-ons and an AI agent on every plan. This page is for you if you are on Sprout Social now and want to see what moving takes. For who each product suits better, read [Trizlink and Sprout Social](https://trizlink.com/compare/sprout-social).
+Sprout Social is a per-seat enterprise platform, with reporting, listening add-ons and an AI agent on every plan. If the brief is executive-ready reports and listening across millions of conversations, or you will use employee advocacy and the premium analytics add-ons, Sprout is the fit. If the budget is nearer ten dollars a month than two hundred and fifty a seat, and you want the links and bio page in the same place as the posts, look at Trizlink. [Trizlink and Sprout Social](https://trizlink.com/compare/sprout-social).
 
-## Moving across today {#steps}
+## Where Trizlink sits beside Sprout {#steps}
 
-**Publishing to social networks is built and switched off in Trizlink, so keep Sprout Social for anything that has to go out.** Read [what is not live yet](/features/social-media#not-live) first. Here is what you can set up beside it now.
+**Sprout keeps publishing and reporting.** Trizlink cannot post today; [publishing is built and switched off](/features/social-media#not-live). This is the small piece of work you can move.
 
-1. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-2. **[Invite your team](/features/workspaces-and-teams#inviting).** Roles are owner, admin, member and viewer. There is no client role.
-3. **Write in the [composer](/features/social-media#composer) and line posts up in the [queue](/features/social-media#queue).** Queued posts stay pending and nothing is sent.
-4. **Move the links first.** [Short links](/features/short-links) and [bio pages](/features/link-in-bio) work today, and they are the part of Trizlink you can use while Sprout Social keeps posting.
+1. **Find who in the team only makes links.** That work does not need a Sprout seat.
+2. **[Open a Trizlink workspace](/getting-started/create-account)** and [invite](/features/workspaces-and-teams#inviting) them with the member role.
+3. **Make campaign links and a bio page here.** Clicks are reported by country, device, referrer and browser in [analytics](/features/analytics#breakdowns).
+4. **Let a [webhook](/features/tracking-and-utm#webhooks) tell your own systems when something happens,** if your reporting lives elsewhere.
 
-## What does not come with you {#stays}
+## What stays on Sprout Social {#stays}
 
-- **Your scheduled posts, connected accounts and post history.** They stay with Sprout Social. There is no importer for them.
-- **Post approval.** Trizlink has no approval step before a post goes out.
-- **TikTok, YouTube and Pinterest.** They cannot be connected. See [which platforms exist](/features/social-media#platforms).
+- **Publishing, listening and executive reports.**
+- **Scheduled posts, profiles and history.** No import exists.
+- **Employee advocacy.**
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Sprout Social's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://sproutsocial.com" target="_blank" rel="noopener noreferrer nofollow">Check Sprout Social on its own site</a>.
+The rows are from Sprout Social's pricing page as read that day. <a href="https://sproutsocial.com" target="_blank" rel="noopener noreferrer nofollow">Check Sprout Social on its own site</a>. It did not state short links, a bio page, a free plan, an API, approvals or a calendar, so those rows are not shown.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -37,16 +37,10 @@ Prices and features come from Sprout Social's own pages, and each row links to t
 
 | Feature | Trizlink | Sprout Social | Source |
 |---|---|---|---|
-| Short links with click reports | Yes | Not stated on the pages we checked |  |
-| A link-in-bio page | Yes | Not stated on the pages we checked |  |
 | Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Yes | <a href="https://sproutsocial.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Team members with roles | Yes | Yes (Priced per seat) | <a href="https://sproutsocial.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A free plan | Yes | Not stated on the pages we checked |  |
-| Public API | Yes | Not stated on the pages we checked |  |
-| Post approval before publishing | No | Not stated on the pages we checked |  |
-| A content calendar | Yes | Not stated on the pages we checked |  |
 | AI drafts and captions | Yes | Yes (Trellis, with AI Assist features) | <a href="https://sproutsocial.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Best time to post | Yes | Yes | <a href="https://sproutsocial.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A phone app | Partly (Android only; no iOS app) | Yes | <a href="https://sproutsocial.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+Seat prices on Sprout, plan prices on Trizlink's [pricing section](https://trizlink.com/#pricing).

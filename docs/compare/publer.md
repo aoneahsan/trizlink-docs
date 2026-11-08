@@ -1,32 +1,32 @@
 ---
 title: "Moving from Publer to Trizlink"
-description: "What you can set up in Trizlink beside Publer today, what stays with Publer, and the dated prices and features from its own pages. Trizlink publishing is switched off."
+description: "Publer keeps posting; rebuild Linkie as a Trizlink bio page you arrange yourself. Publer's prices and features, dated."
 sidebar_label: "Publer"
 last_update:
   date: 2026-11-07
 keywords: ["publer alternative", "move from publer", trizlink]
 ---
 
-A scheduler priced by social accounts and members, with a free plan and its own link-in-bio page. This page is for you if you are on Publer now and want to see what moving takes. For who each product suits better, read [Trizlink and Publer](https://trizlink.com/compare/publer).
+Publer schedules posts priced by social accounts and members, with a free plan and its own bio page, Linkie. If you like every tenth social account and member coming free, use RSS automations, or a bio page that updates itself from your posts is enough, Publer fits. Trizlink is for someone who wants a price written as a number rather than set with a slider, and who cares more about short links with passwords and expiry dates than posting today. [Trizlink and Publer](https://trizlink.com/compare/publer).
 
-## Moving across today {#steps}
+## Moving Linkie, keeping Publer posting {#steps}
 
-**Publishing to social networks is built and switched off in Trizlink, so keep Publer for anything that has to go out.** Read [what is not live yet](/features/social-media#not-live) first. Here is what you can set up beside it now.
+**Publer keeps publishing.** In Trizlink, posts can be written and queued but never sent; [publishing is built and switched off](/features/social-media#not-live).
 
-1. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-2. **[Invite your team](/features/workspaces-and-teams#inviting).** Roles are owner, admin, member and viewer. There is no client role.
-3. **Write in the [composer](/features/social-media#composer) and line posts up in the [queue](/features/social-media#queue).** Queued posts stay pending and nothing is sent.
-4. **Move the links first.** [Short links](/features/short-links) and [bio pages](/features/link-in-bio) work today, and they are the part of Trizlink you can use while Publer keeps posting.
+1. **Rebuild Linkie as a bio page you arrange yourself.** Linkie fills from your posts; a [Trizlink bio page](/features/link-in-bio#blocks) is built from blocks you place, so pick the links worth keeping at the top.
+2. **[Sign in](/getting-started/create-account)** and [publish](/features/link-in-bio#publishing) it.
+3. **Make links for your RSS-driven posts here,** with a password or an expiry date where an offer ends.
+4. **Point your bio at the new page.**
 
-## What does not come with you {#stays}
+## What stays on Publer {#stays}
 
-- **Your scheduled posts, connected accounts and post history.** They stay with Publer. There is no importer for them.
-- **Post approval.** Trizlink has no approval step before a post goes out.
-- **TikTok, YouTube and Pinterest.** They cannot be connected. See [which platforms exist](/features/social-media#platforms).
+- **RSS automations, scheduled posts and connected accounts.**
+- **Approvals for additional members.** Trizlink has none.
+- **Linkie's view history.**
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Publer's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://publer.com" target="_blank" rel="noopener noreferrer nofollow">Check Publer on its own site</a>.
+Publer's pricing page, read that day, is behind each row. <a href="https://publer.com" target="_blank" rel="noopener noreferrer nofollow">Check Publer on its own site</a>. It did not state short links, an API, a calendar or a phone app, so those rows are left out.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -36,16 +36,12 @@ Prices and features come from Publer's own pages, and each row links to the page
 
 | Feature | Trizlink | Publer | Source |
 |---|---|---|---|
-| Short links with click reports | Yes | Not stated on the pages we checked |  |
 | A link-in-bio page | Yes | Yes (Linkie) | <a href="https://publer.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Yes | <a href="https://publer.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Team members with roles | Yes | Yes (Additional members are priced) | <a href="https://publer.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A free plan | Yes | Yes | <a href="https://publer.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Public API | Yes | Not stated on the pages we checked |  |
 | Post approval before publishing | No | Yes (With additional members) | <a href="https://publer.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A content calendar | Yes | Not stated on the pages we checked |  |
 | AI drafts and captions | Yes | Yes | <a href="https://publer.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Best time to post | Yes | Yes (Business) | <a href="https://publer.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+No slider on Trizlink's side: the [pricing section](https://trizlink.com/#pricing) lists each plan's price.

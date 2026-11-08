@@ -1,32 +1,32 @@
 ---
 title: "Moving from Planable to Trizlink"
-description: "What you can set up in Trizlink beside Planable today, what stays with Planable, and the dated prices and features from its own pages. Trizlink publishing is switched off."
+description: "Client sign-off stays in Planable. Set up one Trizlink workspace per client for links and bio pages. Planable's prices, dated."
 sidebar_label: "Planable"
 last_update:
   date: 2026-11-07
 keywords: ["planable alternative", "move from planable", trizlink]
 ---
 
-A collaboration-first planner priced per workspace, built around approvals between teams and clients. This page is for you if you are on Planable now and want to see what moving takes. For who each product suits better, read [Trizlink and Planable](https://trizlink.com/compare/planable).
+Planable is a collaboration-first planner priced per workspace and built around approvals between teams and clients. If clients must sign off every post, with required approvals per workspace, or an agency with many brands wants unlimited users at a workspace price, Planable is built for that. Trizlink is the fit if you want a standing free plan rather than fifty free posts, and if the links and the bio page matter as much as the posts. [Trizlink and Planable](https://trizlink.com/compare/planable).
 
-## Moving across today {#steps}
+## Moving the link work off Planable {#steps}
 
-**Publishing to social networks is built and switched off in Trizlink, so keep Planable for anything that has to go out.** Read [what is not live yet](/features/social-media#not-live) first. Here is what you can set up beside it now.
+**Client sign-off stays in Planable.** Trizlink has no approval step, and its publishing is built and switched off, so it cannot replace a review flow. Read [what is not live](/features/social-media#not-live) before planning.
 
-1. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-2. **[Invite your team](/features/workspaces-and-teams#inviting).** Roles are owner, admin, member and viewer. There is no client role.
-3. **Write in the [composer](/features/social-media#composer) and line posts up in the [queue](/features/social-media#queue).** Queued posts stay pending and nothing is sent.
-4. **Move the links first.** [Short links](/features/short-links) and [bio pages](/features/link-in-bio) work today, and they are the part of Trizlink you can use while Planable keeps posting.
+1. **Make one Trizlink [workspace](/features/workspaces-and-teams#what-it-owns) per client brand.** Links, bio pages and click data stay inside the workspace they belong to.
+2. **[Sign in](/getting-started/create-account) and invite each client's people as viewers.** A [viewer](/features/workspaces-and-teams#roles) reads links and analytics and changes nothing. There is no separate client role.
+3. **Make the campaign links here.** Each [short link](/features/short-links) carries its own UTM tags and click report, which you can show a client without opening Planable.
+4. **Put those links into the posts your clients approve in Planable.**
 
-## What does not come with you {#stays}
+## What stays on Planable {#stays}
 
-- **Your scheduled posts, connected accounts and post history.** They stay with Planable. There is no importer for them.
-- **Post approval.** Trizlink has no approval step before a post goes out.
-- **TikTok, YouTube and Pinterest.** They cannot be connected. See [which platforms exist](/features/social-media#platforms).
+- **Approvals and the posts behind them.**
+- **Scheduled posts, accounts and history.** Nothing carries over.
+- **The analytics add-on and its best-time data.**
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Planable's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://planable.io" target="_blank" rel="noopener noreferrer nofollow">Check Planable on its own site</a>.
+Rows come from Planable's pricing page as read that day. <a href="https://planable.io" target="_blank" rel="noopener noreferrer nofollow">Check Planable on its own site</a>. It did not state short links, a bio page, AI captions or a phone app, so those rows are not shown.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -36,16 +36,12 @@ Prices and features come from Planable's own pages, and each row links to the pa
 
 | Feature | Trizlink | Planable | Source |
 |---|---|---|---|
-| Short links with click reports | Yes | Not stated on the pages we checked |  |
-| A link-in-bio page | Yes | Not stated on the pages we checked |  |
 | Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Yes | <a href="https://planable.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Team members with roles | Yes | Yes (Unlimited users) | <a href="https://planable.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A free plan | Yes | Partly (50 free posts rather than a standing free plan) | <a href="https://planable.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Public API | Yes | Yes (Pro) | <a href="https://planable.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Post approval before publishing | No | Yes (None, optional and required) | <a href="https://planable.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A content calendar | Yes | Yes | <a href="https://planable.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| AI drafts and captions | Yes | Not stated on the pages we checked |  |
 | Best time to post | Yes | Yes (Analytics add-on, $12 a workspace a month) | <a href="https://planable.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+Planable charges per workspace; Trizlink's plans are on the [pricing section](https://trizlink.com/#pricing).

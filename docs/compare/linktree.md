@@ -1,30 +1,31 @@
 ---
 title: "Moving from Linktree to Trizlink"
-description: "Rebuild your Linktree page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Linktree's own pages."
+description: "Rebuild a Linktree as a Trizlink bio page block by block, and what stays behind: sign-ups, sales and history. Linktree's prices, dated."
 sidebar_label: "Linktree"
 last_update:
   date: 2026-11-07
 keywords: ["linktree alternative", "move from linktree", trizlink]
 ---
 
-The link-in-bio page most people have seen, with paid tiers that add design, analytics and social scheduling. This page is for you if you are on Linktree now and want to see what moving takes. For who each product suits better, read [Trizlink and Linktree](https://trizlink.com/compare/linktree).
+Linktree is the link-in-bio page most people have already tapped through, with paid tiers that add design, analytics and social scheduling. If you sell from the page and care about 0% fees, Instagram auto-replies and the widest list of integrations, or visitors trust the Linktree name itself, it does that better. Trizlink suits someone who wants 30 bio pages, click tracking and a contact inbox on a free account, and who wants the page and their short links counted in one set of numbers. [Trizlink and Linktree](https://trizlink.com/compare/linktree) has the longer version.
 
-## Moving your page across {#steps}
+## Rebuilding your Linktree {#steps}
 
-1. **Write down what is on your Linktree page.** There is no importer for a page from another product, so this is the list you build from.
-2. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-3. **Build the page from [blocks](/features/link-in-bio#blocks).** Pick a [layout](/features/link-in-bio#layouts) first, then add the links, the email form and the contact form you need.
-4. **[Publish it and choose its address](/features/link-in-bio#publishing).** Open it on a phone before you change anything else.
-5. **Put the new address in your profiles.** Leave the Linktree page up until the new one has been in place for a while, because old posts still point at it.
+1. **Screenshot your Linktree, top to bottom.** No importer reads a page from another product, so the screenshot is your plan: every link, every heading, the order they sit in.
+2. **[Sign in to Trizlink with Google](/getting-started/create-account).**
+3. **Pick a layout.** Minimal, Portfolio or Spotlight are [arrangements, not colour schemes](/features/link-in-bio#layouts); colour follows the visitor's light or dark setting.
+4. **Add one block per item on the screenshot.** Links become Link blocks. If Linktree collected emails, add an Email collection block; for messages, a Contact form. The [fifteen blocks](/features/link-in-bio#blocks) are listed by group.
+5. **Publish and swap the profile link.** Choose the [address](/features/link-in-bio#publishing) at `trizlink.com/<slug>`, check it on your phone, then change the link in your bio. Leave Linktree up for a few weeks, since older posts still point there.
 
-## What does not come with you {#stays}
+## What stays on Linktree {#stays}
 
-- **Your subscribers and messages.** They stay with Linktree. This guide has no import step for them.
-- **Your page history.** Views and taps start counting on the new page. See [limits](/features/link-in-bio#limits) for how a page is counted.
+- **The emails and phone numbers it collected.** They are in Linktree, and this guide has no step that brings them across.
+- **Products and sales.** Selling from the page is Linktree's; Trizlink's bio page has no store.
+- **Views and taps so far.** Your new page counts from its first view.
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Linktree's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://linktr.ee" target="_blank" rel="noopener noreferrer nofollow">Check Linktree on its own site</a>.
+Linktree's pricing and home pages, read that day, are the source for each row. Its pricing page notes that the price shown varies by region. <a href="https://linktr.ee" target="_blank" rel="noopener noreferrer nofollow">Check Linktree on its own site</a>. Those pages did not state custom domains, a contact form or a phone app, so those rows are left out.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -40,10 +41,7 @@ Prices and features come from Linktree's own pages, and each row links to the pa
 | Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Yes (Premium) | <a href="https://linktr.ee/s/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Team members with roles | Yes | Yes (Team seats on Agency or Enterprise) | <a href="https://linktr.ee/s/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A free plan | Yes | Yes | <a href="https://linktr.ee/s/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Your own domain | Partly (You can prove you own it; serving links from it is not switched on) | Not stated on the pages we checked |  |
 | Collect emails on the page | Yes | Yes | <a href="https://linktr.ee/s/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Contact form on the page | Yes | Not stated on the pages we checked |  |
 | Page views and tap counts | Yes | Yes (Basic on Starter, all-time on Premium) | <a href="https://linktr.ee/s/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+Linktree's regional prices aside, Trizlink's are on its [pricing section](https://trizlink.com/#pricing).

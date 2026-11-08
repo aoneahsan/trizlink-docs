@@ -1,32 +1,32 @@
 ---
 title: "Moving from Mixpost to Trizlink"
-description: "What you can set up in Trizlink beside Mixpost today, what stays with Mixpost, and the dated prices and features from its own pages. Trizlink publishing is switched off."
+description: "Mixpost stays on your server for posting; hand Trizlink the links and bio page you no longer want to host. Mixpost's prices, dated."
 sidebar_label: "Mixpost"
 last_update:
   date: 2026-11-07
 keywords: ["mixpost alternative", "move from mixpost", trizlink]
 ---
 
-A self-hosted scheduler with a free open-source Lite edition and one-time licences for the full version. This page is for you if you are on Mixpost now and want to see what moving takes. For who each product suits better, read [Trizlink and Mixpost](https://trizlink.com/compare/mixpost).
+Mixpost is a self-hosted scheduler, with a free open-source Lite edition and one-time licences for the full version. If the data must stay on your own server and a one-time licence beats a subscription, or you want to white-label a scheduler and sell it on, Mixpost is the honest answer. Trizlink is for someone who does not want to run, update and secure a server, and who wants short links and a bio page beside the social drafts. [Trizlink and Mixpost](https://trizlink.com/compare/mixpost).
 
-## Moving across today {#steps}
+## Mixpost stays on your server {#steps}
 
-**Publishing to social networks is built and switched off in Trizlink, so keep Mixpost for anything that has to go out.** Read [what is not live yet](/features/social-media#not-live) first. Here is what you can set up beside it now.
+**Keep Mixpost running for anything that has to post.** Trizlink's publishing is [built and switched off](/features/social-media#not-live), and nothing queued here is sent.
 
-1. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-2. **[Invite your team](/features/workspaces-and-teams#inviting).** Roles are owner, admin, member and viewer. There is no client role.
-3. **Write in the [composer](/features/social-media#composer) and line posts up in the [queue](/features/social-media#queue).** Queued posts stay pending and nothing is sent.
-4. **Move the links first.** [Short links](/features/short-links) and [bio pages](/features/link-in-bio) work today, and they are the part of Trizlink you can use while Mixpost keeps posting.
+1. **Decide what you no longer want to host.** If Mixpost is only half of a self-hosted stack, the link shortener or bio page beside it may be the part worth handing over.
+2. **[Sign in](/getting-started/create-account)** and [import your links](/features/link-organization#import) from a CSV with a `target_url` column.
+3. **Invite your team.** Mixpost allows unlimited members; Trizlink has [four roles](/features/workspaces-and-teams#roles) on every plan.
+4. **Reach Trizlink from your own tools through the [API](/features/api-access)** on Pro or Team, if Mixpost or another service needs to create links.
 
-## What does not come with you {#stays}
+## What stays on Mixpost {#stays}
 
-- **Your scheduled posts, connected accounts and post history.** They stay with Mixpost. There is no importer for them.
-- **Post approval.** Trizlink has no approval step before a post goes out.
-- **TikTok, YouTube and Pinterest.** They cannot be connected. See [which platforms exist](/features/social-media#platforms).
+- **Your server, its data and your licence.**
+- **White-label setups.** Trizlink offers none.
+- **Scheduled posts and connected accounts.**
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Mixpost's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://mixpost.app" target="_blank" rel="noopener noreferrer nofollow">Check Mixpost on its own site</a>.
+Rows come from Mixpost's pricing page as read that day. <a href="https://mixpost.app" target="_blank" rel="noopener noreferrer nofollow">Check Mixpost on its own site</a>. It did not state short links, a bio page, best-time suggestions or a phone app, so those rows are left out.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -36,8 +36,6 @@ Prices and features come from Mixpost's own pages, and each row links to the pag
 
 | Feature | Trizlink | Mixpost | Source |
 |---|---|---|---|
-| Short links with click reports | Yes | Not stated on the pages we checked |  |
-| A link-in-bio page | Yes | Not stated on the pages we checked |  |
 | Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Yes | <a href="https://mixpost.app/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Team members with roles | Yes | Yes (Unlimited team members) | <a href="https://mixpost.app/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A free plan | Yes | Yes (Self-hosted Lite) | <a href="https://mixpost.app/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
@@ -45,7 +43,5 @@ Prices and features come from Mixpost's own pages, and each row links to the pag
 | Post approval before publishing | No | Yes (Pro) | <a href="https://mixpost.app/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A content calendar | Yes | Yes | <a href="https://mixpost.app/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | AI drafts and captions | Yes | Yes (Pro) | <a href="https://mixpost.app/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Best time to post | Yes | Not stated on the pages we checked |  |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+Trizlink is a hosted subscription; its prices are on the [pricing section](https://trizlink.com/#pricing).

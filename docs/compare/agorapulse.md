@@ -1,32 +1,32 @@
 ---
 title: "Moving from Agorapulse to Trizlink"
-description: "What you can set up in Trizlink beside Agorapulse today, what stays with Agorapulse, and the dated prices and features from its own pages. Trizlink publishing is switched off."
+description: "Agorapulse keeps the inbox and publishing; the link-in-bio and protected links move to Trizlink. Agorapulse's prices, dated."
 sidebar_label: "Agorapulse"
 last_update:
   date: 2026-11-07
 keywords: ["agorapulse alternative", "move from agorapulse", trizlink]
 ---
 
-A per-user inbox and publishing suite with a free plan and a link-in-bio from the Professional tier. This page is for you if you are on Agorapulse now and want to see what moving takes. For who each product suits better, read [Trizlink and Agorapulse](https://trizlink.com/compare/agorapulse).
+Agorapulse is a per-user inbox and publishing suite with a free plan and a link-in-bio from Professional. If the unified inbox, ad-comment moderation and team performance reports are the work, or you want a free plan from a suite that scales to listening and advocacy, Agorapulse fits. Trizlink suits someone who wants links, bio pages and social drafts for less than seventy-nine dollars a user a month, with passwords on links and a free bio page. [Trizlink and Agorapulse](https://trizlink.com/compare/agorapulse).
 
-## Moving across today {#steps}
+## Moving the bio page from Agorapulse {#steps}
 
-**Publishing to social networks is built and switched off in Trizlink, so keep Agorapulse for anything that has to go out.** Read [what is not live yet](/features/social-media#not-live) first. Here is what you can set up beside it now.
+**The inbox and publishing stay in Agorapulse.** Trizlink has no inbox for social messages, and its publishing is [built and switched off](/features/social-media#not-live).
 
-1. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-2. **[Invite your team](/features/workspaces-and-teams#inviting).** Roles are owner, admin, member and viewer. There is no client role.
-3. **Write in the [composer](/features/social-media#composer) and line posts up in the [queue](/features/social-media#queue).** Queued posts stay pending and nothing is sent.
-4. **Move the links first.** [Short links](/features/short-links) and [bio pages](/features/link-in-bio) work today, and they are the part of Trizlink you can use while Agorapulse keeps posting.
+1. **Rebuild the link-in-bio.** On Agorapulse it starts at Professional; [Trizlink's bio page](/features/link-in-bio) is on the free plan.
+2. **[Sign in](/getting-started/create-account)** and invite the people who maintain it as members.
+3. **Protect links that should not travel.** A link with a [password](/features/short-links#gates) asks for it before resolving, and the password is checked on the server.
+4. **Paste the new links into posts you publish from Agorapulse.**
 
-## What does not come with you {#stays}
+## What stays on Agorapulse {#stays}
 
-- **Your scheduled posts, connected accounts and post history.** They stay with Agorapulse. There is no importer for them.
-- **Post approval.** Trizlink has no approval step before a post goes out.
-- **TikTok, YouTube and Pinterest.** They cannot be connected. See [which platforms exist](/features/social-media#platforms).
+- **The unified inbox, ad-comment moderation and team reports.**
+- **Scheduled posts and connected profiles.**
+- **Multi-step approvals on Custom.**
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Agorapulse's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://www.agorapulse.com" target="_blank" rel="noopener noreferrer nofollow">Check Agorapulse on its own site</a>.
+Rows come from Agorapulse's pricing page as read that day. <a href="https://www.agorapulse.com" target="_blank" rel="noopener noreferrer nofollow">Check Agorapulse on its own site</a>. It did not state short links, an API, best-time suggestions or a phone app, so those rows are left out.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -38,16 +38,12 @@ Prices and features come from Agorapulse's own pages, and each row links to the 
 
 | Feature | Trizlink | Agorapulse | Source |
 |---|---|---|---|
-| Short links with click reports | Yes | Not stated on the pages we checked |  |
 | A link-in-bio page | Yes | Yes (Professional) | <a href="https://www.agorapulse.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Yes | <a href="https://www.agorapulse.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Team members with roles | Yes | Yes (Priced per user) | <a href="https://www.agorapulse.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A free plan | Yes | Yes | <a href="https://www.agorapulse.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Public API | Yes | Not stated on the pages we checked |  |
 | Post approval before publishing | No | Yes (Multi-step on Custom) | <a href="https://www.agorapulse.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A content calendar | Yes | Yes (Shared calendars on Advanced) | <a href="https://www.agorapulse.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | AI drafts and captions | Yes | Partly (AI reply suggestions on Custom; captions not stated) | <a href="https://www.agorapulse.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Best time to post | Yes | Not stated on the pages we checked |  |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+Per-user maths on one side; Trizlink's [pricing section](https://trizlink.com/#pricing) on the other.

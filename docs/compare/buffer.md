@@ -1,32 +1,32 @@
 ---
 title: "Moving from Buffer to Trizlink"
-description: "What you can set up in Trizlink beside Buffer today, what stays with Buffer, and the dated prices and features from its own pages. Trizlink publishing is switched off."
+description: "Buffer keeps posting, because Trizlink's publishing is switched off. Move the Start Page and the links. Buffer's prices, dated."
 sidebar_label: "Buffer"
 last_update:
   date: 2026-11-07
 keywords: ["buffer alternative", "move from buffer", trizlink]
 ---
 
-A scheduler priced per connected channel, with a free plan for three channels and a Team tier for approvals. This page is for you if you are on Buffer now and want to see what moving takes. For who each product suits better, read [Trizlink and Buffer](https://trizlink.com/compare/buffer).
+Buffer schedules posts and prices them per connected channel, with a free plan for three channels and a Team tier for approvals. It is the better fit if you want to pay for exactly the channels you use and drop one when a client leaves, or if approvals and a community inbox are must-haves today. Trizlink is for someone whose short links and bio page should be products in their own right, with their own reports, at one price for the workspace. [Trizlink and Buffer](https://trizlink.com/compare/buffer) goes further.
 
-## Moving across today {#steps}
+## Next to Buffer, not instead of it {#steps}
 
-**Publishing to social networks is built and switched off in Trizlink, so keep Buffer for anything that has to go out.** Read [what is not live yet](/features/social-media#not-live) first. Here is what you can set up beside it now.
+**Buffer keeps posting.** Trizlink's social publishing is built and switched off, so nothing you queue here goes out. [What is not live yet](/features/social-media#not-live) explains why. What moves today is the part of Buffer that was never really about posting.
 
-1. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-2. **[Invite your team](/features/workspaces-and-teams#inviting).** Roles are owner, admin, member and viewer. There is no client role.
-3. **Write in the [composer](/features/social-media#composer) and line posts up in the [queue](/features/social-media#queue).** Queued posts stay pending and nothing is sent.
-4. **Move the links first.** [Short links](/features/short-links) and [bio pages](/features/link-in-bio) work today, and they are the part of Trizlink you can use while Buffer keeps posting.
+1. **Rebuild your Start Page as a [bio page](/features/link-in-bio).** On Buffer, a Start Page uses up one of your paid channels. Here it is a page with its own view counts; Free covers 30 of them.
+2. **Stop letting Buffer shorten your links.** Make them in Trizlink instead, so each [short link](/features/short-links) records its own clicks, by country, device and referrer.
+3. **[Sign in](/getting-started/create-account) and draft posts in the [composer](/features/social-media#composer)** if you want to try it. Previews show where each network cuts the caption.
+4. **Paste the Trizlink links into the posts you schedule in Buffer.**
 
-## What does not come with you {#stays}
+## What stays on Buffer {#stays}
 
-- **Your scheduled posts, connected accounts and post history.** They stay with Buffer. There is no importer for them.
-- **Post approval.** Trizlink has no approval step before a post goes out.
-- **TikTok, YouTube and Pinterest.** They cannot be connected. See [which platforms exist](/features/social-media#platforms).
+- **Scheduled posts, connected channels and post history.** Nothing imports them.
+- **Approvals.** Trizlink has no approval step before a post.
+- **TikTok, YouTube and Pinterest.** They cannot be connected here; see [platforms](/features/social-media#platforms).
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Buffer's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://buffer.com" target="_blank" rel="noopener noreferrer nofollow">Check Buffer on its own site</a>.
+Buffer's pricing page, read that day, is the source for each row. <a href="https://buffer.com" target="_blank" rel="noopener noreferrer nofollow">Check Buffer on its own site</a>. It did not state best-time suggestions or a phone app, so those two rows are left out.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -45,7 +45,5 @@ Prices and features come from Buffer's own pages, and each row links to the page
 | Post approval before publishing | No | Yes (Team) | <a href="https://buffer.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A content calendar | Yes | Yes | <a href="https://buffer.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | AI drafts and captions | Yes | Yes | <a href="https://buffer.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Best time to post | Yes | Not stated on the pages we checked |  |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+Per channel on Buffer, per plan on Trizlink: see the [pricing section](https://trizlink.com/#pricing).

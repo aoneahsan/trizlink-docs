@@ -1,31 +1,31 @@
 ---
 title: "Moving from Switchy to Trizlink"
-description: "Move your links from Switchy to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from Switchy's own pages."
+description: "Moving from Switchy starts with your pixels, and the redirect trade-off a pixel brings on Trizlink. Switchy's prices and features, dated."
 sidebar_label: "Switchy"
 last_update:
   date: 2026-11-07
 keywords: ["switchy alternative", "move from switchy", trizlink]
 ---
 
-A link customiser for social sharing, priced by tracked clicks, with pixels and custom domains on every plan. This page is for you if you are on Switchy now and want to see what moving takes. For who each product suits better, read [Trizlink and Switchy](https://trizlink.com/compare/switchy).
+Switchy customises links for social sharing and prices by tracked clicks, with retargeting pixels and custom domains on every plan. If unlimited pixels on every link is the reason you use a shortener, or paying by clicks suits you better than paying by links made, Switchy is built around exactly that. Forty-seven dollars a month is a high first price for one person, though; Trizlink starts free, with a bio page and a social calendar in the same workspace. [Trizlink and Switchy compared](https://trizlink.com/compare/switchy).
 
-## Moving your links across {#steps}
+## From Switchy, pixels first {#steps}
 
-1. **Get your list of links out of Switchy.** Look for an export in your Switchy account. This guide cannot promise one on your plan, so check there first. If there is no export, build the list by hand for the links you still use.
-2. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-3. **Shape the list into a CSV.** The [importer](/features/link-organization#import) needs a `target_url` column and also reads `custom_code`, `title`, `description` and `expires_at`. A file can hold 5,000 rows and 2 MB.
-4. **Run the import at `/dashboard/links/bulk-import`.** The file is parsed in your browser, and only the last step writes. Every refused row is named with its line number.
-5. **Draw new QR codes for anything you print from now on.** See [QR codes](/features/qr-codes). Codes already printed keep pointing at Switchy.
+1. **Write down your pixel IDs.** Switchy's value is in the pixels, so list each one with its provider before touching the links.
+2. **[Sign in to Trizlink](/getting-started/create-account)** and add them under [tracking pixels](/features/tracking-and-utm#pixels). Meta, Google Analytics 4, Google Ads, TikTok, X, LinkedIn, Pinterest and Snapchat are supported, and each ID is checked for the right shape when you save it.
+3. **Read the redirect trade-off before attaching them.** A link carrying an active pixel returns a short [interstitial page](/features/tracking-and-utm#interstitial) instead of a `301`, because a tag needs somewhere to render. Attach pixels to the links you measure, not to every link.
+4. **Export the links from Switchy, or list them, and [import the CSV](/features/link-organization#import)** at `/dashboard/links/bulk-import`.
+5. **Set the social card on links you share.** The link form has a [social card section](/features/short-links#the-form) for the title, description and image a preview shows, with a separate one for X.
 
-## What does not come with you {#stays}
+## What stays on Switchy {#stays}
 
-- **Your old short addresses.** They live on Switchy, so keep that account while people still click them. Trizlink cannot answer for an address on another company's domain.
-- **Your click history.** Counting starts again from the first click on the new link. See [analytics](/features/analytics).
-- **Your own domain, for now.** You can [add it and prove you own it](/features/custom-domains#not-live), and serving links from it is not switched on, so leave it where it works today.
+- **Links on your Switchy domains.** They keep answering there; Trizlink can [verify a domain](/features/custom-domains#not-live) but cannot serve it yet.
+- **Audiences already built from Switchy clicks.** They live in your ad accounts, not in either product.
+- **Click history.** New links start at zero.
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Switchy's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://www.switchy.io" target="_blank" rel="noopener noreferrer nofollow">Check Switchy on its own site</a>.
+Switchy's pricing page that day gave the prices and three of the features below, each linked. <a href="https://www.switchy.io" target="_blank" rel="noopener noreferrer nofollow">Check Switchy on its own site</a>. It said nothing about a bio page, scheduled posts, a free plan, QR codes, passwords, expiry, an API, bulk import, a UTM builder or a phone app, so those rows are not shown.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -37,17 +37,7 @@ Prices and features come from Switchy's own pages, and each row links to the pag
 | Feature | Trizlink | Switchy | Source |
 |---|---|---|---|
 | Short links with click reports | Yes | Yes | <a href="https://www.switchy.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A link-in-bio page | Yes | Not stated on the pages we checked |  |
-| Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Not stated on the pages we checked |  |
 | Team members with roles | Yes | Yes (5 users on Pro) | <a href="https://www.switchy.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A free plan | Yes | Not stated on the pages we checked |  |
 | Your own domain | Partly (You can prove you own it; serving links from it is not switched on) | Yes | <a href="https://www.switchy.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| QR codes | Yes | Not stated on the pages we checked |  |
-| Password on a link | Yes | Not stated on the pages we checked |  |
-| Links that expire | Yes | Not stated on the pages we checked |  |
-| Public API | Yes | Not stated on the pages we checked |  |
-| Bulk import from a file | Yes | Not stated on the pages we checked |  |
-| UTM builder | Yes | Not stated on the pages we checked |  |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+What Trizlink costs is on the [pricing section](https://trizlink.com/#pricing).

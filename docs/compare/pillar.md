@@ -1,30 +1,31 @@
 ---
 title: "Moving from Pillar to Trizlink"
-description: "Rebuild your Pillar page in Trizlink step by step, see what stays behind, and read the dated prices and features taken from Pillar's own pages."
+description: "Pillar keeps the store; Trizlink takes the links page and the contact form. Pillar's prices and the rows its page left out, dated."
 sidebar_label: "Pillar"
 last_update:
   date: 2026-11-07
 keywords: ["pillar alternative", "move from pillar", trizlink]
 ---
 
-A creator storefront and media kit with a free tier and three monthly plans aimed at selling. This page is for you if you are on Pillar now and want to see what moving takes. For who each product suits better, read [Trizlink and Pillar](https://trizlink.com/compare/pillar).
+Pillar is a creator storefront and media kit with a free tier and three monthly plans aimed at selling. It is the right home when the page is a store first: courses, bookings, invoices and brand-deal reports, and maybe a branded app for subscribers. If what you want first is 30 bio pages and a contact inbox before any payment, with tap counts, short links and a social calendar rather than a storefront, Trizlink fits. [The comparison](https://trizlink.com/compare/pillar).
 
-## Moving your page across {#steps}
+## When the store stays and the links move {#steps}
 
-1. **Write down what is on your Pillar page.** There is no importer for a page from another product, so this is the list you build from.
-2. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-3. **Build the page from [blocks](/features/link-in-bio#blocks).** Pick a [layout](/features/link-in-bio#layouts) first, then add the links, the email form and the contact form you need.
-4. **[Publish it and choose its address](/features/link-in-bio#publishing).** Open it on a phone before you change anything else.
-5. **Put the new address in your profiles.** Leave the Pillar page up until the new one has been in place for a while, because old posts still point at it.
+1. **Keep selling on Pillar.** Courses, bookings and invoices have no counterpart here. A Link block can send visitors to your Pillar store.
+2. **[Sign in to Trizlink](/getting-started/create-account)** and start a draft page.
+3. **Choose Spotlight if one thing comes first.** The [Spotlight layout](/features/link-in-bio#layouts) puts a single item at the top, such as the course you are launching.
+4. **Add a Contact form block** so enquiries land in Trizlink's inbox instead of your email.
+5. **[Publish](/features/link-in-bio#publishing)**, and watch the per-block tap counts for a week before deciding what else to move.
 
-## What does not come with you {#stays}
+## What stays on Pillar {#stays}
 
-- **Your subscribers and messages.** They stay with Pillar. This guide has no import step for them.
-- **Your page history.** Views and taps start counting on the new page. See [limits](/features/link-in-bio#limits) for how a page is counted.
+- **The store, the media kit and brand-deal reports.**
+- **The branded subscriber app.** Trizlink's [Android app](/getting-started/create-account) is for you, not for your audience.
+- **Your Entrepreneur custom domain.** Trizlink [cannot serve one yet](/features/custom-domains#not-live).
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Pillar's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://pillar.io" target="_blank" rel="noopener noreferrer nofollow">Check Pillar on its own site</a>.
+These rows are from Pillar's pricing page as read that day. <a href="https://pillar.io" target="_blank" rel="noopener noreferrer nofollow">Check Pillar on its own site</a>. It did not state short links, scheduled posts, team roles, email collection, a contact form or page analytics, so most of our usual rows are left out.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -35,15 +36,9 @@ Prices and features come from Pillar's own pages, and each row links to the page
 
 | Feature | Trizlink | Pillar | Source |
 |---|---|---|---|
-| Short links with click reports | Yes | Not stated on the pages we checked |  |
 | A link-in-bio page | Yes | Yes (A creator store page) | <a href="https://pillar.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Not stated on the pages we checked |  |
-| Team members with roles | Yes | Not stated on the pages we checked |  |
 | A free plan | Yes | Yes | <a href="https://pillar.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Your own domain | Partly (You can prove you own it; serving links from it is not switched on) | Yes (Entrepreneur) | <a href="https://pillar.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Collect emails on the page | Yes | Not stated on the pages we checked |  |
-| Contact form on the page | Yes | Not stated on the pages we checked |  |
-| Page views and tap counts | Yes | Not stated on the pages we checked |  |
 | A phone app | Partly (Android only; no iOS app) | Partly (A branded app for your audience on Professional, not an app for you) | <a href="https://pillar.io/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+If the links move and the store stays, Trizlink's [pricing section](https://trizlink.com/#pricing) shows what the links cost.

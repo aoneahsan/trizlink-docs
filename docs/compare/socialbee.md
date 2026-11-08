@@ -1,32 +1,32 @@
 ---
 title: "Moving from SocialBee to Trizlink"
-description: "What you can set up in Trizlink beside SocialBee today, what stays with SocialBee, and the dated prices and features from its own pages. Trizlink publishing is switched off."
+description: "Keep SocialBee's recycling categories and give each evergreen post a Trizlink short link. SocialBee's prices, dated."
 sidebar_label: "SocialBee"
 last_update:
   date: 2026-11-07
 keywords: ["socialbee alternative", "move from socialbee", trizlink]
 ---
 
-A category-based scheduler with unlimited AI drafting on every plan and approvals from the middle tier. This page is for you if you are on SocialBee now and want to see what moving takes. For who each product suits better, read [Trizlink and SocialBee](https://trizlink.com/compare/socialbee).
+SocialBee schedules by content category, with unlimited AI drafting on every plan and approvals from the middle tier. If evergreen categories that recycle on a schedule are how you post, or unlimited AI drafting on the lowest tier matters more than a free plan, SocialBee is built around that. Trizlink suits someone who wants a free plan, AI drafting with a stated monthly allowance, and short links and a bio page on the same subscription. [Trizlink and SocialBee](https://trizlink.com/compare/socialbee).
 
-## Moving across today {#steps}
+## Keeping the categories, moving the links {#steps}
 
-**Publishing to social networks is built and switched off in Trizlink, so keep SocialBee for anything that has to go out.** Read [what is not live yet](/features/social-media#not-live) first. Here is what you can set up beside it now.
+**Your recycling categories stay in SocialBee.** Trizlink has no categories, and its publishing is [built and switched off](/features/social-media#not-live).
 
-1. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-2. **[Invite your team](/features/workspaces-and-teams#inviting).** Roles are owner, admin, member and viewer. There is no client role.
-3. **Write in the [composer](/features/social-media#composer) and line posts up in the [queue](/features/social-media#queue).** Queued posts stay pending and nothing is sent.
-4. **Move the links first.** [Short links](/features/short-links) and [bio pages](/features/link-in-bio) work today, and they are the part of Trizlink you can use while SocialBee keeps posting.
+1. **Give each evergreen post a Trizlink link.** A post that recycles for a year is a link that gets clicked for a year. Make it a [short link](/features/short-links) and you can change the destination without editing the post.
+2. **[Sign in](/getting-started/create-account) and file those links in one [folder](/features/link-organization#structures) per category,** so the reports line up with the way you post.
+3. **Try AI drafting with a counted allowance.** The [composer](/features/social-media#composer) shows how many AI requests you have left beside the button.
+4. **Paste the new links into SocialBee's category posts.**
 
-## What does not come with you {#stays}
+## What stays on SocialBee {#stays}
 
-- **Your scheduled posts, connected accounts and post history.** They stay with SocialBee. There is no importer for them.
-- **Post approval.** Trizlink has no approval step before a post goes out.
-- **TikTok, YouTube and Pinterest.** They cannot be connected. See [which platforms exist](/features/social-media#platforms).
+- **Categories, the recycling schedule and every queued post.**
+- **Approvals on Accelerate.** There is no approval step in Trizlink.
+- **Connected profiles and history.**
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from SocialBee's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://socialbee.com" target="_blank" rel="noopener noreferrer nofollow">Check SocialBee on its own site</a>.
+Rows come from SocialBee's pricing page as read that day. <a href="https://socialbee.com" target="_blank" rel="noopener noreferrer nofollow">Check SocialBee on its own site</a>. It did not mention short links, a bio page, a free plan, an API, a calendar, best-time suggestions or a phone app, so more than half of our usual rows are missing.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -36,16 +36,9 @@ Prices and features come from SocialBee's own pages, and each row links to the p
 
 | Feature | Trizlink | SocialBee | Source |
 |---|---|---|---|
-| Short links with click reports | Yes | Not stated on the pages we checked |  |
-| A link-in-bio page | Yes | Not stated on the pages we checked |  |
 | Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Yes | <a href="https://socialbee.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Team members with roles | Yes | Yes (Multi-user on Pro) | <a href="https://socialbee.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A free plan | Yes | Not stated on the pages we checked |  |
-| Public API | Yes | Not stated on the pages we checked |  |
 | Post approval before publishing | No | Yes (From Accelerate) | <a href="https://socialbee.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A content calendar | Yes | Not stated on the pages we checked |  |
 | AI drafts and captions | Yes | Yes (Unlimited on every plan) | <a href="https://socialbee.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Best time to post | Yes | Not stated on the pages we checked |  |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+The AI allowance per plan, with the prices, is on Trizlink's [pricing section](https://trizlink.com/#pricing).

@@ -1,32 +1,32 @@
 ---
 title: "Moving from Vista Social to Trizlink"
-description: "What you can set up in Trizlink beside Vista Social today, what stays with Vista Social, and the dated prices and features from its own pages. Trizlink publishing is switched off."
+description: "Vista Social keeps publishing; the Vista Page becomes a Trizlink bio page. Vista Social's prices and features, dated."
 sidebar_label: "Vista Social"
 last_update:
   date: 2026-11-07
 keywords: ["vista social alternative", "move from vista social", trizlink]
 ---
 
-A profile-based planner with a link-in-bio page, approval workflows and an AI command centre. This page is for you if you are on Vista Social now and want to see what moving takes. For who each product suits better, read [Trizlink and Vista Social](https://trizlink.com/compare/vista-social).
+Vista Social is a profile-based planner with a link-in-bio page, approval workflows and an AI command centre. Free listening on your own profiles, an advocacy programme, and clients connecting their own profiles into your workspace are reasons to choose it. If ninety-nine dollars a month is the wrong floor for a two-person team, Trizlink starts free, and its short links carry passwords and expiry dates. [Trizlink and Vista Social](https://trizlink.com/compare/vista-social).
 
-## Moving across today {#steps}
+## Vista Page to Trizlink {#steps}
 
-**Publishing to social networks is built and switched off in Trizlink, so keep Vista Social for anything that has to go out.** Read [what is not live yet](/features/social-media#not-live) first. Here is what you can set up beside it now.
+**Vista Social keeps publishing.** Trizlink's publishing is [built and switched off](/features/social-media#not-live), so queued posts stay pending.
 
-1. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-2. **[Invite your team](/features/workspaces-and-teams#inviting).** Roles are owner, admin, member and viewer. There is no client role.
-3. **Write in the [composer](/features/social-media#composer) and line posts up in the [queue](/features/social-media#queue).** Queued posts stay pending and nothing is sent.
-4. **Move the links first.** [Short links](/features/short-links) and [bio pages](/features/link-in-bio) work today, and they are the part of Trizlink you can use while Vista Social keeps posting.
+1. **Recreate the Vista Page as a [bio page](/features/link-in-bio#blocks).** Choose a layout, add your links as blocks, publish.
+2. **[Sign in](/getting-started/create-account)** and invite the second person on the team as an admin or member.
+3. **Draft in the [composer](/features/social-media#composer)** if you want to see each network's preview, then copy the text to Vista Social to post.
+4. **Change your bio link** to the new page.
 
-## What does not come with you {#stays}
+## What stays on Vista Social {#stays}
 
-- **Your scheduled posts, connected accounts and post history.** They stay with Vista Social. There is no importer for them.
-- **Post approval.** Trizlink has no approval step before a post goes out.
-- **TikTok, YouTube and Pinterest.** They cannot be connected. See [which platforms exist](/features/social-media#platforms).
+- **Listening, advocacy and client-connected profiles.**
+- **Approvals on Advanced.**
+- **Scheduled posts and history.**
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Vista Social's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://vistasocial.com" target="_blank" rel="noopener noreferrer nofollow">Check Vista Social on its own site</a>.
+Each row is from Vista Social's pricing page as read that day. <a href="https://vistasocial.com" target="_blank" rel="noopener noreferrer nofollow">Check Vista Social on its own site</a>. It did not state short links, a free plan, an API, best-time suggestions or a phone app, so those rows are left out.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -37,16 +37,11 @@ Prices and features come from Vista Social's own pages, and each row links to th
 
 | Feature | Trizlink | Vista Social | Source |
 |---|---|---|---|
-| Short links with click reports | Yes | Not stated on the pages we checked |  |
 | A link-in-bio page | Yes | Yes (Vista Page) | <a href="https://vistasocial.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Yes | <a href="https://vistasocial.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Team members with roles | Yes | Yes (2 to 8 or more users by plan) | <a href="https://vistasocial.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A free plan | Yes | Not stated on the pages we checked |  |
-| Public API | Yes | Not stated on the pages we checked |  |
 | Post approval before publishing | No | Yes (Advanced) | <a href="https://vistasocial.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A content calendar | Yes | Yes | <a href="https://vistasocial.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | AI drafts and captions | Yes | Yes (Ask Vista) | <a href="https://vistasocial.com/pricing/" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Best time to post | Yes | Not stated on the pages we checked |  |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+For a two-person team, read Trizlink's [pricing section](https://trizlink.com/#pricing) before Vista's Advanced tier.

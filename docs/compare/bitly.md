@@ -1,31 +1,31 @@
 ---
 title: "Moving from Bitly to Trizlink"
-description: "Move your links from Bitly to Trizlink with a CSV import, see what stays behind, and read the dated prices and features taken from Bitly's own pages."
+description: "Export your Bitly links, rename the columns and import them into Trizlink. Why bit.ly addresses and printed codes stay put. Bitly's prices, dated."
 sidebar_label: "Bitly"
 last_update:
   date: 2026-11-07
 keywords: ["bitly alternative", "move from bitly", trizlink]
 ---
 
-The best-known link shortener, sold with QR codes and a link-in-bio page, priced by links per month. This page is for you if you are on Bitly now and want to see what moving takes. For who each product suits better, read [Trizlink and Bitly](https://trizlink.com/compare/bitly).
+Bitly is the shortener most people already know, and it sells QR codes and a link-in-bio page beside the links, priced by how many links you make a month. If you print codes on packaging and need GTIN support, or your team works through its Shopify, Canva and HubSpot integrations, Bitly is doing a job Trizlink does not try to do. If five links a month on a free account is the wall you keep hitting, Trizlink's free plan starts at 1,000 short links and 30 bio pages, with the social drafts in the same workspace. The side-by-side is on [trizlink.com](https://trizlink.com/compare/bitly).
 
-## Moving your links across {#steps}
+## Moving your Bitly links {#steps}
 
-1. **Get your list of links out of Bitly.** Look for an export in your Bitly account. This guide cannot promise one on your plan, so check there first. If there is no export, build the list by hand for the links you still use.
-2. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-3. **Shape the list into a CSV.** The [importer](/features/link-organization#import) needs a `target_url` column and also reads `custom_code`, `title`, `description` and `expires_at`. A file can hold 5,000 rows and 2 MB.
-4. **Run the import at `/dashboard/links/bulk-import`.** The file is parsed in your browser, and only the last step writes. Every refused row is named with its line number.
-5. **Draw new QR codes for anything you print from now on.** See [QR codes](/features/qr-codes). Codes already printed keep pointing at Bitly.
+1. **Find out whether your plan can export.** Bitly lists bulk import from its Growth plan, so look in your account before planning anything. No export means copying out, by hand, the links that still get clicked; the dead ones can stay behind.
+2. **[Sign in to Trizlink with Google](/getting-started/create-account).** You land in a workspace called My Workspace, ready to take links.
+3. **Rename the columns.** Whatever Bitly calls the long URL becomes `target_url`, the back-half you chose becomes `custom_code`, and the link's title goes in `title`. The [importer](/features/link-organization#import) reads 5,000 rows and 2 MB per file, so split a big account into several files.
+4. **Expect a few codes to bounce.** Codes are unique across all of Trizlink and compared without case, so a back-half somebody else already holds cannot be yours. The check step at `/dashboard/links/bulk-import` names each refused row by line number before anything is written.
+5. **Keep printed codes pointing at Bitly.** A code on a box cannot be redirected from here. For anything you print next, [download a new code](/features/qr-codes#download) as SVG for the designer or a 1,024-pixel PNG for the print shop.
 
-## What does not come with you {#stays}
+## What stays on Bitly {#stays}
 
-- **Your old short addresses.** They live on Bitly, so keep that account while people still click them. Trizlink cannot answer for an address on another company's domain.
-- **Your click history.** Counting starts again from the first click on the new link. See [analytics](/features/analytics).
-- **Your own domain, for now.** You can [add it and prove you own it](/features/custom-domains#not-live), and serving links from it is not switched on, so leave it where it works today.
+- **Every bit.ly address already out in the world.** It resolves on Bitly's domain, and Trizlink cannot answer for it. Keep the account open while those links still get traffic.
+- **The click counts behind them.** Your Trizlink links start from zero; [analytics](/features/analytics) counts from the first click.
+- **A branded domain.** You can [add it here and prove you own it](/features/custom-domains#not-live), but serving links on it is not switched on, so leave it on Bitly for now.
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Bitly's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://bitly.com" target="_blank" rel="noopener noreferrer nofollow">Check Bitly on its own site</a>.
+Every price and feature below was read on Bitly's own pricing page that day, and each row links to it. <a href="https://bitly.com" target="_blank" rel="noopener noreferrer nofollow">Check Bitly on its own site</a> before you decide. Bitly's pages did not say whether it schedules social posts or puts passwords on links, so those rows are left out.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -39,16 +39,14 @@ Prices and features come from Bitly's own pages, and each row links to the page 
 |---|---|---|---|
 | Short links with click reports | Yes | Yes | <a href="https://bitly.com/pages/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A link-in-bio page | Yes | Yes | <a href="https://bitly.com/pages/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Not stated on the pages we checked |  |
 | Team members with roles | Yes | Yes (Multiple users and group permissions on Enterprise) | <a href="https://bitly.com/pages/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A free plan | Yes | Yes | <a href="https://bitly.com/pages/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Your own domain | Partly (You can prove you own it; serving links from it is not switched on) | Yes (From Growth) | <a href="https://bitly.com/pages/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | QR codes | Yes | Yes | <a href="https://bitly.com/pages/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Password on a link | Yes | Not stated on the pages we checked |  |
 | Links that expire | Yes | Yes | <a href="https://bitly.com/pages/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Public API | Yes | Yes (1,000 requests a month on Free) | <a href="https://bitly.com/pages/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Bulk import from a file | Yes | Yes (From Growth) | <a href="https://bitly.com/pages/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | UTM builder | Yes | Yes (From Core) | <a href="https://bitly.com/pages/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | A phone app | Partly (Android only; no iOS app) | Yes | <a href="https://bitly.com/pages/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+Trizlink's plans and prices: [pricing](https://trizlink.com/#pricing).

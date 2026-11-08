@@ -1,32 +1,32 @@
 ---
 title: "Moving from Sendible to Trizlink"
-description: "What you can set up in Trizlink beside Sendible today, what stays with Sendible, and the dated prices and features from its own pages. Trizlink publishing is switched off."
+description: "Sendible keeps scheduling; each client gets a Trizlink workspace for links and bio pages. Sendible's prices and features, dated."
 sidebar_label: "Sendible"
 last_update:
   date: 2026-11-07
 keywords: ["sendible alternative", "move from sendible", trizlink]
 ---
 
-An agency scheduler priced by social profiles, with unlimited users on every plan. This page is for you if you are on Sendible now and want to see what moving takes. For who each product suits better, read [Trizlink and Sendible](https://trizlink.com/compare/sendible).
+Sendible is an agency scheduler priced by social profiles, with unlimited users on every plan. An agency that adds people often and never wants a per-seat fee, or needs client workspaces with their own permissions, is who it serves. Trizlink is for someone who wants a free plan to start on rather than a trial, with links and bio pages as products beside the posts. [Trizlink and Sendible](https://trizlink.com/compare/sendible).
 
-## Moving across today {#steps}
+## Client by client, beside Sendible {#steps}
 
-**Publishing to social networks is built and switched off in Trizlink, so keep Sendible for anything that has to go out.** Read [what is not live yet](/features/social-media#not-live) first. Here is what you can set up beside it now.
+**Sendible keeps scheduling.** Trizlink sends no posts; its publishing is [built and switched off](/features/social-media#not-live).
 
-1. **[Create a Trizlink account](/getting-started/create-account).** Sign-in is with Google, and a workspace is made for you.
-2. **[Invite your team](/features/workspaces-and-teams#inviting).** Roles are owner, admin, member and viewer. There is no client role.
-3. **Write in the [composer](/features/social-media#composer) and line posts up in the [queue](/features/social-media#queue).** Queued posts stay pending and nothing is sent.
-4. **Move the links first.** [Short links](/features/short-links) and [bio pages](/features/link-in-bio) work today, and they are the part of Trizlink you can use while Sendible keeps posting.
+1. **Make one Trizlink [workspace](/features/workspaces-and-teams#what-it-owns) for each Sendible client.** Separation is enforced in the database, so one client's links and numbers never show in another's.
+2. **[Sign in](/getting-started/create-account) and invite your staff** per workspace. Clients who should only read get the viewer role; there is no client role beyond that.
+3. **Build each client's bio page and campaign links there.**
+4. **Use those links in the posts you schedule in Sendible.**
 
-## What does not come with you {#stays}
+## What stays on Sendible {#stays}
 
-- **Your scheduled posts, connected accounts and post history.** They stay with Sendible. There is no importer for them.
-- **Post approval.** Trizlink has no approval step before a post goes out.
-- **TikTok, YouTube and Pinterest.** They cannot be connected. See [which platforms exist](/features/social-media#platforms).
+- **Scheduled posts, client profiles and history.**
+- **Approvals on Plus.** Trizlink has no approval step.
+- **TikTok, YouTube and Pinterest.** Not connectable in Trizlink.
 
 ## The facts, as of 7 November 2026 {#facts}
 
-Prices and features come from Sendible's own pages, and each row links to the page we read. "Not stated" means those pages did not say. <a href="https://www.sendible.com" target="_blank" rel="noopener noreferrer nofollow">Check Sendible on its own site</a>.
+Rows come from Sendible's pricing page as read that day. <a href="https://www.sendible.com" target="_blank" rel="noopener noreferrer nofollow">Check Sendible on its own site</a>. It did not state short links, a bio page, a free plan, an API, a calendar, best-time suggestions or a phone app, so more than half of our usual rows are not shown.
 
 | Plan | Price | Note | Source |
 |---|---|---|---|
@@ -36,16 +36,9 @@ Prices and features come from Sendible's own pages, and each row links to the pa
 
 | Feature | Trizlink | Sendible | Source |
 |---|---|---|---|
-| Short links with click reports | Yes | Not stated on the pages we checked |  |
-| A link-in-bio page | Yes | Not stated on the pages we checked |  |
 | Scheduled social posts | Partly (Drafts, calendar and queue work; publishing is switched off) | Yes | <a href="https://www.sendible.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
 | Team members with roles | Yes | Yes (Unlimited users on all plans) | <a href="https://www.sendible.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A free plan | Yes | Not stated on the pages we checked |  |
-| Public API | Yes | Not stated on the pages we checked |  |
 | Post approval before publishing | No | Yes (Plus) | <a href="https://www.sendible.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| A content calendar | Yes | Not stated on the pages we checked |  |
 | AI drafts and captions | Yes | Yes | <a href="https://www.sendible.com/pricing" target="_blank" rel="noopener noreferrer nofollow">Source</a> |
-| Best time to post | Yes | Not stated on the pages we checked |  |
-| A phone app | Partly (Android only; no iOS app) | Not stated on the pages we checked |  |
 
-Trizlink's own prices are on the [pricing page](https://trizlink.com/#pricing).
+Sendible prices by profile; Trizlink by plan, on its [pricing section](https://trizlink.com/#pricing).
