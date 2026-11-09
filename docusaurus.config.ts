@@ -47,6 +47,7 @@ const config: Config = {
   // SoftwareApplication) help Google Rich Results, Perplexity, ChatGPT, and
   // Claude extract structured entity data when citing this documentation.
   headTags: [
+    { tagName: 'meta', attributes: { name: 'yandex-verification', content: '72e7e442c9337d4c' } },
     // 🔴 NO HARDCODED CANONICAL HERE. A `headTags` entry is emitted on EVERY page, so
     // `href: ${SITE_URL}/` told search engines that every page in this site is a duplicate
     // of the home page — the one instruction that can remove a whole docs site from search
