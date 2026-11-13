@@ -5,8 +5,56 @@
     <link>https://docs.trizlink.com/</link>
     <description><![CDATA[How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on.]]></description>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://docs.trizlink.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>White-label and licensing</title>
+      <link>https://docs.trizlink.com/white-label</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/white-label</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[How a Trizlink white-label licence works, what the source buyout hands over, how updates and renewals run, and how anyone can verify a licensed deployment.]]></description>
+    </item>
+    <item>
+      <title>White-label questions</title>
+      <link>https://docs.trizlink.com/white-label/faq</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/white-label/faq</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Answers to the questions buyers ask about a Trizlink white-label licence and the source buyout, from source code and exclusivity to iOS and acquired products.]]></description>
+    </item>
+    <item>
+      <title>What each platform group delivers</title>
+      <link>https://docs.trizlink.com/white-label/platform-groups</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/white-label/platform-groups</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[The two Trizlink platform groups a white-label licence can cover, the web app and the mobile app, what each one includes, and when iOS is built.]]></description>
+    </item>
+    <item>
+      <title>From payment to a running deployment</title>
+      <link>https://docs.trizlink.com/white-label/setup</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/white-label/setup</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[What happens after a Trizlink white-label payment, in order: the licence email and certificate, the setup of domain and branding, and the deployment with its licence file.]]></description>
+    </item>
+    <item>
+      <title>Updates and renewals</title>
+      <link>https://docs.trizlink.com/white-label/updates-and-renewals</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/white-label/updates-and-renewals</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[The six months of Trizlink updates included with every white-label licence and buyout, what counts as an update, and how a 3, 6 or 12 month renewal is counted.]]></description>
+    </item>
+    <item>
+      <title>Verifying a licence</title>
+      <link>https://docs.trizlink.com/white-label/verify-a-licence</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/white-label/verify-a-licence</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[How to check whether a deployment of Trizlink is licensed, by its licence key or by its domain, and what each answer from the licensing service means.]]></description>
+    </item>
     <item>
       <title>Moving to Trizlink</title>
       <link>https://docs.trizlink.com/compare</link>
