@@ -58,6 +58,19 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'White-label and licensing',
+      collapsed: true,
+      link: { type: 'doc', id: 'white-label/index' },
+      items: [
+        'white-label/platform-groups',
+        'white-label/setup',
+        'white-label/updates-and-renewals',
+        'white-label/verify-a-licence',
+        'white-label/faq',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Guides',
       collapsed: true,
       items: ['guides/faq'],
