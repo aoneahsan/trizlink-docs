@@ -23,6 +23,17 @@ The code of every repository that builds the web app and the Android app, the bu
 of updates. It does not include the accounts or data of the people using trizlink.com; a buyout transfers code,
 not users.
 
+## Is there anything to pay after a buyout?
+
+Yes, a royalty of 7% of the gross revenue Trizlink earns, leaving out any sales tax or VAT the buyer collects. It is
+paid every quarter with a revenue statement, for as long as Trizlink earns revenue, and it is still owed after a
+resale.
+
+## How is a licence paid for?
+
+By Wise bank transfer from our payment page. The licence is issued once the Trizlink team has confirmed the
+transfer.
+
 ## What happens to the pages after a buyout?
 
 They say the product has been acquired, and nothing is offered for sale. The verify page keeps working for every

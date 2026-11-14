@@ -8,12 +8,12 @@ last_update:
 keywords: [white label setup, trizlink deployment, custom domain white label]
 ---
 
-The checkout opens on the payment page in the same tab. Nothing is issued by that redirect, and nothing by the
-thank-you page after it: the licence is issued when the payment provider confirms the payment to our licensing
-service.
+The pay button opens our payment page in the same tab. The buyer pays by Wise bank transfer and sends the transfer
+reference from that page. Nothing is issued by the redirect, and nothing by the thank-you page after it: the licence
+is issued once the Trizlink team has confirmed the transfer.
 
-1. **The licence email.** It carries the licence key and the certificate as a PDF, and goes to the address used at
-   checkout. The thank-you page shows the order's status once; it does not need to stay open.
+1. **The licence email.** It carries the licence key and the certificate as a PDF, and goes to the address used on
+   the payment page. The thank-you page shows the order's status once; it does not need to stay open.
 2. **Domain and branding.** The Trizlink team writes to collect the domain, the name, the logo and the colours.
    The buyer points the domain's DNS at the deployment; we issue its certificate.
 3. **The deployment.** We build and deploy it under the buyer's name. It serves its licence file at

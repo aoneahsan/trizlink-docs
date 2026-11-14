@@ -13,10 +13,12 @@ a domain the buyer owns, and replace Trizlink's name, logo and colours with thei
 own customers. The source code stays with us.
 
 The other path is the **source buyout**: the buyer receives the code of every repository that builds the web app
-and the Android app, and Trizlink comes off sale for everyone else.
+and the Android app, and Trizlink comes off sale for everyone else. The buyer also pays a royalty of 7% of the gross
+revenue Trizlink earns, every quarter, for as long as it earns; the
+[licence terms](https://trizlink.com/white-label/license-terms#buyout) set out how it works.
 
 Prices are not repeated here. The [pricing page](https://trizlink.com/white-label/pricing) asks the licensing
-service for every number it shows, and that number is the one the checkout charges.
+service for every number it shows, and that number is the one the payment page asks for.
 
 ## The pages in this section
 
