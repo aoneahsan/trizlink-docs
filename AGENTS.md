@@ -23,7 +23,7 @@ file carries only what is true of *this* repo.
 | Repo | `trizlink-docs` (PUBLIC — never commit secrets) · branch `main` |
 | Type | Docusaurus 3 documentation site (classic preset + Mermaid) + a local `discovery-feed` plugin emitting `feed.xml` |
 | Package manager | yarn (NEVER npm/pnpm) |
-| Node | >=18 (`.nvmrc` = 22) |
+| Node | 26.13.1 LTS (`.nvmrc`, `engines >=26.13.1`) · packages: `docs/PACKAGES.md` (excluded from the site) |
 | Author | Ahsan Mahmood ([aoneahsan@gmail.com](mailto:aoneahsan@gmail.com)) |
 | Live URL | https://docs.trizlink.com — **GitHub Pages only** (`server: GitHub.com`; `DONE-002` removed the Firebase offer) |
 | Product (app) | https://trizlink.com · Android: https://play.google.com/store/apps/details?id=com.trizlink.app (Play serves the rebuild since 2.15.0, owner-confirmed 2026-10-28) |
@@ -32,6 +32,8 @@ file carries only what is true of *this* repo.
 | Content tracker | `docs/tracking/trizlink-docs-content-tracker.json` |
 | Search discovery | enrolled as surface `docs` of project `aoneahsan/trizlink`; findings land in `../trizlink/SEARCH-DISCOVERY-ISSUES.md`; the IndexNow key file is `static/5ec21df431ff3d1dbf8dd7052aad9671.txt` |
 | Gitignore Last Verified | 2026-06-24 |
+
+<!-- fleet:node-26-13-1 v1 --> Node 26.13.1 LTS (.nvmrc), packages latest — 2026-11-16
 
 ## Critical rules
 

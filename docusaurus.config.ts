@@ -181,6 +181,7 @@ const config: Config = {
             '**/__tests__/**',
             'MANUAL-TASKS.md',
             'DONE-TASKS.md',
+            'PACKAGES.md',
           ],
           routeBasePath: '/',
           editUrl: 'https://github.com/aoneahsan/trizlink-docs/edit/main/',
