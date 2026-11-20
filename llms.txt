@@ -5,6 +5,13 @@
 > Pro ($9.99/month) and Team ($8.99/seat/month, from 3 seats); annual billing charges ten months for twelve.
 > Product: https://trizlink.com. Made by the Trizlink team (support@trizlink.com).
 
+
+## Get Trizlink
+
+- [All apps](https://docs.trizlink.com/apps): every released surface of Trizlink.
+- [Trizlink web app](https://trizlink.com)
+- [Google Play](https://play.google.com/store/apps/details?id=com.trizlink.app)
+
 ## About
 
 Trizlink turns long URLs into short links and gives each one a QR code plus click statistics broken down by
