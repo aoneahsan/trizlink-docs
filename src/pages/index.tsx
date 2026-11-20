@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
+import { OTHER_PLATFORMS, PRIMARY_PLATFORM } from '@site/src/data/platforms';
 import styles from './index.module.css';
 
 type Feature = {
@@ -71,10 +72,17 @@ function HomepageHeader(): ReactNode {
           <Link className="button button--secondary button--lg" to="/getting-started/quick-start">
             Quick start
           </Link>
-          <Link className="button button--outline button--lg" href="https://trizlink.com">
+          <Link className="button button--outline button--lg" href={PRIMARY_PLATFORM.href}>
             Open Trizlink
           </Link>
         </div>
+        <p className={styles.also}>
+          <span>Also on</span>
+          {OTHER_PLATFORMS.filter((platform) => !platform.primary).map((platform) => (
+            <Link key={platform.id} href={platform.href}>{platform.name}</Link>
+          ))}
+          <Link to="/apps">All apps →</Link>
+        </p>
       </div>
     </header>
   );

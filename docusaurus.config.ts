@@ -2,6 +2,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import discoveryFeed from './src/plugins/discoveryFeed';
+import { OTHER_PLATFORMS, platformHref } from './src/data/platforms';
 
 // ---------------------------------------------------------------------------
 // Trizlink — Documentation site config
@@ -10,8 +11,8 @@ import discoveryFeed from './src/plugins/discoveryFeed';
 // ---------------------------------------------------------------------------
 
 const SITE_URL = 'https://docs.trizlink.com';
-const APP_URL = 'https://trizlink.com';
-const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.trizlink.app';
+const APP_URL = platformHref('web');
+const PLAY_URL = platformHref('android');
 const DISCOVERY_DESCRIPTION =
   'How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on.';
 /* Products speak as a team (owner-approved 2026-10-22): the site-wide JSON-LD names the
@@ -242,14 +243,28 @@ const config: Config = {
       items: [
         { type: 'docSidebar', sidebarId: 'mainSidebar', position: 'left', label: 'Docs' },
         { to: '/getting-started/quick-start', label: 'Quick Start', position: 'left' },
-        { href: APP_URL, label: 'Open Trizlink', position: 'right' },
-        { href: PLAY_URL, label: 'Android app', position: 'right' },
+        {
+          type: 'dropdown',
+          label: 'Get Trizlink',
+          position: 'right',
+          items: [
+            ...OTHER_PLATFORMS.map((platform) => ({ label: platform.name, href: platform.href })),
+            { label: 'All apps', to: '/apps' },
+          ],
+        },
         { href: 'https://github.com/aoneahsan/trizlink-docs', label: 'GitHub', position: 'right' },
       ],
     },
     footer: {
       style: 'dark',
       links: [
+        {
+          title: 'Get Trizlink',
+          items: [
+            ...OTHER_PLATFORMS.map((platform) => ({ label: platform.name, href: platform.href })),
+            { label: 'All apps', to: '/apps' },
+          ],
+        },
         {
           title: 'Documentation',
           items: [
@@ -264,8 +279,6 @@ const config: Config = {
         {
           title: 'Product',
           items: [
-            { label: 'Open Trizlink', href: APP_URL },
-            { label: 'Android app (Google Play)', href: PLAY_URL },
             { label: 'Privacy policy', href: `${APP_URL}/privacy-policy` },
             { label: 'Docs source', href: 'https://github.com/aoneahsan/trizlink-docs' },
           ],
