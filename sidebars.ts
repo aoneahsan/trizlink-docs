@@ -47,6 +47,21 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Developers',
+      collapsed: true,
+      link: { type: 'doc', id: 'developers/index' },
+      items: [
+        'developers/authentication',
+        'developers/api',
+        'developers/mcp',
+        'developers/webhooks',
+        'developers/calendar-feed',
+        'developers/two-step-sign-in',
+        'developers/changelog',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Moving to Trizlink',
       collapsed: true,
       link: { type: 'doc', id: 'compare/index' },
