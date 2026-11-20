@@ -15,7 +15,7 @@ Dub is a developer-first link platform, and its distinguishing part is partner a
 2. **Pull the rest through Dub's API.** Dub is built API-first, so the links you want are reachable in code even if your plan has no export button. Write them to a CSV with a `target_url` column.
 3. **Keep the passwords and expiry dates.** Dub supports both, and so does the [importer](/features/link-organization#import): fill `password` and `expires_at`, and each link arrives with them set.
 4. **[Sign in](/getting-started/create-account) and import** at `/dashboard/links/bulk-import`. Up to 5,000 rows a file.
-5. **Point your code at Trizlink's API, if you have Pro or Team.** It has [eighteen endpoints](/features/api-access#endpoints) for links, bio pages, analytics, domains, webhooks and social posts, with keys scoped per workspace.
+5. **Point your code at Trizlink's API, on any plan.** It covers links, bio pages, analytics, domains, webhooks and social posts, with keys scoped per workspace ([API reference](/developers/api-reference)).
 
 ## What stays on Dub {#stays}
 

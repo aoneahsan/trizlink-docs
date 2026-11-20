@@ -15,7 +15,7 @@ T2M sells a lifetime Basic tier for five dollars and monthly plans that add doma
 2. **Export from a Standard plan or above.** T2M lists bulk tools from Standard. On Basic, write the list by hand.
 3. **[Sign in to Trizlink](/getting-started/create-account)** and build the CSV: `target_url`, plus `custom_code`, `password` and `expires_at` where T2M had them set.
 4. **Import** at `/dashboard/links/bulk-import`. Every problem row is named with its line number and the value read, and nothing is repaired silently.
-5. **Swap the API key in your scripts.** Trizlink's [API](/features/api-access#keys) is on Pro and Team. Mint a key with only the scopes the script uses.
+5. **Swap the API key in your scripts.** Trizlink's [API](/developers/access-keys) is on every plan, Free included. Make a key with only the scopes the script uses.
 
 ## What stays on T2M {#stays}
 

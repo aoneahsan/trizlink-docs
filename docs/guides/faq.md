@@ -184,13 +184,13 @@ image generation and no hashtag generator.
 
 ### Is there an API?
 
-Yes — 18 endpoints at `https://api.trizlink.com/v1`, on **Pro and Team**. Free has no API access and no key
-allowance. See [Public API](../features/api-access.md).
+Yes, at `https://api.trizlink.com/v1`, on every plan, Free included, with an MCP connection for AI assistants
+beside it. See [Developers](/developers).
 
 ### I have `links:write`, so why can I not delete a link?
 
-Because deletion needs `links:delete` as well. A destructive permission is separate from the scope and is
-never implied by write access.
+Because deletion needs `links:delete` as well, and only a workspace owner or admin can give it. Delete is a
+separate tick from Change and is never implied by write access.
 
 ### Can I schedule social posts?
 

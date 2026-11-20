@@ -54,7 +54,7 @@ This is the honest answer for anyone who wanted an extension for speed. A worksp
 shortcut can each do it in one step — from **outside** the browser as well as inside it. That is genuinely
 faster than a toolbar button.
 
-The API is on Pro and Team. See [Public API](./api-access.md).
+The API is on every plan. See [Developers](/developers).
 
 ### 3. Bulk import, when it is not one link
 
