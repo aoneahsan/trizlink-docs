@@ -5,8 +5,96 @@
     <link>https://docs.trizlink.com/</link>
     <description><![CDATA[How Trizlink works, from the code: short links, bio pages, QR codes, click analytics that store no visitor IP address, and what is not switched on.]]></description>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 18:51:56 GMT</lastBuildDate>
     <atom:link href="https://docs.trizlink.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Browser extension</title>
+      <link>https://docs.trizlink.com/features/browser-extension</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/browser-extension</guid>
+      <pubDate>Fri, 20 Nov 2026 18:51:56 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[Trizlink does not offer a browser extension. Here is why, what to use instead to shorten a link quickly, and what would have to be true for one to ship.]]></description>
+    </item>
+    <item>
+      <title>Frequently asked questions</title>
+      <link>https://docs.trizlink.com/guides/faq</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/guides/faq</guid>
+      <pubDate>Fri, 20 Nov 2026 18:51:56 GMT</pubDate>
+      <category>Guides</category>
+      <description><![CDATA[Short answers to what people actually ask about Trizlink — plans, sign-in, custom domains, the missing browser extension, AI metering, the API and what happened to old links.]]></description>
+    </item>
+    <item>
+      <title>Trizlink for developers</title>
+      <link>https://docs.trizlink.com/developers</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/developers</guid>
+      <pubDate>Fri, 20 Nov 2026 18:49:43 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Use Trizlink from a script, an AI assistant, another app or your calendar: one API, one assistant connection, signed webhooks and two-step sign-in, per workspace, on every plan.]]></description>
+    </item>
+    <item>
+      <title>Trizlink Access Keys: Scopes, Roles and Limits</title>
+      <link>https://docs.trizlink.com/developers/access-keys</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/developers/access-keys</guid>
+      <pubDate>Fri, 20 Nov 2026 18:49:43 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Make a workspace access key in Trizlink, choose what it may read, change or delete, see it again within ten minutes of signing in, and stay inside the rate limits.]]></description>
+    </item>
+    <item>
+      <title>The Trizlink API</title>
+      <link>https://docs.trizlink.com/developers/api-reference</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/developers/api-reference</guid>
+      <pubDate>Fri, 20 Nov 2026 18:49:43 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Trizlink's REST API: the base address, the OpenAPI 3.1 file, its resources, workspace scoping and cursor pagination.]]></description>
+    </item>
+    <item>
+      <title>Connect Claude, ChatGPT, Claude Code or Cursor to Trizlink</title>
+      <link>https://docs.trizlink.com/developers/assistants</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/developers/assistants</guid>
+      <pubDate>Fri, 20 Nov 2026 18:49:43 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Connect an AI assistant to a Trizlink workspace through MCP: the address, the steps per assistant, what the approval page asks, and how deletes wait for you.]]></description>
+    </item>
+    <item>
+      <title>Trizlink Calendar Feeds</title>
+      <link>https://docs.trizlink.com/developers/calendar-feeds</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/developers/calendar-feeds</guid>
+      <pubDate>Fri, 20 Nov 2026 18:49:43 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Subscribe Google Calendar, Outlook or Apple Calendar to a Trizlink workspace's scheduled posts and link expiries, read only.]]></description>
+    </item>
+    <item>
+      <title>Trizlink Developer Changelog</title>
+      <link>https://docs.trizlink.com/developers/changelog</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/developers/changelog</guid>
+      <pubDate>Fri, 20 Nov 2026 18:49:43 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Every change to Trizlink's API, MCP connection, webhooks, calendar feeds and two-step sign-in, newest first.]]></description>
+    </item>
+    <item>
+      <title>Two-Step Sign-In for Trizlink</title>
+      <link>https://docs.trizlink.com/developers/two-step-sign-in</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/developers/two-step-sign-in</guid>
+      <pubDate>Fri, 20 Nov 2026 18:49:43 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Turn on two-step sign-in for your Trizlink account: an authenticator code, ten recovery codes, remembering a browser for seven days, and what support can do.]]></description>
+    </item>
+    <item>
+      <title>Trizlink Webhooks: Events, Signatures and Retries</title>
+      <link>https://docs.trizlink.com/developers/webhooks</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/developers/webhooks</guid>
+      <pubDate>Fri, 20 Nov 2026 18:49:43 GMT</pubDate>
+      <category>Overview</category>
+      <description><![CDATA[Trizlink posts to your server when links, bio pages, domains and members change, signed with Standard Webhooks, retried for a day and paused only after five failing days.]]></description>
+    </item>
+    <item>
+      <title>Public API</title>
+      <link>https://docs.trizlink.com/features/api-access</link>
+      <guid isPermaLink="true">https://docs.trizlink.com/features/api-access</guid>
+      <pubDate>Fri, 20 Nov 2026 18:49:43 GMT</pubDate>
+      <category>Features</category>
+      <description><![CDATA[The Trizlink API, assistant connection, webhooks and calendar feeds now live in the Developers section, on every plan, at the same address api.trizlink.com/v1.]]></description>
+    </item>
     <item>
       <title>White-label and licensing</title>
       <link>https://docs.trizlink.com/white-label</link>
@@ -408,14 +496,6 @@
       <description><![CDATA[Trizlink is built and maintained by the Trizlink team. Product questions go to the contact page on trizlink.com, or to support@trizlink.com.]]></description>
     </item>
     <item>
-      <title>Browser extension</title>
-      <link>https://docs.trizlink.com/features/browser-extension</link>
-      <guid isPermaLink="true">https://docs.trizlink.com/features/browser-extension</guid>
-      <pubDate>Fri, 30 Oct 2026 18:56:26 GMT</pubDate>
-      <category>Features</category>
-      <description><![CDATA[Trizlink does not offer a browser extension. Here is why, what to use instead to shorten a link quickly, and what would have to be true for one to ship.]]></description>
-    </item>
-    <item>
       <title>Theme control</title>
       <link>https://docs.trizlink.com/features/theme-customizer</link>
       <guid isPermaLink="true">https://docs.trizlink.com/features/theme-customizer</guid>
@@ -446,14 +526,6 @@
       <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
       <category>Features</category>
       <description><![CDATA[Press Tour this page for a short guided tour of the page you are on. The product walkthrough shows how Trizlink works, one real screen per step.]]></description>
-    </item>
-    <item>
-      <title>Frequently asked questions</title>
-      <link>https://docs.trizlink.com/guides/faq</link>
-      <guid isPermaLink="true">https://docs.trizlink.com/guides/faq</guid>
-      <pubDate>Tue, 06 Oct 2026 15:33:19 GMT</pubDate>
-      <category>Guides</category>
-      <description><![CDATA[Short answers to what people actually ask about Trizlink — plans, sign-in, custom domains, the missing browser extension, AI metering, the API and what happened to old links.]]></description>
     </item>
     <item>
       <title>Introduction to Trizlink</title>
@@ -510,14 +582,6 @@
       <pubDate>Fri, 04 Sep 2026 09:10:05 GMT</pubDate>
       <category>About</category>
       <description><![CDATA[What Trizlink stores, what it deliberately does not store, and why no visitor IP address exists in the database. A plain summary alongside the legal text.]]></description>
-    </item>
-    <item>
-      <title>Public API</title>
-      <link>https://docs.trizlink.com/features/api-access</link>
-      <guid isPermaLink="true">https://docs.trizlink.com/features/api-access</guid>
-      <pubDate>Fri, 04 Sep 2026 09:00:28 GMT</pubDate>
-      <category>Features</category>
-      <description><![CDATA[Eighteen REST endpoints at api.trizlink.com/v1 for links, bio pages, analytics, domains, webhooks and social posts, with per-resource scopes and separate destructive permissions.]]></description>
     </item>
     <item>
       <title>Link organisation</title>
