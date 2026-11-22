@@ -69,11 +69,19 @@ docs/
   guides/faq.md
   about/{privacy-and-data, changelog, about-the-author}.md   (about-the-author is the team page since 2026-10-30)
   MANUAL-TASKS.md · DONE-TASKS.md            (excluded from the build)
-src/css/custom.css · src/pages/{index,feed,sitemap}.tsx · src/plugins/discoveryFeed.ts
+blog/   authors.yml + posts (one .md each; the blog stays off until the first post)
+src/css/custom.css · src/pages/{index,feed,sitemap}.tsx · src/plugins/discoveryFeed.ts · src/data/blog.ts
 static/{robots.txt, llms.txt, humans.txt, CNAME, 5ec21df431ff3d1dbf8dd7052aad9671.txt, img/*}
 docusaurus.config.ts · sidebars.ts
 gh-pages branch (generated build; GitHub Pages)
 ```
+
+## Blog
+
+`blog/` holds the team's posts, one `.md` each (front matter: `slug`, `title`, `description`, `authors: [team]`, `image`,
+`date`; `{/* truncate */}` after the opening line), each image in `static/img/social/`. Empty, the blog stays off; the first
+post turns on the blog, its RSS and Atom feeds, its sitemap entries (`/blog` dated by its newest post), its Blog section
+on `/sitemap` and its place in `/feed` and `/feed.xml`, and the Blog links. The words live in `src/data/blog.ts` (2026-11-22).
 
 ## Deployment
 

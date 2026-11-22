@@ -1,6 +1,7 @@
 import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
+import type { BlogContent } from '@docusaurus/plugin-content-blog';
 import type { LoadedContent } from '@docusaurus/plugin-content-docs';
 import type { AllContent, LoadContext, Plugin } from '@docusaurus/types';
 
@@ -16,6 +17,8 @@ type FeedItem = {
 /** What the readable `/feed` and `/sitemap` pages receive (`usePluginData('discovery-feed')`). */
 export type DiscoveryFeedData = {
   items: { title: string; description: string; permalink: string; updatedAt: string; category: string }[];
+  /** How many of the items are blog posts: none until the first post is published. */
+  posts: number;
 };
 
 /** Section names as the sidebar shows them. A page outside these folders is "Overview". */
@@ -24,6 +27,7 @@ const CATEGORY: Record<string, string> = {
   features: 'Features',
   guides: 'Guides',
   about: 'About',
+  blog: 'Blog',
 };
 
 function categoryOf(permalink: string): string {
@@ -44,12 +48,15 @@ export default function discoveryFeed(
   return {
     name: 'discovery-feed',
     allContentLoaded({ allContent, actions }) {
-      items = docsFeedItems(allContent);
-      if (items.length === 0) {
+      const docs = docsFeedItems(allContent);
+      if (docs.length === 0) {
         throw new Error('discovery-feed: no dated documentation pages were found');
       }
+      const posts = blogFeedItems(allContent);
+      items = sortNewestFirst([...docs, ...posts]);
       const data: DiscoveryFeedData = {
         items: items.map((item) => ({ ...item, updatedAt: item.updatedAt.toISOString() })),
+        posts: posts.length,
       };
       actions.setGlobalData(data);
     },
@@ -105,6 +112,36 @@ function docsFeedItems(allContent: AllContent): FeedItem[] {
       }),
     );
   });
+  return sortNewestFirst(items);
+}
+
+/**
+ * The blog posts the blog plugin loaded, each dated by the day it was published. Drafts are already gone from a
+ * production build; an unlisted post stays out, as it does from the blog's own lists. Empty while the blog is off.
+ *
+ * @param allContent - every plugin's loaded content
+ * @returns one item per listed post, in the Blog section
+ */
+function blogFeedItems(allContent: AllContent): FeedItem[] {
+  const instances = (allContent['docusaurus-plugin-content-blog'] ?? {}) as Record<string, BlogContent | undefined>;
+  return Object.values(instances)
+    .flatMap((content) => content?.blogPosts ?? [])
+    .filter((post) => !post.metadata.unlisted)
+    .flatMap(({ metadata }) => {
+      const updatedAt = parseDate(metadata.date);
+      return updatedAt
+        ? [{
+            title: metadata.title,
+            description: metadata.description,
+            permalink: metadata.permalink,
+            updatedAt,
+            category: categoryOf(metadata.permalink),
+          }]
+        : [];
+    });
+}
+
+function sortNewestFirst(items: FeedItem[]): FeedItem[] {
   return items.sort(
     (left, right) =>
       right.updatedAt.getTime() - left.updatedAt.getTime() ||

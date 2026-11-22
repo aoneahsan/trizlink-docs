@@ -4,16 +4,18 @@ import Layout from '@theme/Layout';
 import { usePluginData } from '@docusaurus/useGlobalData';
 
 import type { DiscoveryFeedData } from '../plugins/discoveryFeed';
+import { BLOG_PATH } from '../data/blog';
 
 /**
  * `/sitemap` — the readable twin of `/sitemap.xml` (search audit SA-P05, 2026-10-30): every documentation page,
  * grouped by section. Built from the same plugin data as `/feed`, so a page that exists is listed in both.
  */
 export default function SitemapPage(): ReactNode {
-  const { items } = usePluginData('discovery-feed') as DiscoveryFeedData;
+  const { items, posts } = usePluginData('discovery-feed') as DiscoveryFeedData;
+  const what = posts > 0 ? 'documentation page and blog post' : 'documentation page';
   const sections = [...new Set(items.map((item) => item.category))].sort();
   return (
-    <Layout title="Sitemap" description="Every page of the Trizlink documentation, by section. Also as XML at /sitemap.xml.">
+    <Layout title="Sitemap" description={`Every Trizlink ${what}, by section. Also as XML at /sitemap.xml.`}>
       <main className="container margin-vert--lg">
         <h1>Sitemap</h1>
         <p>
@@ -21,7 +23,8 @@ export default function SitemapPage(): ReactNode {
         </p>
         {sections.map((section) => (
           <section key={section} className="margin-bottom--lg">
-            <h2>{section}</h2>
+            {/* The Blog heading leads to the blog's own page, which lists every post. */}
+            <h2>{section === 'Blog' ? <Link to={BLOG_PATH}>{section}</Link> : section}</h2>
             <ul>
               {items
                 .filter((item) => item.category === section)

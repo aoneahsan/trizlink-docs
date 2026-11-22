@@ -1,8 +1,19 @@
+import { existsSync, readdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import discoveryFeed from './src/plugins/discoveryFeed';
+import { BLOG_DESCRIPTION, BLOG_PATH, BLOG_TITLE } from './src/data/blog';
 import { OTHER_PLATFORMS, platformHref } from './src/data/platforms';
+
+/**
+ * Whether blog/ holds a post yet. Until it does, the blog stays off: an empty blog page would sit in sitemap.xml with
+ * nothing on it, and a Blog link would point at it. The first post added to blog/ turns on the blog, its RSS and Atom
+ * feeds, its sitemap entries, its place on /sitemap, /feed and /feed.xml, and the Blog links.
+ */
+const BLOG_DIR = fileURLToPath(new URL('./blog', import.meta.url));
+const HAS_POSTS = existsSync(BLOG_DIR) && readdirSync(BLOG_DIR).some((name) => /\.mdx?$/.test(name));
 
 // ---------------------------------------------------------------------------
 // Trizlink — Documentation site config
@@ -189,11 +200,52 @@ const config: Config = {
           showLastUpdateTime: true,
           breadcrumbs: true,
         },
-        blog: false,
+        blog: HAS_POSTS && {
+          path: 'blog',
+          routeBasePath: BLOG_PATH.slice(1),
+          blogTitle: BLOG_TITLE,
+          blogDescription: BLOG_DESCRIPTION,
+          blogSidebarTitle: 'Recent posts',
+          blogSidebarCount: 10,
+          postsPerPage: 10,
+          showReadingTime: false,
+          // A post's last update comes from git, like a doc's: shown under the post, and its sitemap lastmod.
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: false,
+          // Every author and tag is defined once, in blog/authors.yml (and blog/tags.yml when a post uses one).
+          onInlineAuthors: 'throw',
+          onInlineTags: 'throw',
+          onUntruncatedBlogPosts: 'throw',
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+            title: BLOG_TITLE,
+            description: BLOG_DESCRIPTION,
+            copyright: 'Made by the Trizlink team.',
+            language: 'en-GB',
+          },
+        },
         theme: { customCss: './src/css/custom.css' },
         /* No changefreq or priority (search audit 2026-10-30): Google ignores both, and a constant one on every URL
            says nothing true. lastmod stays, from git, the day the page's words changed. */
-        sitemap: { changefreq: null, priority: null, lastmod: 'date' },
+        sitemap: {
+          changefreq: null,
+          priority: null,
+          lastmod: 'date',
+          // The blog's tag, author, archive and later list pages only repeat its posts; each post is listed once.
+          ignorePatterns: ['/blog/tags/**', '/blog/authors/**', '/blog/archive', '/blog/page/**'],
+          // The blog's own page has no git date: it takes the newest date among the posts it lists.
+          createSitemapItems: async ({ defaultCreateSitemapItems, ...params }) => {
+            const items = await defaultCreateSitemapItems(params);
+            const blogUrl = `${SITE_URL}${BLOG_PATH}`;
+            const newest = items
+              .filter((item) => item.url.startsWith(`${blogUrl}/`) && item.lastmod)
+              .map((item) => item.lastmod as string)
+              .sort()
+              .at(-1);
+            return items.map((item) => (item.url === blogUrl && !item.lastmod && newest ? { ...item, lastmod: newest } : item));
+          },
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -243,6 +295,7 @@ const config: Config = {
       items: [
         { type: 'docSidebar', sidebarId: 'mainSidebar', position: 'left', label: 'Docs' },
         { to: '/getting-started/quick-start', label: 'Quick Start', position: 'left' },
+        ...(HAS_POSTS ? [{ to: BLOG_PATH, label: 'Blog', position: 'left' as const }] : []),
         {
           type: 'dropdown',
           label: 'Get Trizlink',
@@ -272,6 +325,7 @@ const config: Config = {
             { label: 'Create your account', to: '/getting-started/create-account' },
             { label: 'Quick Start', to: '/getting-started/quick-start' },
             { label: 'FAQ', to: '/guides/faq' },
+            ...(HAS_POSTS ? [{ label: 'Blog', to: BLOG_PATH }] : []),
             { label: 'Sitemap', to: '/sitemap' },
             { label: 'Feed', to: '/feed' },
           ],

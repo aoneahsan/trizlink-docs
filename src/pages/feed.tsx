@@ -11,13 +11,15 @@ import type { DiscoveryFeedData } from '../plugins/discoveryFeed';
  * the one plugin that writes the XML, so the two can never disagree.
  */
 export default function FeedPage(): ReactNode {
-  const { items } = usePluginData('discovery-feed') as DiscoveryFeedData;
+  const { items, posts } = usePluginData('discovery-feed') as DiscoveryFeedData;
+  // Once the blog has posts they share this list, each dated by the day it was published.
+  const what = posts > 0 ? 'documentation page and blog post' : 'documentation page';
   return (
-    <Layout title="Feed" description="Every Trizlink documentation page, newest change first. Also as RSS at /feed.xml.">
+    <Layout title="Feed" description={`Every Trizlink ${what}, newest change first. Also as RSS at /feed.xml.`}>
       <main className="container margin-vert--lg">
         <h1>Feed</h1>
         <p>
-          Every documentation page, newest change first. Subscribe with <Link href="pathname:///feed.xml">/feed.xml</Link>.
+          Every {what}, newest change first. Subscribe with <Link href="pathname:///feed.xml">/feed.xml</Link>.
         </p>
         <ol>
           {items.map((item) => (
