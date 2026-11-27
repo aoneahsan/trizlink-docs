@@ -5,7 +5,8 @@ Fixed path in every repo (`aoneahsan-cccs-search-issue-remediation`). Newest fir
 
 ## trizlink-docs#1 — AEO structured data gaps · 2026-11-27 · commit: see `git log -- docs/search-consoles/fix-log.md`
 
-Status: fixed; live proof below once published. `yarn build` (zero warnings) ends with `yarn seo:contract`
+Status: live-verified, google-pending (commit `37bb45e`, gh-pages `edb4227`, IndexNow 200): FAQPage on both FAQ pages in the
+raw HTML; `/guides/faq` → 301 `/guides/faq/`; 0 unslashed sitemap URLs. `yarn build` (zero warnings) ends with `yarn seo:contract`
 (`src/plugins/seo-contract.mts`), which failed on a planted noindex on `/guides/faq/`, then passed. Rendered
 `/guides/faq/` at 1440.
 
