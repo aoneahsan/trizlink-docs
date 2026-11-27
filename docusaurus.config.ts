@@ -1,4 +1,5 @@
 import { existsSync, readdirSync } from 'node:fs';
+import faqSchema from './src/plugins/faq-schema';
 import { fileURLToPath } from 'node:url';
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
@@ -163,7 +164,9 @@ const config: Config = {
 
   i18n: { defaultLocale: 'en', locales: ['en'] },
 
-  trailingSlash: false,
+  // Every page is `<route>/index.html`: GitHub Pages then 301s `/x` to `/x/`. With `false` it served `x.html` and
+  // 404ed every slashed link (trizlink-docs#1, SA-P26).
+  trailingSlash: true,
 
   markdown: {
     mermaid: true,
@@ -194,6 +197,8 @@ const config: Config = {
             'MANUAL-TASKS.md',
             'DONE-TASKS.md',
             'PACKAGES.md',
+            // docs/search-consoles/ is the fleet's fixed-path record of search-console work, never a page.
+            'search-consoles/**',
           ],
           routeBasePath: '/',
           editUrl: 'https://github.com/aoneahsan/trizlink-docs/edit/main/',
@@ -233,7 +238,8 @@ const config: Config = {
           priority: null,
           lastmod: 'date',
           // The blog's tag, author, archive and later list pages only repeat its posts; each post is listed once.
-          ignorePatterns: ['/blog/tags/**', '/blog/authors/**', '/blog/archive', '/blog/page/**'],
+          // Slashed forms too: under `trailingSlash: true` routes end in `/`.
+          ignorePatterns: ['/blog/tags/**', '/blog/authors/**', '/blog/archive', '/blog/archive/', '/blog/page/**'],
           // The blog's own page has no git date: it takes the newest date among the posts it lists.
           createSitemapItems: async ({ defaultCreateSitemapItems, ...params }) => {
             const items = await defaultCreateSitemapItems(params);
@@ -243,14 +249,19 @@ const config: Config = {
               .map((item) => item.lastmod as string)
               .sort()
               .at(-1);
-            return items.map((item) => (item.url === blogUrl && !item.lastmod && newest ? { ...item, lastmod: newest } : item));
+            const isBlogIndex = (url: string): boolean => url === blogUrl || url === `${blogUrl}/`;
+            return items.map((item) => (isBlogIndex(item.url) && !item.lastmod && newest ? { ...item, lastmod: newest } : item));
           },
         },
       } satisfies Preset.Options,
     ],
   ],
 
-  plugins: [[discoveryFeed, { description: DISCOVERY_DESCRIPTION }]],
+  plugins: [
+    [discoveryFeed, { description: DISCOVERY_DESCRIPTION }],
+    // FAQPage JSON-LD read off the built FAQ pages, so the markup is the page (trizlink-docs#1, SA-P30).
+    faqSchema,
+  ],
 
   themeConfig: {
     image: 'img/social-card.png',

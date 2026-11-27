@@ -20,7 +20,8 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start --port 5962 --host 0.0.0.0",
-    "build": "NODE_OPTIONS=--no-experimental-webstorage docusaurus build",
+    "build": "NODE_OPTIONS=--no-experimental-webstorage docusaurus build && yarn seo:contract",
+    "seo:contract": "node src/plugins/seo-contract.mts",
     "swizzle": "docusaurus swizzle",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve --port 5963",
